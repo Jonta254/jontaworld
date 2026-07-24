@@ -15,16 +15,20 @@ export default function Section({
   lede,
   children,
   wide = false,
+  divider = true,
 }: {
   eyebrow?: string;
   title?: string;
   lede?: string;
   children: React.ReactNode;
   wide?: boolean;
+  /** The top rule. Dropping it lets a section float, which is how pacing
+      variation is created without changing any component's styling. */
+  divider?: boolean;
 }) {
   return (
     <section className={styles.section}>
-      <hr className="rule" />
+      {divider && <hr className="rule" />}
       <div className={`${styles.inner} ${wide ? styles.wide : ""}`}>
         {(eyebrow || title || lede) && (
           <header className={styles.header}>

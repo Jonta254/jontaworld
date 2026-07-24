@@ -37,6 +37,9 @@ export type CaseStudy = {
   decisions: Decision[];
   /** The honest constraints and what was traded for what. */
   challenges: string;
+  /** The one decision that changed the outcome, in the maker's own voice.
+      Pulled out mid-story as the "show thinking" beat. */
+  turningPoint: string;
   /** What shipped and what it does. One click from proof. */
   solution: string;
   /** Only verifiable results. If it cannot be checked, it is not here. */
@@ -124,6 +127,8 @@ export const PROJECTS: Project[] = [
       ],
       challenges:
         "The honest constraint is compliance I do not own. BCITO can change its format, and the product has to track that or it stops being useful the day it drifts. I traded a faster first release for an entry structure kept in one place, so a format change is an edit rather than a rebuild. The other trade was scope: voice capture that is genuinely reliable mattered more than a wide feature list, so the feature list stayed short on purpose.",
+      turningPoint:
+        "It worked the moment the compliance format stopped being a feature and became the product itself. After that, every other decision got simpler.",
       solution:
         "A voice-to-logbook app live on its own domain, free for NZ apprentices, spanning construction, carpentry, electrical, plumbing and automotive. Record a day out loud, review the structured entry, and keep a running log that works with no signal and installs to the home screen.",
       results:
@@ -185,6 +190,8 @@ export const PROJECTS: Project[] = [
       ],
       challenges:
         "The real risk was breadth. The temptation is to keep adding calculators until the tool claims to do everything, which is the fastest way to make it do nothing well. I traded coverage for trust: fewer tools, each one correct and clearly explained, rather than a long menu I could not stand behind. Serving a student and a working electrician on the same screen was the other tension, resolved by leading with the result and letting the reasoning stay one glance away.",
+      turningPoint:
+        "The decision that mattered was the one to leave tools out. A short, correct set earns more trust than a long one I could not stand behind.",
       solution:
         "A platform of circuit calculators, wiring guides, and structured learning paths, live and free for the core tools. It describes itself, accurately, as built by an electrician with real site experience, because it was.",
       results:

@@ -149,12 +149,16 @@ export default async function ProjectPage({
         </div>
       </div>
 
-      {/* ── Case study body ────────────────────────────────────── */}
+      {/* ── Case study body ─────────────────────────────────────────
+          Composed as chapters, not identical blocks. A full-width lead opens
+          it; two-column notes carry the middle; a pulled turning point marks
+          the decision that mattered; the solution turns visual; the closing
+          reflection is quiet and italic. ─────────────────────────────────── */}
       {s ? (
         <div className={styles.body}>
-          <section className={styles.block}>
-            <h2 className={styles.blockLabel}>The problem</h2>
-            <p className={styles.blockLede}>{s.problem}</p>
+          <section className={styles.opening}>
+            <p className={styles.openingLabel}>The problem</p>
+            <p className={styles.openingText}>{s.problem}</p>
           </section>
 
           <section className={styles.block}>
@@ -174,6 +178,11 @@ export default async function ProjectPage({
             <h2 className={styles.blockLabel}>Challenges and tradeoffs</h2>
             <p className={styles.blockLede}>{s.challenges}</p>
           </section>
+
+          <figure className={styles.turningPoint}>
+            <figcaption className={styles.turningLabel}>The turning point</figcaption>
+            <blockquote className={styles.turningText}>{s.turningPoint}</blockquote>
+          </figure>
 
           <section className={styles.block}>
             <h2 className={styles.blockLabel}>The solution</h2>

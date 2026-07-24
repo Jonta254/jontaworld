@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "./components/home/Hero";
 import Section from "./components/home/Section";
+import Statement from "./components/home/Statement";
 import Services from "./components/home/Services";
 import { FlagshipCard, SupportingGrid } from "./components/showcase/ProjectShowcase";
 import { FLAGSHIPS, SUPPORTING, PROJECTS } from "@/content/projects";
@@ -91,7 +92,12 @@ export default function HomePage() {
         </Link>
       </Section>
 
-      <Section eyebrow="How I work" title="Four rules, learned the expensive way.">
+      <Statement>
+        None of these were built to be a portfolio. Each exists because someone{" "}
+        <em>needed</em> it, and now it does.
+      </Statement>
+
+      <Section title="Four rules, learned the expensive way." divider={false}>
         <ul className={styles.principles}>
           {PRINCIPLES.map((p) => (
             <li key={p.title} className={styles.principle}>

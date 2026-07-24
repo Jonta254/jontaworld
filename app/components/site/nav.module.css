@@ -134,3 +134,18 @@
      here buys the nav links the room they need. */
   .cta { display: none; }
 }
+
+/* At 320px (WCAG 1.4.10 reflow, which is 400% zoom on a 1280 screen) the
+   wordmark and four links no longer fit on one line, so the row wraps to two.
+   Wrapping is used rather than tighter padding because it holds regardless of
+   font metrics or a longer label, and it avoids a hamburger for four links. */
+@media (max-width: 420px) {
+  .inner {
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
+  }
+  .brand { margin-right: 0; }
+  .links { width: 100%; justify-content: space-between; }
+  .link { padding-inline: var(--space-1); }
+  .link::after { left: var(--space-1); right: var(--space-1); }
+}

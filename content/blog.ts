@@ -20,6 +20,29 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "nothing-announces-itself",
+    title: "Nothing announces itself",
+    excerpt:
+      "Working systems are silent. No alert, no pause, no warning. Everything simply exists until the moment it does not, and that silence is the thing worth designing around.",
+    topic: "Systems",
+    readingTime: "8 min",
+    note: "I wrote this after a long stretch of thinking about why the best work is usually the work nobody notices.",
+    body: [
+      "When I was young I wanted to know what was behind things. Not what they did, but what made them do it. I opened what I was allowed to open and a few things I was not. Most of it went back together. Some of it did not, and those were the useful ones, because a thing that fails teaches you more in an afternoon than a thing that works teaches you in a year.",
+      "What pulled me in was that physical things do not argue. A wire carries current or it does not. There is no opinion in it, no persuading it, no partial credit for good intentions. For a young person that is enormously clarifying. You are either right or you are wrong, and the thing itself tells you which, immediately, without being asked.",
+      "So I went into the trade, and the trade turned out to be a long apprenticeship in consequences. You learn to read a fault the way other people read handwriting. You learn that the panel in front of you is not one decision but a record of every decision anyone ever made about that building, including the ones made badly, made quickly, or made at the end of a Friday when everybody wanted to go home.",
+      "What I see daily has not changed much since I moved into software. The work is different. The failures rhyme. Somebody needed a thing to work and did not have the time to make it work well. Somebody solved the problem in front of them and left the cost with a person they would never meet. Somebody labelled nothing, because at the time they knew where everything was, and knowing where everything was felt permanent.",
+      "It never is. That is the first lesson, and it arrives slowly. The knowledge that holds a system together lives in a head, and heads move on. What survives is what was written down, laid out clearly, and made obvious to the next person. Everything else is a rumour that happens to be true for a while.",
+      "The second lesson took me much longer, and it is the one I keep returning to. Systems do not warn you. There is no alert before the fault. There is no pause before the failure, no moment where the thing you built raises its hand and says it is about to stop. It all simply exists, quietly, doing what it does, until the day it does not. The silence is not safety. The silence is only silence.",
+      "This is easy to say and hard to feel until you have stood in front of something that was fine yesterday. A circuit that carried load for years. A script that ran every night without anyone thinking about it. Neither of them gave notice. Neither of them was ever going to. Working and failing look identical right up until the moment they stop looking identical.",
+      "Once you accept that, it changes what you build. If the system will not warn you, the warning has to be designed in. That does not mean more alerts. Alerts that fire constantly are the same as no alerts at all, and a person who has learned to ignore a warning is in a worse position than a person who never had one. It means building so that failure shows up early, reads clearly when it arrives, and can be survived while it is being fixed.",
+      "It also means being honest about the conditions. Software written for a desk behaves very differently in a roof space with one bar of signal and cold hands. The failure case is not an edge case out there. For the people I build for it is most of the day. Designing for the worst realistic condition is not pessimism. It is just paying attention to where the work actually happens.",
+      "There is a quiet part of this that took me a while to make peace with. The best compliment work of this kind receives is that nobody notices it. Nobody thanks a circuit for holding. Nobody praises an app for opening. The entire craft points at an outcome where the person using it never thinks about you at all, and never has cause to. You are working toward your own invisibility, and you have to find that satisfying, because it is the only reward the job reliably pays.",
+      "So that is where I am now. I build tools for people who work with their hands, in conditions that do not forgive guesswork, for a standard I did not invent and cannot argue with. Test it. Verify it. Write it down. Leave it better than you found it. Assume no warning is coming, because none is.",
+      "It works, or it does not. Everything else is commentary.",
+    ],
+  },
+  {
     slug: "wiring-panel-architecture",
     title: "What wiring a panel taught me about architecture",
     excerpt:

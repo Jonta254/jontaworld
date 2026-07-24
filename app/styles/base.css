@@ -23,7 +23,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd { margin: 0; }
-ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
+
+/* Wrapped in :where() so the reset carries zero specificity. Written as
+   `ul[class]` it scored (0,1,1) and silently beat every single-class CSS
+   module selector, which quietly killed margin and padding on any styled
+   list. The Writing index lost its centring that way. */
+:where(ul[class], ol[class]) { list-style: none; margin: 0; padding: 0; }
 
 img, picture, svg, video { display: block; max-width: 100%; }
 
