@@ -114,4 +114,12 @@
   text-transform: uppercase;
 }
 
+/* The handle. Mono and small, sitting between the name and the availability
+   note so it reads as a signature rather than a second name. Mixed case is
+   preserved deliberately; it is how the handle is written. */
+.handle {
+  font-family: var(--font-mono);
+  color: var(--muted);
+}
+
 .availability { font-family: var(--font-mono); }

@@ -13,6 +13,9 @@ export const SITE = {
   name: "Josiah",
   /** Full name for schema.org, the CV, and off-site profiles. */
   fullName: "Brian Josiah",
+  /** The handle used across GitHub and X. Kept small and secondary to the
+      name: it identifies, it does not lead. Mixed case is deliberate. */
+  handle: "jontAWorld",
   brand: "Raw Signal",
   /** Primary role. Broad enough to carry the full range of work, precise
    *  enough to stay honest: these are real capabilities, not a wish list. */
@@ -37,4 +40,5 @@ export const NAV = [
 
 export const SOCIAL = [
   { href: "https://github.com/Jonta254", label: "GitHub" },
+  { href: "https://x.com/jontAWorld", label: "X" },
 ] as const;
