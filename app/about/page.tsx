@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "../components/home/Section";
+import Statement from "../components/home/Statement";
 import { SEQUENCE } from "@/content/sequence";
+import { ESSAY, ABOUT_STATEMENT } from "@/content/about";
 import { SITE } from "@/content/site";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "How I got from electrical work to building software, and the standard I carried across. No credentials claimed. The work is open, so judge that instead.",
+    "How I approach problems, decide what to build, work with other people, and what I mean by good software. No credentials, no claims the work cannot support.",
   alternates: { canonical: "/about" },
 };
 
 /**
- * About. Server component, no client JavaScript.
+ * About, written as an essay rather than a biography or a résumé.
  *
- * Written to avoid the two failure modes of portfolio biographies: the
- * inflated claim ("passionate about crafting delightful experiences") and the
- * CV recital. What's left is a short, specific, checkable story — plus an
- * honest statement of what is *not* being claimed, which is unusual enough to
- * function as a credibility signal in its own right.
- *
- * No dates anywhere. Progression is carried by the Sequence's numbering.
+ * The page moves from a wide, structured sequence (how the work got here),
+ * through a quiet statement, into an intimate reading column (how I actually
+ * think and work). No dates, no credentials, nothing the visitor cannot check
+ * against the live work.
  */
 export default function AboutPage() {
   return (
@@ -56,41 +55,26 @@ export default function AboutPage() {
         </ol>
       </Section>
 
-      <Section eyebrow="Standard" title="The work is the evidence.">
-        <div className={styles.plain}>
-          <p>
-            Five products are live and open to anyone. This site is built to the
-            same standard: fast, keyboard-operable, and legible on the cheapest
-            phone in the room.
-          </p>
-          <p>Both are there to be tested rather than taken on trust.</p>
-        </div>
-      </Section>
+      <Statement>{ABOUT_STATEMENT}</Statement>
 
-      <Section eyebrow="Working together" title="Where I am most useful.">
-        <div className={styles.plain}>
-          <p>
-            Projects with an awkward real constraint: no connection, bad light,
-            gloves on, an old device, a user mid-task who cannot stop to read.
-            I build for the failure case first.
-          </p>
-          <p>
-            I work best where design and engineering are one conversation. I
-            decide type, spacing and motion once, then apply them everywhere.
-          </p>
-          <p className={styles.close}>
-            {SITE.availability}. If that fits something you are working on,{" "}
-            <Link className={styles.inline} href="/contact">
-              say hello
-            </Link>{" "}
-            or read{" "}
-            <Link className={styles.inline} href="/portfolio">
-              the work
-            </Link>{" "}
-            first.
-          </p>
-        </div>
-      </Section>
+      <div className={styles.essay}>
+        {ESSAY.map((chapter) => (
+          <section key={chapter.title} className={styles.essayChapter}>
+            <h2 className={styles.essayTitle}>{chapter.title}</h2>
+            {chapter.body.map((para, i) => (
+              <p key={i} className={styles.essayText}>{para}</p>
+            ))}
+          </section>
+        ))}
+
+        <p className={styles.essayClose}>
+          Everything here is live and open, which is the point. Read{" "}
+          <Link className={styles.inline} href="/portfolio">the work</Link>, or if
+          something you are building needs this kind of attention,{" "}
+          <Link className={styles.inline} href="/contact">say hello</Link>.{" "}
+          {SITE.availability}.
+        </p>
+      </div>
     </>
   );
 }

@@ -114,21 +114,46 @@
   max-width: 62ch;
 }
 
-/* ── Prose blocks ───────────────────────────────────────────────────────── */
-.plain {
+/* ── The essay ───────────────────────────────────────────────────────────
+   An intimate reading column, deliberately narrower than the wide sequence
+   above it. The rhythm shift from a structured rail to a single essay column
+   is the point: the page stops presenting and starts talking. */
+.essay {
+  max-width: var(--container-prose);
+  margin-inline: auto;
+  padding: 0 var(--gutter) var(--space-11);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  max-width: var(--measure);
+  gap: var(--space-8);
 }
 
-.plain p {
-  font-size: var(--text-base);
-  line-height: var(--leading-base);
+.essayChapter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.essayTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-h3);
+  color: var(--ink);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+.essayText {
+  font-size: var(--text-lg);
+  line-height: 1.75;
   color: var(--body);
 }
 
-.close { color: var(--muted); }
+.essayClose {
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--muted);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
+}
 
 .inline {
   color: var(--accent);
