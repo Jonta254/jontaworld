@@ -60,6 +60,7 @@
   --leading-tight: 1.08;
   --leading-snug:  1.25;
   --leading-base:  1.65;
+  --leading-loose: 1.75;  /* long-form reading columns — essay, blog, case-study prose */
 
   --tracking-tight: -0.02em;
   --tracking-base:   0;

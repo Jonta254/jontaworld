@@ -1,5 +1,32 @@
 /** @type {import('next').NextConfig} */
 
+// Fast Refresh / Turbopack use eval() in development only. Production ships no
+// eval, so 'unsafe-eval' is scoped to dev instead of shipped to every visitor.
+const isDev = process.env.NODE_ENV === 'development';
+
+const csp = [
+  "default-src 'self'",
+  // 'unsafe-inline' stays: a fully static App Router site injects inline
+  // bootstrap/style with no nonce available (nonces require dynamic rendering).
+  // 'unsafe-eval' is dev-only. Vercel Analytics loads from va.vercel-scripts.com.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
+  // Fonts are self-hosted by next/font at build time — no request ever reaches
+  // Google, so fonts.googleapis.com / fonts.gstatic.com are removed.
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
+  "img-src 'self' data: blob: https:",
+  "media-src 'self' blob: data:",
+  // Vercel Analytics beacons to same-origin /_vercel/insights. In dev, Turbopack
+  // Fast Refresh needs its websocket, so ws: is allowed only there.
+  `connect-src 'self' https://va.vercel-scripts.com${isDev ? ' ws:' : ''}`,
+  "worker-src 'self' blob:",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "object-src 'none'",
+  "upgrade-insecure-requests",
+].join('; ');
+
 const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control',    value: 'on' },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
@@ -9,22 +36,9 @@ const securityHeaders = [
   { key: 'Referrer-Policy',           value: 'strict-origin-when-cross-origin' },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), browsing-topics=()',
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
   },
-  {
-    key: 'Content-Security-Policy',
-    value: [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: blob: https:",
-      "media-src 'self' blob: data:",
-      "connect-src 'self' https: wss:",
-      "worker-src 'self' blob:",
-      "frame-ancestors 'none'",
-    ].join('; '),
-  },
+  { key: 'Content-Security-Policy', value: csp },
 ];
 
 const nextConfig = {

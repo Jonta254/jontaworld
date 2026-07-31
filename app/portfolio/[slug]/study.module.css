@@ -122,7 +122,7 @@
 
 .blockLede {
   font-size: var(--text-lg);
-  line-height: 1.7;
+  line-height: var(--leading-loose);
   color: var(--body);
   max-width: 62ch;
 }

@@ -20,6 +20,19 @@ export type Service = {
     shot: string;
     alt: string;
   };
+  /**
+   * An optional interface study for this capability. Unlike `example`, a
+   * concept is NOT a shipped product — it is a design study from the Lab, and
+   * it always links to /lab where that is stated plainly. When present it
+   * becomes the card's visual; any real `example` is kept as a secondary live
+   * link, so the concept never displaces or impersonates shipped proof.
+   * Image lives in /public/lab/<slug>.png.
+   */
+  concept?: {
+    label: string;
+    shot: string;
+    alt: string;
+  };
 };
 
 export const SERVICES: Service[] = [
@@ -33,6 +46,11 @@ export const SERVICES: Service[] = [
       href: "https://electracore.vercel.app",
       shot: "/showcase/electracore-desktop.webp",
       alt: "ElectraCore, an electrical calculation platform with guides and learning paths.",
+    },
+    concept: {
+      label: "Atlas Ops",
+      shot: "/lab/atlas-ops.png",
+      alt: "Design concept: the Atlas Ops business-operations dashboard — a self-initiated interface study, shown in full in the Lab.",
     },
   },
   {
@@ -60,14 +78,24 @@ export const SERVICES: Service[] = [
       shot: "/showcase/traildesk-desktop.webp",
       alt: "TrailDesk, an offline-first trip planning interface.",
     },
+    concept: {
+      label: "SprintFlow",
+      shot: "/lab/sprintflow.png",
+      alt: "Design concept: the SprintFlow project-management board — a self-initiated interface study, shown in full in the Lab.",
+    },
   },
   {
     num: "04",
     title: "E-commerce & online stores",
     body: "Storefronts that are quick to browse and simple to buy from, with checkout, payments, inventory, and orders handled properly. The parts a customer never notices, built to hold up under real use.",
     deliverables: ["Storefront", "Cart & checkout", "Payments", "Inventory", "Orders"],
-    // Offered on request. No live example is featured here yet, so it is not
-    // dressed up as one.
+    // No live storefront is deployed yet, so none is claimed. The card shows a
+    // design study instead — clearly labelled as a concept, linked to the Lab.
+    concept: {
+      label: "CommerceOS",
+      shot: "/lab/commerceos.png",
+      alt: "Design concept: the CommerceOS store dashboard — a self-initiated interface study, shown in full in the Lab.",
+    },
   },
   {
     num: "05",
@@ -91,6 +119,11 @@ export const SERVICES: Service[] = [
       href: "https://safesignal-beta.vercel.app",
       shot: "/showcase/safesignal-desktop.webp",
       alt: "SafeSignal, a location-sharing interface built on a consistent component set.",
+    },
+    concept: {
+      label: "Nova",
+      shot: "/lab/nova-design-system.png",
+      alt: "Design concept: the Nova design-system documentation — tokens, components and accessibility guidance, shown in full in the Lab.",
     },
   },
   {

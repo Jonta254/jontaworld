@@ -1,0 +1,148 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+/* The honesty note. Deliberately prominent — accent rail, sunken ground — so a
+   visitor reads "concept, fictional data" before they read the work, not after.
+   This is the single most important element on the page. */
+.note {
+  max-width: var(--container-content);
+  /* Centred, but never edge-to-edge on mobile: the gutter wins on narrow
+     viewports, the centring calc wins once there is room. */
+  margin-inline: max(var(--gutter), calc((100% - var(--container-content)) / 2));
+  margin-top: calc(var(--space-6) * -1);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--sunken);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  line-height: var(--leading-base);
+  color: var(--body);
+}
+
+.noteLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.list {
+  max-width: var(--container-content);
+  margin: var(--space-9) auto 0;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  list-style: none;
+}
+
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* A fixed 3:2 plate. The captured boards vary slightly in ratio, so the image
+   is contained on a sunken ground and framed — letterboxing reads as a mounted
+   plate, and the reserved box means zero layout shift whatever the source size. */
+.frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+
+.shot {
+  object-fit: contain;
+  padding: var(--space-3);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--measure);
+}
+
+.captionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: var(--text-h3);
+  color: var(--ink);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+.category {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: var(--text-lg);
+  line-height: var(--leading-base);
+  color: var(--body);
+}
+
+.surfaces {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  line-height: var(--leading-base);
+  color: var(--muted);
+}
+
+.surfacesLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.foot {
+  max-width: var(--container-content);
+  margin-inline: auto;
+  padding: var(--space-9) var(--gutter) var(--space-10);
+}
+
+.footLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.footLink:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.arrow { transition: transform var(--dur-fast) var(--ease-out); }
+.footLink:hover .arrow { transform: translateX(var(--nudge)); }
+
+@media (min-width: 700px) {
+  .frame { border-radius: var(--radius-md); }
+}

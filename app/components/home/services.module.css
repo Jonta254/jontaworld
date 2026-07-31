@@ -67,7 +67,12 @@
 }
 
 /* ── Example ────────────────────────────────────────────────────────────── */
-.example { display: flex; }
+.example {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
 
 .exampleLink {
   display: flex;
@@ -135,3 +140,20 @@
   color: var(--faint);
   padding-top: var(--space-2);
 }
+
+/* Secondary "Live: Product →" link, shown under a concept thumbnail so the
+   shipped proof stays present without competing with the study for the eye. */
+.liveLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  margin-top: calc(var(--space-2) * -1);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.liveLink:hover { color: var(--accent); }
+.liveLink .arrow { transition: transform var(--dur-fast) var(--ease-out); }
+.liveLink:hover .arrow { transform: translateX(var(--nudge)); }
