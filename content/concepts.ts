@@ -84,11 +84,11 @@ export const CONCEPTS: Concept[] = [
     name: "CommerceOS",
     category: "E-commerce",
     tagline:
-      "A store back office where the operator's day makes sense — products, orders, customers and channel analytics in one clean surface.",
+      "A store back office where the operator's day makes sense — products, orders, inventory, discounts, shipping and analytics in one clean surface.",
     surfaces:
-      "Store dashboard, product catalogue, orders, customer detail, analytics.",
+      "Store dashboard, products, orders, customers, inventory, discounts, shipping, analytics.",
     image: "/lab/commerceos.png",
-    alt: "CommerceOS design study: five screens for an e-commerce admin, including a store dashboard, a product list, an orders table and a customer detail page. All data shown is fictional.",
+    alt: "CommerceOS design study: eight screens for an e-commerce admin, including a store dashboard, a product catalogue, an orders table, inventory, discounts, shipping zones and analytics. All data shown is fictional.",
   },
   {
     slug: "nimbus-admin",
