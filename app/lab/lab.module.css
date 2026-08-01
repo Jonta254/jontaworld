@@ -103,6 +103,48 @@
   color: var(--body);
 }
 
+/* Professional case notes: a labelled list of what each study demonstrates,
+   each point marked by a small copper node that echoes the brand motif. */
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.notesLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.highlight {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  color: var(--body);
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+}
+
 .surfaces {
   display: flex;
   flex-direction: column;

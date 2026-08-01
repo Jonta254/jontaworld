@@ -111,8 +111,7 @@ export default function HomePage() {
       <Section
         eyebrow="Services"
         title="What I can be hired to do."
-        lede="Seven things I build, held to one standard. Most link to a live example you can open right now."
-        wide
+        lede="Seven things I build, every one of them held to the same standard."
       >
         <Services />
       </Section>

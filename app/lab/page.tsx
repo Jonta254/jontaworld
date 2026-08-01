@@ -8,7 +8,7 @@ import styles from "./lab.module.css";
 export const metadata: Metadata = {
   title: "Lab",
   description:
-    "Self-initiated interface studies exploring design-system range across industries. Design concepts, not client work — all data shown is fictional.",
+    "Independent interface studies exploring design system range across industries. Design concepts, not client work. All data shown is fictional.",
   alternates: { canonical: "/lab" },
 };
 
@@ -27,7 +27,7 @@ export default function LabPage() {
       <PageHeader
         eyebrow="Lab"
         title="Interface concepts."
-        lede="Where the design-system work goes to be tested. Each of these is a self-initiated study of a full product interface — a different industry, a different visual identity, one discipline."
+        lede="Where the design system work goes to be tested. Each of these is an independent study of a full product interface: a different industry, a different visual identity, one discipline held steady across all of them."
       />
 
       <p className={styles.note} role="note">
@@ -55,6 +55,16 @@ export default function LabPage() {
                   <span className={styles.category}>{c.category}</span>
                 </div>
                 <p className={styles.tagline}>{c.tagline}</p>
+
+                <div className={styles.notes}>
+                  <span className={styles.notesLabel}>What it demonstrates</span>
+                  <ul className={styles.highlights}>
+                    {c.highlights.map((h) => (
+                      <li key={h} className={styles.highlight}>{h}</li>
+                    ))}
+                  </ul>
+                </div>
+
                 <p className={styles.surfaces}>
                   <span className={styles.surfacesLabel}>Screens</span>
                   {c.surfaces}

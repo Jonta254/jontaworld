@@ -43,7 +43,7 @@ export const PRINCIPLES = [
   },
   {
     title: "Constraints are the brief",
-    body: "No signal, cold hands, bright sun, a five-year-old Android. Design for the worst realistic condition and the good conditions take care of themselves.",
+    body: "No signal, cold hands, bright sun, an ageing Android. Design for the worst realistic condition and the good conditions take care of themselves.",
   },
   {
     title: "Remove until it breaks",
