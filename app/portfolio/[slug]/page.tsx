@@ -136,7 +136,7 @@ export default async function ProjectPage({
         </dl>
       </header>
 
-      {/* ── Lead image ─────────────────────────────────────────── */}
+      {/* ── Lead image: the landing view, desktop and mobile ────── */}
       <div className={styles.lead}>
         <div className={styles.leadMedia}>
           <BrowserFrame
@@ -148,6 +148,16 @@ export default async function ProjectPage({
           <PhoneFrame src={project.shot.mobile} priority />
         </div>
       </div>
+
+      {/* ── A closer look: a real working screen past the hero ──── */}
+      <section className={styles.closer} aria-label="A closer look inside the product">
+        <p className={styles.closerLabel}>A closer look</p>
+        <BrowserFrame
+          src={project.shot.feature}
+          alt={project.shot.featureAlt}
+          url={project.displayUrl}
+        />
+      </section>
 
       {/* ── Case study body ─────────────────────────────────────────
           Composed as chapters, not identical blocks. A full-width lead opens

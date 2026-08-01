@@ -28,7 +28,7 @@ const CHROME_CANDIDATES = [
 /** Canonical URLs — every one verified HTTP 200. See docs/design-system.md §1. */
 const APPS = [
   { slug: "electracore",   url: "https://electracore.vercel.app" },
-  { slug: "apprenticelog", url: "https://apprenticelog.nz" },
+  { slug: "apprenticelog", url: "https://apprentice-log-xi.vercel.app" },
   { slug: "traildesk",     url: "https://traildesk.vercel.app" },
   { slug: "digilearn",     url: "https://digilearn-five.vercel.app" },
   { slug: "safesignal",    url: "https://safesignal-beta.vercel.app" },
@@ -36,6 +36,9 @@ const APPS = [
 
 const VIEWPORTS = [
   { name: "desktop", width: 1440, height: 900, deviceScaleFactor: 2, isMobile: false },
+  // A second desktop frame, scrolled past the hero, so the case study shows a
+  // real working screen and not only the landing view.
+  { name: "feature", width: 1440, height: 900, deviceScaleFactor: 2, isMobile: false, scroll: 820 },
   { name: "mobile",  width: 390,  height: 844, deviceScaleFactor: 2, isMobile: true  },
 ];
 
@@ -72,6 +75,12 @@ async function capture(browser, app, vp) {
       });
       window.scrollTo(0, 0);
     });
+
+    // Scroll past the hero for the "feature" frame, then let it settle.
+    if (vp.scroll) {
+      await page.evaluate((y) => window.scrollTo(0, y), vp.scroll);
+      await new Promise((r) => setTimeout(r, 700));
+    }
 
     // PNG straight from Chrome, then WebP for shipping — the raw PNGs run
     // 0.5–1.8MB each and would blow the §13 page-weight budget on their own.

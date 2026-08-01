@@ -65,9 +65,13 @@ export type Project = {
   tier: "flagship" | "supporting";
   shot: {
     desktop: string;
+    /** A second desktop frame, scrolled past the hero to a real working screen. */
+    feature: string;
     mobile: string;
-    /** Describes the screenshot for anyone who can't see it. */
+    /** Describes the desktop screenshot for anyone who cannot see it. */
     alt: string;
+    /** Describes the feature screenshot. */
+    featureAlt: string;
   };
   /** Present on flagships. Drives the /portfolio/[slug] case study. */
   study?: CaseStudy;
@@ -78,18 +82,20 @@ export const PROJECTS: Project[] = [
     slug: "apprenticelog",
     name: "ApprenticeLog",
     outcome:
-      "Turns a 30-second voice note into a compliant logbook entry, so apprentices stop losing evenings to paperwork.",
+      "Turns a quick voice note into a compliant logbook entry, so apprentices stop losing evenings to paperwork.",
     summary:
-      "A logbook app built for New Zealand trade apprentices. Record what you did out loud; it becomes a structured, BCITO-compliant entry. Works offline, because job sites do not have signal.",
-    url: "https://apprenticelog.nz",
-    displayUrl: "apprenticelog.nz",
+      "A logbook app built for New Zealand trade apprentices. Record what you did out loud, and it becomes a structured entry in the format BCITO expects. Works offline, because job sites do not have signal.",
+    url: "https://apprentice-log-xi.vercel.app",
+    displayUrl: "apprentice-log-xi.vercel.app",
     repo: "https://github.com/Jonta254/apprentice-log",
-    stack: ["Next.js", "TypeScript", "Voice-to-text", "Offline-first", "PWA"],
+    stack: ["Next.js", "TypeScript", "Voice to text", "Offline first", "PWA"],
     tier: "flagship",
     shot: {
       desktop: "/showcase/apprenticelog-desktop.webp",
+      feature: "/showcase/apprenticelog-feature.webp",
       mobile: "/showcase/apprenticelog-mobile.webp",
-      alt: "ApprenticeLog landing page: a phone showing a record button and a saved logbook entry, over a construction site.",
+      alt: "ApprenticeLog landing page: a dark interface headed 'Every hour on the tools, on the record', beside a sample logbook of hours logged and competency sign offs.",
+      featureAlt: "A closer look at ApprenticeLog, showing how it logs hours, collects competency sign offs, and exports a submission ready record.",
     },
     study: {
       role: "Sole designer and engineer. Product definition, interface, and build.",
@@ -130,9 +136,9 @@ export const PROJECTS: Project[] = [
       turningPoint:
         "It worked the moment the compliance format stopped being a feature and became the product itself. After that, every other decision got simpler.",
       solution:
-        "A voice-to-logbook app live on its own domain, free for NZ apprentices, spanning construction, carpentry, electrical, plumbing and automotive. Record a day out loud, review the structured entry, and keep a running log that works with no signal and installs to the home screen.",
+        "A voice to logbook app, free for NZ apprentices, spanning construction, carpentry, electrical, plumbing and automotive. Record a day out loud, review the structured entry, and keep a running log that works with no signal and installs to the home screen.",
       results:
-        "Live and open to anyone at apprenticelog.nz, on a custom domain rather than a preview URL. The full loop, from recording to a structured entry, runs in the browser right now. I am not going to claim adoption numbers I cannot show you. Open it and put it through a day.",
+        "Live and open to anyone, running as a real deployment you can put through a day. The full loop, from a spoken note to a structured entry, runs in the browser right now. I am not going to claim adoption numbers I cannot show you. Open it and try it for yourself.",
       lessons:
         "The build was the easy part. The lasting lesson was to design around the constraint I do not control from the very start. Keeping the compliance format editable without a redeploy should have been the first decision, not a correction. I learned that the slightly harder way, and it changed how I scope anything that depends on someone else's rules.",
     },
@@ -151,8 +157,10 @@ export const PROJECTS: Project[] = [
     tier: "flagship",
     shot: {
       desktop: "/showcase/electracore-desktop.webp",
+      feature: "/showcase/electracore-feature.webp",
       mobile: "/showcase/electracore-mobile.webp",
-      alt: "ElectraCore landing page: the headline 'Every electrical tool you actually need' above calculator and guide counts.",
+      alt: "ElectraCore landing page for an electrical calculators and guides platform, built from real site experience.",
+      featureAlt: "A closer look at ElectraCore: a grid of features including electrical calculators, wiring guides, load analysis and cable sizing, learning paths, project tools and job billing.",
     },
     study: {
       role: "Sole designer and engineer. Scope, interface, calculators, and build.",
@@ -214,8 +222,10 @@ export const PROJECTS: Project[] = [
     tier: "supporting",
     shot: {
       desktop: "/showcase/traildesk-desktop.webp",
+      feature: "/showcase/traildesk-feature.webp",
       mobile: "/showcase/traildesk-mobile.webp",
       alt: "TrailDesk landing page showing offline trip planning with route mapping and gear checklists.",
+      featureAlt: "A closer look at TrailDesk, showing its offline route maps, gear checklists and emergency contacts.",
     },
   },
   {
@@ -232,8 +242,10 @@ export const PROJECTS: Project[] = [
     tier: "supporting",
     shot: {
       desktop: "/showcase/safesignal-desktop.webp",
+      feature: "/showcase/safesignal-feature.webp",
       mobile: "/showcase/safesignal-mobile.webp",
       alt: "SafeSignal landing page showing live location sharing and accident detection.",
+      featureAlt: "A closer look at SafeSignal, showing live location sharing and the accident sensing that raises the alarm if you stop moving.",
     },
   },
   {
@@ -250,8 +262,10 @@ export const PROJECTS: Project[] = [
     tier: "supporting",
     shot: {
       desktop: "/showcase/digilearn-desktop.webp",
+      feature: "/showcase/digilearn-feature.webp",
       mobile: "/showcase/digilearn-mobile.webp",
       alt: "DigiLearn landing page showing learning paths across coding, AI and data science.",
+      featureAlt: "A closer look at DigiLearn, showing structured learning paths across coding, AI, automation and data science.",
     },
   },
 ];

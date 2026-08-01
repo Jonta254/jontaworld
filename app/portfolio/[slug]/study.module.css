@@ -87,6 +87,25 @@
 
 .leadMedia { position: relative; max-width: var(--container-content); margin-inline: auto; }
 
+/* A second framed screenshot, a real working screen rather than the landing
+   view. Labelled quietly so it reads as evidence, not decoration. */
+.closer {
+  max-width: var(--container-content);
+  margin-inline: auto;
+  padding: var(--space-2) var(--gutter) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.closerLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
 /* ── Body ───────────────────────────────────────────────────────────────── */
 .body {
   max-width: var(--container-content);
