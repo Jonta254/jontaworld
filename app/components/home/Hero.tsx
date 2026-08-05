@@ -6,13 +6,12 @@ import styles from "./hero.module.css";
 /**
  * The hero. Server-rendered text, with no canvas, orb, or boot sequence.
  *
- * The memorability comes from the claim itself rather than an effect. Almost
- * nobody else can honestly say they came to software from inside a wall. The
- * one visual gesture is a hairline underline that ties the sentence together,
- * drawn in CSS.
+ * A plain, client facing promise: what gets built, and that one person handles
+ * the whole thing from design to launch. The one visual gesture is a hairline
+ * underline beneath the emphasis, drawn in CSS.
  *
  * Nothing here animates before first paint, and nothing blocks the content.
- * A hiring manager's first five seconds are the most expensive on the site.
+ * A visitor's first five seconds are the most expensive on the site.
  */
 export default function Hero() {
   return (
@@ -20,16 +19,16 @@ export default function Hero() {
       <p className={styles.kicker}>{SITE.availability}</p>
 
       <h1 className={styles.headline}>
-        I build software for people who
+        I design and build websites and apps,
         <br className={styles.br} />
-        <span className={styles.emphasis}> work with their hands</span>.
+        <span className={styles.emphasis}> start to finish</span>.
       </h1>
 
       <p className={styles.lede}>
-        {SITE.role}. I design and build web and mobile apps, online stores, and
-        the marketing and brand around them. I came to this from the electrical
-        trade, where I learned the only standard that matters. It works, or it
-        does not.
+        Whether you need a website, an online store, or a simple app, I handle
+        the whole thing: the design, the words, the structure behind it, and the
+        build. You get something clean, fast, and easy to use, made by one
+        person who keeps it clear and simple to work with.
       </p>
 
       <div className={styles.actions}>
@@ -37,8 +36,8 @@ export default function Hero() {
           See the work
           <span className={styles.arrow} aria-hidden="true">→</span>
         </Link>
-        <Link href="/about" className={styles.secondary}>
-          How I work
+        <Link href="/contact" className={styles.secondary}>
+          Start a project
         </Link>
       </div>
 

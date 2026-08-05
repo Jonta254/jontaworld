@@ -67,7 +67,7 @@ export const POSTS: Post[] = [
       "Learning to design after years of writing code was like learning to speak after years of only reading. The grammar was already there. Fluency took practice.",
     topic: "Design",
     readingTime: "5 min",
-    note: "I wrote this after re-reading my first Figma file. I have archived it for everyone's protection.",
+    note: "I wrote this after reading my first Figma file again. I have archived it for everyone's protection.",
     body: [
       "When you learn a language as an adult there is a specific frustration that children are spared: you know what you want to say, but you do not have the words. You have the thought fully formed, and it dissolves at the point of articulation.",
       "That is exactly what learning design felt like coming from code. I could look at a good interface and understand it, intellectually and structurally. I could feel what was working. I just could not make it myself. The gap between what I could perceive and what I could produce was humbling.",

@@ -122,13 +122,13 @@ export const PROJECTS: Project[] = [
           kind: "Engineering",
           step: "Offline as the default, not a fallback",
           detail:
-            "Everything works with no connection and syncs when one returns. A tool that needs a bar of signal on a construction site is a tool that gets abandoned in the first week, so local-first storage came before anything that talked to a server.",
+            "Everything works with no connection and syncs when one returns. A tool that needs a bar of signal on a construction site is a tool that gets abandoned in the first week, so local first storage came before anything that talked to a server.",
         },
         {
           kind: "Engineering",
           step: "Installable, so it lives on the home screen",
           detail:
-            "Built as a progressive web app so it installs like a native app without an app-store gate, launches straight to the record screen, and updates itself. The lowest friction between wanting to log and having logged.",
+            "Built as a progressive web app so it installs like a native app without an app store gate, launches straight to the record screen, and updates itself. The lowest friction between wanting to log and having logged.",
         },
       ],
       challenges:
@@ -167,7 +167,7 @@ export const PROJECTS: Project[] = [
       problem:
         "The reference tools an electrician needs are scattered. One calculator lives on a forum, a wiring chart in a PDF, the theory in a textbook that assumes you are sitting an exam rather than standing in front of a panel. Nothing pulled the everyday calculations and guides into one place written for the job instead of the classroom.",
       objective:
-        "One place an electrician, an apprentice, or a student can reach for the calculation they need and trust the answer. Fast enough to use mid-job, clear enough to learn from, and correct enough that someone would rely on it with a meter in the other hand.",
+        "One place an electrician, an apprentice, or a student can reach for the calculation they need and trust the answer. Fast enough to use mid job, clear enough to learn from, and correct enough that someone would rely on it with a meter in the other hand.",
       research:
         "I did not need to invent the requirements. I have done the trade. The research was cataloguing the calculations I actually reach for and the guides I wished existed, then checking each against how it comes up on site. The comparison set was the scattered tools already out there, which told me the gap was not another single calculator but a coherent set written for the work.",
       decisions: [
@@ -181,7 +181,7 @@ export const PROJECTS: Project[] = [
           kind: "Design",
           step: "The answer first, the reasoning underneath",
           detail:
-            "Every calculator gives the number first and the working below it. Someone mid-job needs the result now. Someone learning needs to see how it was reached. The same screen serves both without slowing down either.",
+            "Every calculator gives the number first and the working below it. Someone mid job needs the result now. Someone learning needs to see how it was reached. The same screen serves both without slowing down either.",
         },
         {
           kind: "Design",
@@ -214,11 +214,11 @@ export const PROJECTS: Project[] = [
     outcome:
       "Route maps, gear lists and emergency contacts that still work where there is no signal.",
     summary:
-      "Offline-first trip planning for people who take going outside seriously. Everything needed on the trail is available without a connection.",
+      "Offline first trip planning for people who take going outside seriously. Everything needed on the trail is available without a connection.",
     url: "https://traildesk.vercel.app",
     displayUrl: "traildesk.vercel.app",
     repo: "https://github.com/Jonta254/traildesk",
-    stack: ["Next.js", "Offline-first", "Mapping"],
+    stack: ["Next.js", "Offline first", "Mapping"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/traildesk-desktop.webp",
@@ -234,11 +234,11 @@ export const PROJECTS: Project[] = [
     outcome:
       "Shares your live location with the people who would need it, and raises the alarm if you stop moving.",
     summary:
-      "Real-time location sharing with accident sensing. Built for lone workers and anyone heading out alone.",
+      "Real time location sharing with accident sensing. Built for lone workers and anyone heading out alone.",
     url: "https://safesignal-beta.vercel.app",
     displayUrl: "safesignal-beta.vercel.app",
     repo: "https://github.com/Jonta254/safesignal",
-    stack: ["Next.js", "Geolocation", "Real-time"],
+    stack: ["Next.js", "Geolocation", "Real time"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/safesignal-desktop.webp",
@@ -254,7 +254,7 @@ export const PROJECTS: Project[] = [
     outcome:
       "Structured paths through coding, AI, automation, and data science, built around real projects rather than video playlists.",
     summary:
-      "A digital-skills platform covering the ground a modern developer actually needs, organised into paths with real outcomes.",
+      "A digital skills platform covering the ground a modern developer actually needs, organised into paths with real outcomes.",
     url: "https://digilearn-five.vercel.app",
     displayUrl: "digilearn-five.vercel.app",
     repo: "https://github.com/Jonta254/digilearn",

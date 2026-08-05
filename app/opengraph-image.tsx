@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Josiah. I build software for people who work with their hands.";
+export const alt = "Josiah. I design and build websites and apps, start to finish.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -75,7 +75,7 @@ export default function OgImage() {
               maxWidth: 900,
             }}
           >
-            I build software for people who work with their hands.
+            I design and build websites and apps, start to finish.
           </div>
         </div>
 
@@ -91,7 +91,7 @@ export default function OgImage() {
             color: MUTED,
           }}
         >
-          <div style={{ display: "flex" }}>Product designer and full-stack engineer</div>
+          <div style={{ display: "flex" }}>Designer and developer</div>
           <div style={{ display: "flex", color: ACCENT }}>Five live products</div>
         </div>
       </div>

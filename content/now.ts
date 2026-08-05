@@ -31,7 +31,7 @@ export const NOW: NowGroup[] = [
     label: "Learning",
     items: [
       { title: "Rust", note: "Slowly, and with the humility it demands." },
-      { title: "Motor control", note: "Variable-frequency drives and field-oriented control." },
+      { title: "Motor control", note: "Variable frequency drives and field oriented control." },
       { title: "Composition", note: "Deliberate framing, not just pointing the lens." },
     ],
   },

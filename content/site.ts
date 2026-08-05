@@ -19,14 +19,14 @@ export const SITE = {
   brand: "Raw Signal",
   /** Primary role. Broad enough to carry the full range of work, precise
    *  enough to stay honest: these are real capabilities, not a wish list. */
-  role: "Product designer and full-stack engineer",
+  role: "Designer and developer",
   /** The services offered, phrased for a search result and a share card. */
   services:
     "web and mobile apps, online stores, marketing sites, design systems, and brand identities",
   /** One line, plain, no metaphor. The signature headline. */
-  positioning: "I build software for people who work with their hands.",
+  positioning: "I design and build websites and apps, start to finish.",
   /** Deliberately no city. See docs/design-system.md §11. */
-  availability: "Available for remote work across timezones",
+  availability: "Available for new projects, working remotely",
   email: "josiah@rawsignal.dev",
   url: "https://josiah-rawsignal.vercel.app",
 } as const;

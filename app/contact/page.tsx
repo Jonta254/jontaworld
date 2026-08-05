@@ -7,7 +7,7 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch about freelance projects, full-time roles, or anything worth building. Email, GitHub, and a contact form.",
+    "Get in touch about freelance projects, full time roles, or anything worth building. Email, GitHub, and a contact form.",
   alternates: { canonical: "/contact" },
 };
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
           <p className={styles.eyebrow}>Contact</p>
           <h1 className={styles.title}>Let&rsquo;s talk.</h1>
           <p className={styles.lede}>
-            Open to freelance projects, full-time roles, and the occasional
+            Open to freelance projects, full time roles, and the occasional
             conversation about something genuinely interesting. If you are
             building something worth building, I&rsquo;d like to hear about it.
           </p>

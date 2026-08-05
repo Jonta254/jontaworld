@@ -5,7 +5,7 @@ import styles from "./portfolio.module.css";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Live products built for people who work with their hands: electrical tools, trade logbooks, and offline-first field apps. Every one is running, and open to anyone.",
+    "Live products built for people who work with their hands: electrical tools, trade logbooks, and offline field apps. Every one is running, and open to anyone.",
   alternates: { canonical: "/portfolio" },
 };
 

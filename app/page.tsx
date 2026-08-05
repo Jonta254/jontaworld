@@ -26,9 +26,9 @@ const jsonLd = {
       sameAs: SOCIAL.map((s) => s.href),
       knowsAbout: [
         "Web application development",
-        "Mobile and offline-first apps",
-        "Full-stack engineering",
-        "E-commerce",
+        "Mobile and offline apps",
+        "Full stack engineering",
+        "Ecommerce",
         "Product design",
         "Design systems",
         "Brand identity",
