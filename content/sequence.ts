@@ -16,7 +16,7 @@ export const SEQUENCE: Chapter[] = [
   {
     num: "01",
     title: "The trade",
-    body: "Electrical work, inside walls, tracing faults by feel. A circuit either carries current or it does not. There is no persuading it, and no partial credit. That standard is the one I still work to.",
+    body: "Electrical work, inside walls, tracing faults by feel. A circuit either carries current or it does not. There is no persuading it, and no partial credit. That is the standard I still work to.",
   },
   {
     num: "02",
@@ -26,7 +26,7 @@ export const SEQUENCE: Chapter[] = [
   {
     num: "03",
     title: "The craft",
-    body: "Then design, and deliberately so. Type, spacing, motion, and systems, not decoration. It is the discipline of deciding something once and applying it consistently, which is the same discipline as wiring a panel properly.",
+    body: "Then design, and by choice. Type, spacing, motion, and systems, not decoration. It is the discipline of deciding something once and applying it everywhere, the same discipline as wiring a panel properly.",
   },
   {
     num: "04",

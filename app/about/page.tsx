@@ -28,13 +28,12 @@ export default function AboutPage() {
       <header className={styles.hero}>
         <p className={styles.kicker}>About</p>
         <h1 className={styles.headline}>
-          I learned to build things that <em>have to work</em>.
+          I build things that <em>have to work</em>.
         </h1>
         <p className={styles.lede}>
           Most of what I know about software I learned somewhere else first, in
           walls and ceiling cavities, on jobs where a mistake is not a bug
-          report. That background is the whole reason my work looks the way it
-          does.
+          report. It is the reason the work looks the way it does.
         </p>
       </header>
 
@@ -68,9 +67,9 @@ export default function AboutPage() {
         ))}
 
         <p className={styles.essayClose}>
-          Everything here is live and open, which is the point. Read{" "}
-          <Link className={styles.inline} href="/portfolio">the work</Link>, or if
-          something you are building needs this kind of attention,{" "}
+          Everything here is live and open. You are meant to check it. Read{" "}
+          <Link className={styles.inline} href="/portfolio">the work</Link>, and if
+          something you are building needs this kind of care,{" "}
           <Link className={styles.inline} href="/contact">say hello</Link>.{" "}
           {SITE.availability}.
         </p>
