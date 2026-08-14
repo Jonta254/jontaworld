@@ -28,7 +28,7 @@ export const SITE = {
   /** Deliberately no city. See docs/design-system.md §11. */
   availability: "Available for new projects, working remotely",
   email: "josiah@rawsignal.dev",
-  url: "https://josiah-rawsignal.vercel.app",
+  url: "https://jontaworld.com",
 } as const;
 
 export const NAV = [

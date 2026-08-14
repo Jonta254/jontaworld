@@ -2,7 +2,7 @@
 
 A design and engineering portfolio for Josiah. The site presents shipped digital products, detailed case studies, interface studies, and writing about the overlap between electrical work, software architecture, and visual design.
 
-**Live site:** [josiah-rawsignal.vercel.app](https://josiah-rawsignal.vercel.app)
+**Live site:** [jontaworld.com](https://jontaworld.com)
 **Contact:** [josiah@rawsignal.dev](mailto:josiah@rawsignal.dev)
 
 ## What the site demonstrates
@@ -100,7 +100,7 @@ Writing artwork lives in `public/writing/`. Production pages reference optimized
 
 ## Deployment
 
-The project is designed for Vercel. Production requires the three contact environment variables above. A custom `rawsignal.dev` domain is the recommended canonical deployment target; until that migration is complete, metadata uses the current Vercel URL.
+The project is designed for Vercel. Production requires the three contact environment variables above. The canonical production domain is `jontaworld.com`, served through Cloudflare and connected to the deployment origin.
 
 ## License
 

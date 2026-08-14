@@ -44,7 +44,7 @@ Owned by `Jonta254`, retrieved live. Marked ● where the site already uses it.
 | KIND-Quest | public | no | — | — |
 | Forex-platform | **private** | no | forex-platform-xi.vercel.app | — (correctly excluded) |
 | Jonta254 | public | no | — | profile README |
-| jontaworld | public | no | josiah-rawsignal.vercel.app | this site; rename target: `Jonta254/jontaworld` |
+| jontaworld | public | no | jontaworld.com | this site; rename target: `Jonta254/jontaworld` |
 | aip | public | **yes** | — | — |
 | world-id-contracts | public | **yes** | — | — |
 
@@ -79,7 +79,7 @@ changes public content on GitHub, so it waits for an explicit go-ahead.
 | digilearn | Structured learning paths through coding, AI, automation and data science, built around real projects. | (already correct) |
 
 Profile (P5), for confirmation before any change: name → **Josiah**,
-bio → a one-line professional summary, website → **https://josiah-rawsignal.vercel.app**.
+bio → a one-line professional summary, website → **https://jontaworld.com**.
 
 ---
 

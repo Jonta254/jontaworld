@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://josiah-rawsignal.vercel.app/sitemap.xml",
-    host: "https://josiah-rawsignal.vercel.app",
+    sitemap: "https://jontaworld.com/sitemap.xml",
+    host: "https://jontaworld.com",
   };
 }

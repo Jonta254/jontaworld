@@ -405,9 +405,9 @@ exclude you, and it keeps both markets addressable. Add a city later if you want
 it's a one-token change in the content layer. **The one thing that must not happen is the
 site implying one location while a linked product implies another.**
 
-**Domain.** `josiah-rawsignal.vercel.app` should become a real custom domain before this is
-sent to anyone. ApprenticeLog already demonstrates you know how — a `.vercel.app` on the
-portfolio itself, next to a product on `apprenticelog.nz`, is an odd signal.
+**Domain.** `jontaworld.com` is the canonical production domain, protected and proxied through Cloudflare.
+Keep the deployment origin and Cloudflare Worker route aligned so visitors and search engines
+always resolve to the same branded URL.
 
 ---
 
