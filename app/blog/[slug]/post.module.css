@@ -142,3 +142,8 @@
 
 .arrow { color: var(--muted); transition: transform var(--dur-fast) var(--ease-out); }
 .relatedLink:hover .arrow { transform: translateX(var(--nudge)); }
+
+.meta time { color: var(--faint); }
+.meta time::before { content: "·"; margin-right: var(--space-3); color: var(--line-strong); }
+.hero { width: min(var(--container-wide), calc(100% - (2 * var(--gutter)))); margin: 0 auto var(--space-8); overflow: hidden; aspect-ratio: 3 / 2; border-radius: var(--radius-md); background: var(--sunken); box-shadow: var(--shadow-2); }
+.heroImage { width: 100%; height: 100%; object-fit: cover; }

@@ -12,6 +12,9 @@ export type Post = {
   excerpt: string;
   topic: string;
   readingTime: string;
+  published: string;
+  updated?: string;
+  image: { src: string; alt: string };
   /** A short first-person note on why the piece exists. */
   note: string;
   /** Paragraphs. Plain strings — no markup in the data. */
@@ -26,6 +29,12 @@ export const POSTS: Post[] = [
       "Working systems are silent. No alert, no pause, no warning. Everything simply exists until the moment it does not, and that silence is the thing worth designing around.",
     topic: "Systems",
     readingTime: "8 min",
+    published: "2026-07-24",
+    updated: "2026-08-05",
+    image: {
+      src: "/writing/nothing-announces-itself-v2.webp",
+      alt: "A meticulously labelled electrical panel in a quiet service room at dawn, lit by a narrow seam of copper light.",
+    },
     note: "I wrote this after a long stretch of thinking about why the best work is usually the work nobody notices.",
     body: [
       "When I was young I wanted to know what was behind things. Not what they did, but what made them do it. I opened what I was allowed to open and a few things I was not. Most of it went back together. Some of it did not, and those were the useful ones, because a thing that fails teaches you more in an afternoon than a thing that works teaches you in a year.",
@@ -49,6 +58,12 @@ export const POSTS: Post[] = [
       "Every circuit is a module and every breaker is a boundary. The mental model transfers more than you would think, and it moves in both directions.",
     topic: "Craft",
     readingTime: "7 min",
+    published: "2026-07-23",
+    updated: "2026-08-05",
+    image: {
+      src: "/writing/wiring-panel-architecture-v2.webp",
+      alt: "A carefully routed electrical panel beside a hand-drawn system diagram, cable labels, and precision tools.",
+    },
     note: "I wrote this after spending three hours retracing a fault in a distribution board that looked exactly like a circular dependency.",
     body: [
       "There is a moment you will recognise if you have worked with complex systems of any kind. You stare at something and realise you are not looking at one problem but at a record of every decision ever made about it. A breaker panel does this to me. So does a legacy codebase.",
@@ -67,6 +82,12 @@ export const POSTS: Post[] = [
       "Learning to design after years of writing code was like learning to speak after years of only reading. The grammar was already there. Fluency took practice.",
     topic: "Design",
     readingTime: "5 min",
+    published: "2026-07-23",
+    updated: "2026-08-05",
+    image: {
+      src: "/writing/design-second-language-v2.webp",
+      alt: "Layers of tracing paper move from rough interface studies to a refined grid beside an electrical schematic.",
+    },
     note: "I wrote this after reading my first Figma file again. I have archived it for everyone's protection.",
     body: [
       "When you learn a language as an adult there is a specific frustration that children are spared: you know what you want to say, but you do not have the words. You have the thought fully formed, and it dissolves at the point of articulation.",

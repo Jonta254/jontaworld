@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+public/writing/*.png
+!.env.example
+public/writing/nothing-announces-itself.webp
+public/writing/wiring-panel-architecture.webp
+public/writing/design-second-language.webp

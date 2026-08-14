@@ -1,8 +1,8 @@
-# Raw Signal — Creative Brief
+# jontAWorld — Creative Brief
 
 **Step 1 deliverable: strategy and brand foundation. No design, no code.**
 
-Version 0.2 · Grounded in an audit of the current `josiah-rawsignal` codebase.
+Version 0.2 · Grounded in an audit of the current `josiah-jontaworld` codebase.
 Items marked **[OPEN]** are unresolved questions, not decisions. They must be answered
 before Step 2. Nothing in this brief invents a fact about Josiah.
 
@@ -66,7 +66,7 @@ and the honest starting point is what it currently is:
 
 | Signal | Evidence in repo |
 |---|---|
-| Identity | "Josiah — Electrician · Developer · Designer", brand name **Raw Signal** (`app/layout.tsx:18`) |
+| Identity | "Josiah — Electrician · Developer · Designer", brand name **jontAWorld** (`app/layout.tsx:18`) |
 | Positioning | Three-trade hybrid: electrical → full-stack → design (`app/about/page.tsx:14-50`) |
 | Visual mode | Dark "deep-space" gradients, five neon accent hues, glow/bloom, glassmorphism |
 | Typefaces | **Seven** families loaded: Bebas Neue, Inter, JetBrains Mono, Orbitron, Playfair Display, Rajdhani, Caveat |
@@ -99,7 +99,7 @@ three years — which means it now reads as *generated*, not *handcrafted*. The 
 instruction ("avoid anything that looks AI-generated") points away from the current design,
 not toward polishing it.
 
-**Recommendation: keep the concept, discard the costume.** "Raw Signal" — the electrician
+**Recommendation: keep the concept, discard the costume.** "jontAWorld" — the electrician
 who codes, honesty of a system that either works or doesn't — is a genuinely distinctive
 positioning that no template can fake. That is the asset. The neon is not the asset; it is
 the most replaceable thing on the site. Rebuild the surface around restraint, and the

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Raw Signal — the whole global surface.
+/* jontAWorld — the whole global surface.
    Tokens define every value; base applies them to the document.
    Nothing else belongs in here. Component styling lives in CSS modules. */
 @import "./styles/tokens.css";

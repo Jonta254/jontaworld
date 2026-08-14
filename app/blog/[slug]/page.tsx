@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { POSTS, getPost } from "@/content/blog";
@@ -21,7 +22,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { title: post.title, description: post.excerpt, type: "article" },
+    openGraph: { title: post.title, description: post.excerpt, type: "article", publishedTime: post.published, modifiedTime: post.updated, images: [{ url: post.image.src, width: 1536, height: 1024, alt: post.image.alt }] },
   };
 }
 
@@ -45,6 +46,9 @@ export default async function BlogPost({
     publisher: { "@type": "Person", name: SITE.fullName },
     url: `${SITE.url}/blog/${post.slug}`,
     timeRequired: post.readingTime,
+    datePublished: post.published,
+    dateModified: post.updated ?? post.published,
+    image: `${SITE.url}${post.image.src}`,
   };
 
   return (
@@ -60,11 +64,16 @@ export default async function BlogPost({
         </Link>
         <div className={styles.meta}>
           <span className={styles.topic}>{post.topic}</span>
+          <time dateTime={post.published}>{new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${post.published}T00:00:00Z`))}</time>
           <span className={styles.time}>{post.readingTime}</span>
         </div>
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.note}>{post.note}</p>
       </div>
+
+      <figure className={styles.hero}>
+        <Image className={styles.heroImage} src={post.image.src} alt={post.image.alt} width={1536} height={1024} priority sizes="(min-width: 1200px) 1120px, 100vw" />
+      </figure>
 
       <div className={styles.prose}>
         {post.body.map((para, i) => (

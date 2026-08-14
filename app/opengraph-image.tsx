@@ -44,7 +44,7 @@ export default function OgImage() {
               textTransform: "uppercase",
             }}
           >
-            Raw Signal
+            jontAWorld
           </div>
         </div>
 

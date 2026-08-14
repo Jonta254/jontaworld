@@ -1,4 +1,4 @@
-# Raw Signal — Follow-up: GitHub reconciliation
+# jontAWorld — Follow-up: GitHub reconciliation
 
 **A follow-up to `creative-brief.md` (§15) and `design-system.md` (§1, P5–P6).**
 
@@ -44,7 +44,7 @@ Owned by `Jonta254`, retrieved live. Marked ● where the site already uses it.
 | KIND-Quest | public | no | — | — |
 | Forex-platform | **private** | no | forex-platform-xi.vercel.app | — (correctly excluded) |
 | Jonta254 | public | no | — | profile README |
-| josiah-rawsignal | public | no | josiah-rawsignal.vercel.app | this site |
+| jontaworld | public | no | josiah-rawsignal.vercel.app | this site; rename target: `Jonta254/jontaworld` |
 | aip | public | **yes** | — | — |
 | world-id-contracts | public | **yes** | — | — |
 
@@ -61,7 +61,7 @@ reaches *after clicking through* inconsistent with the precision the site claims
   `apprenticelog.nz`. The single strongest trust signal in the portfolio is
   mislabelled at its source.
 - **P5 — the profile contradicts the brand.** Name is `jontAWorld`, bio is
-  `🩵😇 cold fLame`, website is unset. The site presents "Brian Josiah / Raw
+  `🩵😇 cold fLame`, website is unset. The site presents "Josiah / Raw
   Signal". `creative-brief.md` §15: off-site consistency outranks any on-site
   SEO work, because a name search resolves on all three surfaces agreeing.
 
@@ -78,7 +78,7 @@ changes public content on GitHub, so it waits for an explicit go-ahead.
 | safesignal | Real-time location sharing with accident sensing, for lone workers and anyone heading out alone. | (already correct) |
 | digilearn | Structured learning paths through coding, AI, automation and data science, built around real projects. | (already correct) |
 
-Profile (P5), for confirmation before any change: name → **Brian Josiah**,
+Profile (P5), for confirmation before any change: name → **Josiah**,
 bio → a one-line professional summary, website → **https://josiah-rawsignal.vercel.app**.
 
 ---

@@ -1,4 +1,4 @@
-# Raw Signal — Design System & Visual Direction
+# jontAWorld — Design System & Visual Direction
 
 **Step 2 deliverable: visual language, tokens, and component specification. Still no build.**
 
@@ -43,14 +43,14 @@ All five return **HTTP 200** with the correct product title, verified after the 
 |---|---|---|
 | **P7** | **DigiLearn and SafeSignal are not deployable from this Vercel team.** Both projects' latest *production* deployments show `readyState: ERROR`, and their team aliases (`digilearn-brian-josiahs-projects.vercel.app`, `safesignal-brian-josiahs-projects.vercel.app`) serve a **Vercel login wall**, not the app. The working public URLs (`digilearn-five`, `safesignal-beta`) are aliases on a *different* account. | The links work today, so the site is safe to ship. But these two products are one dashboard change away from going dark, and you can't fix them from this team. Consolidate both under `brian-josiahs-projects` and fix the failing production builds. |
 | **P5** | **GitHub profile undermines the site.** Display name `jontAWorld`, bio `🩵😇 cold fLame`, no location, no website link. A recruiter clicking through from a precision-branded portfolio lands on this. | Align: real name, one-line professional bio, link back to the site. Brief §15 — off-site consistency outranks on-site SEO tricks. |
-| **P6** | `electracore`, `traildesk`, `digilearn`, and `josiah-rawsignal` repos have **no description** and no homepage URL set. | Add both. Free credibility. Do **not** chase stars. |
+| **P6** | `electracore`, `traildesk`, `digilearn`, and `josiah-jontaworld` repos have **no description** and no homepage URL set. | Add both. Free credibility. Do **not** chase stars. |
 | **P8** | `forex-platform` still exists on Vercel and its latest production deploy is **READY** — `forex-platform-mu.vercel.app` serves *"ForexPro — Learn Forex Trading & Trade Live"*. Only the `fxprorise.org` domain is broken. | Removed from the site as instructed. Noted only so the decision is informed: the product itself is alive, and the DNS on `fxprorise.org` is the sole failure. |
 
 ### Positioning note
 
 **ElectraCore and ApprenticeLog are the two strongest assets on the site** and are currently
 buried among five equals. Both are software built by an electrician *for* electricians —
-they are the living proof of the entire "Raw Signal" thesis. ApprenticeLog is the single best
+they are the living proof of the entire "jontAWorld" thesis. ApprenticeLog is the single best
 item: real custom domain, specific named audience, a real institutional workflow (BCITO), and
 a concrete outcome ("stop wasting time on paperwork").
 
@@ -382,13 +382,13 @@ be shown.
 
 Answering brief **OPEN-4** with a recommendation rather than a question, as requested.
 
-**Name.** Present as **"Josiah"** with **Raw Signal** as the practice/brand — matching the
+**Name.** Present as **"Josiah"** with **jontAWorld** as the practice/brand — matching the
 existing `title` template. One name, used identically on the site, GitHub, LinkedIn, and every
 profile. The current GitHub display name `jontAWorld` and bio `🩵😇 cold fLame` break this and
 should change (P5).
 
 *Flag, not an assumption:* the Vercel team slug is **`brian-josiahs-projects`** and the local
-git author is **Brian**, which suggests the full name may be *Brian Josiah*. The site says only
+git author is **Brian**, which suggests the full name may be *Josiah*. The site says only
 "Josiah". I have not written a surname anywhere — confirm which you want used publicly and it
 goes into the CV, the `Person` schema, and every off-site profile at once. What matters is that
 one name is used consistently; a portfolio branded "Josiah" whose deployment URLs and commits
