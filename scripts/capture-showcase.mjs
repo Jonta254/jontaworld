@@ -12,7 +12,7 @@
  */
 import puppeteer from "puppeteer-core";
 import sharp from "sharp";
-import { mkdir } from "node:fs/promises";
+import { mkdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
@@ -27,18 +27,18 @@ const CHROME_CANDIDATES = [
 
 /** Canonical URLs — every one verified HTTP 200. See docs/design-system.md §1. */
 const APPS = [
-  { slug: "electracore",   url: "https://electracore.vercel.app" },
-  { slug: "apprenticelog", url: "https://apprentice-log-xi.vercel.app" },
-  { slug: "traildesk",     url: "https://traildesk.vercel.app" },
-  { slug: "digilearn",     url: "https://digilearn-five.vercel.app" },
-  { slug: "safesignal",    url: "https://safesignal-beta.vercel.app" },
+  { slug: "electracore",   url: "https://electracore.vercel.app", featurePath: "/calculate" },
+  { slug: "apprenticelog", url: "https://apprentice-log-xi.vercel.app", featurePath: "/dashboard" },
+  { slug: "traildesk",     url: "https://traildesk.vercel.app", featurePath: "/explore" },
+  { slug: "digilearn",     url: "https://digilearn-five.vercel.app", featurePath: "/courses" },
+  { slug: "safesignal",    url: "https://safesignal-beta.vercel.app", featurePath: "/dashboard" },
 ];
 
 const VIEWPORTS = [
   { name: "desktop", width: 1440, height: 900, deviceScaleFactor: 2, isMobile: false },
   // A second desktop frame, scrolled past the hero, so the case study shows a
   // real working screen and not only the landing view.
-  { name: "feature", width: 1440, height: 900, deviceScaleFactor: 2, isMobile: false, scroll: 820 },
+  { name: "feature", width: 1440, height: 900, deviceScaleFactor: 2, isMobile: false },
   { name: "mobile",  width: 390,  height: 844, deviceScaleFactor: 2, isMobile: true  },
 ];
 
@@ -54,7 +54,10 @@ async function capture(browser, app, vp) {
   const page = await browser.newPage();
   try {
     await page.setViewport(vp);
-    await page.goto(app.url, { waitUntil: "networkidle2", timeout: 60_000 });
+    const targetUrl = vp.name === "feature"
+      ? new URL(app.featurePath, app.url).toString()
+      : app.url;
+    await page.goto(targetUrl, { waitUntil: "networkidle2", timeout: 60_000 });
 
     // Let entrance animations settle so we capture the resting state, not a
     // half-faded frame. Then freeze anything still looping.
@@ -76,7 +79,8 @@ async function capture(browser, app, vp) {
       window.scrollTo(0, 0);
     });
 
-    // Scroll past the hero for the "feature" frame, then let it settle.
+    // Feature frames use a real product route. A small scroll only removes
+    // repeated site chrome when the meaningful interface begins below it.
     if (vp.scroll) {
       await page.evaluate((y) => window.scrollTo(0, y), vp.scroll);
       await new Promise((r) => setTimeout(r, 700));
@@ -88,7 +92,7 @@ async function capture(browser, app, vp) {
     const out = path.join(OUT_DIR, `${app.slug}-${vp.name}.webp`);
     await sharp(png).webp({ quality: 82, effort: 6 }).toFile(out);
 
-    const kb = (await sharp(out).metadata()).size / 1024;
+    const kb = (await stat(out)).size / 1024;
     console.log(`  ✓ ${vp.name.padEnd(7)} ${app.slug}-${vp.name}.webp  ${kb.toFixed(0)}KB`);
     return true;
   } catch (err) {

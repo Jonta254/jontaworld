@@ -94,8 +94,8 @@ export const PROJECTS: Project[] = [
       desktop: "/showcase/apprenticelog-desktop.webp",
       feature: "/showcase/apprenticelog-feature.webp",
       mobile: "/showcase/apprenticelog-mobile.webp",
-      alt: "ApprenticeLog landing page: a dark interface headed 'Every hour on the tools, on the record', beside a sample logbook of hours logged and competency sign offs.",
-      featureAlt: "A closer look at ApprenticeLog, showing how it logs hours, collects competency sign offs, and exports a submission ready record.",
+      alt: "ApprenticeLog current professional apprenticeship workspace, with clear navigation for work entries, competencies, reviews and reports.",
+      featureAlt: "ApprenticeLog apprenticeship overview showing recorded time, approved time, awaiting review and the next action for a new work entry.",
     },
     study: {
       role: "Sole designer and engineer. Product definition, interface, and build.",
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/electracore-feature.webp",
       mobile: "/showcase/electracore-mobile.webp",
       alt: "ElectraCore landing page for an electrical calculators and guides platform, built from real site experience.",
-      featureAlt: "A closer look at ElectraCore: a grid of features including electrical calculators, wiring guides, load analysis and cable sizing, learning paths, project tools and job billing.",
+      featureAlt: "ElectraCore electrical calculators route showing real Ohm's law, power, voltage-drop and cable-sizing tools with saved calculations.",
     },
     study: {
       role: "Sole designer and engineer. Scope, interface, calculators, and build.",
@@ -225,7 +225,7 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/traildesk-feature.webp",
       mobile: "/showcase/traildesk-mobile.webp",
       alt: "TrailDesk landing page showing offline trip planning with route mapping and gear checklists.",
-      featureAlt: "A closer look at TrailDesk, showing its offline route maps, gear checklists and emergency contacts.",
+      featureAlt: "TrailDesk destination catalogue showing international route discovery, regional filters and researched trip-planning context.",
     },
   },
   {
@@ -245,7 +245,7 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/safesignal-feature.webp",
       mobile: "/showcase/safesignal-mobile.webp",
       alt: "SafeSignal landing page showing live location sharing and accident detection.",
-      featureAlt: "A closer look at SafeSignal, showing live location sharing and the accident sensing that raises the alarm if you stop moving.",
+      featureAlt: "SafeSignal supervisor dashboard preview showing active check-ins, due-soon and overdue states, and an illustrative incident record clearly labelled as sample data.",
     },
   },
   {
@@ -265,7 +265,7 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/digilearn-feature.webp",
       mobile: "/showcase/digilearn-mobile.webp",
       alt: "DigiLearn landing page showing learning paths across coding, AI and data science.",
-      featureAlt: "A closer look at DigiLearn, showing structured learning paths across coding, AI, automation and data science.",
+      featureAlt: "DigiLearn open course library showing searchable, filterable structured courses with lesson counts and access status.",
     },
   },
 ];
