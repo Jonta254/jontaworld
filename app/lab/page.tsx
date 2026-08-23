@@ -108,7 +108,7 @@ export default function LabPage() {
 
         <article className={`${styles.panel} ${styles.responsive}`}>
           <div className={styles.headingRow}>
-            <div><p className={styles.kind}>Responsive study</p><h2>One product, three useful widths.</h2></div>
+            <div><p className={styles.kind}>Responsive study</p><h2>One product, two deliberate layouts.</h2></div>
             <span className={styles.status}>Interface study</span>
           </div>
           <div className={styles.deviceRow}>

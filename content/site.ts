@@ -13,9 +13,6 @@ export const SITE = {
   name: "Josiah",
   /** Full name for schema.org, the CV, and off-site profiles. */
   fullName: "Josiah",
-  /** The handle used across GitHub and X. Kept small and secondary to the
-      name: it identifies, it does not lead. Mixed case is deliberate. */
-  handle: "jontAWorld",
   brand: "jontAWorld",
   /** Primary role. Broad enough to carry the full range of work, precise
    *  enough to stay honest: these are real capabilities, not a wish list. */

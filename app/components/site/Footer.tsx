@@ -68,7 +68,6 @@ export default function Footer() {
           {SITE.fullName}{" "}
           <span className={styles.brand}>{SITE.brand}</span>
         </span>
-        <span className={styles.handle}>{SITE.handle}</span>
         <span className={styles.availability}>{SITE.availability}</span>
       </div>
     </footer>

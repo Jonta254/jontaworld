@@ -39,7 +39,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name}, ${SITE.role.toLowerCase()}`,
+    default: `${SITE.name} — Developer / ${SITE.brand}`,
     // The pipe is the conventional title-tag separator, not prose punctuation.
     template: `%s | ${SITE.name} ${SITE.brand}`,
   },
@@ -63,10 +63,24 @@ export const metadata: Metadata = {
     locale: "en_NZ",
     url: SITE.url,
     siteName: `${SITE.name} ${SITE.brand}`,
-    title: `${SITE.name}, ${SITE.role.toLowerCase()}`,
+    title: `${SITE.name} — Developer / ${SITE.brand}`,
     description: `Design and engineering for the full web: apps, online stores, marketing sites, design systems, and brand. Every project is live and open to anyone.`,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Josiah — Developer / jontAWorld" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — Developer / ${SITE.brand}`,
+    description: SITE.positioning,
+    images: ["/opengraph-image"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/jontaworld-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icons/jontaworld-48.png", type: "image/png", sizes: "48x48" },
+    ],
+    apple: [{ url: "/icons/jontaworld-180.png", sizes: "180x180", type: "image/png" }],
+  },
   robots: { index: true, follow: true },
   // Home canonical. Each page overrides with its own path, so a URL reached via
   // query strings or an alternate host consolidates to one address.

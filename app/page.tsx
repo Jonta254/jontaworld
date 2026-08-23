@@ -16,10 +16,19 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      name: SITE.fullName,
-      alternateName: SITE.name,
+      "@type": "ProfilePage",
+      "@id": `${SITE.url}/#profile`,
       url: SITE.url,
+      name: `${SITE.name} — Developer / ${SITE.brand}`,
+      mainEntity: { "@id": `${SITE.url}/#josiah` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE.url}/#josiah`,
+      name: SITE.fullName,
+      alternateName: SITE.brand,
+      url: SITE.url,
+      image: `${SITE.url}/icons/jontaworld-512.png`,
       email: `mailto:${SITE.email}`,
       jobTitle: SITE.role,
       description: SITE.positioning,
@@ -41,8 +50,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
       name: `${SITE.name} ${SITE.brand}`,
       url: SITE.url,
+      publisher: { "@id": `${SITE.url}/#josiah` },
     },
   ],
 };
