@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: project.name,
     description: project.outcome,
     alternates: { canonical: `/portfolio/${project.slug}` },
-    openGraph: { title: project.name, description: project.outcome, type: "article" },
+    openGraph: { title: project.name, description: project.outcome, type: "article", images: [{ url: project.shot.feature, width: 1440, height: 900, alt: project.shot.featureAlt }] },
   };
 }
 

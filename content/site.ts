@@ -26,6 +26,7 @@ export const SITE = {
   availability: "Available for new projects, working remotely",
   email: "jontaworld@gmail.com",
   url: "https://jontaworld.com",
+  updated: "2026-08-26",
 } as const;
 
 export const NAV = [

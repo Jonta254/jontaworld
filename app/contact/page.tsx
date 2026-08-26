@@ -37,6 +37,17 @@ export default function ContactPage() {
           <a href={SOCIAL[0].href} target="_blank" rel="noopener noreferrer"><Code2 aria-hidden="true" /><span><strong>View GitHub</strong><small>Code and repositories</small></span></a>
         </nav>
 
+        <section className={styles.brief} aria-labelledby="brief-title">
+          <p className={styles.label}>A useful first message</p>
+          <h2 id="brief-title">A few details are enough.</h2>
+          <ul>
+            <li>What you need built</li>
+            <li>Who it needs to help</li>
+            <li>What stage the idea is at</li>
+            <li>When you would like it ready</li>
+          </ul>
+          <p>If some of that is still unclear, send the problem as you understand it. We can shape the rest together.</p>
+        </section>
         <p className={styles.availability}><MapPin aria-hidden="true" />Available for selected new projects and remote roles.</p>
       </main>
     </div>

@@ -90,3 +90,6 @@
 #product-logic, #responsive-systems, #defensive-data, #accessible-states { scroll-margin-top: var(--space-8); }
 @media (min-width: 700px) { .proof { grid-template-columns: repeat(3, 1fr); } .proof div { grid-template-columns: 1fr; border-right: 1px solid var(--line); border-bottom: 0; } .proof div:last-child { border-right: 0; } .checkGrid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .demo { padding: var(--space-4); } .demoFacts { grid-template-columns: 1fr; } .demoFacts div { grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid var(--line); } .demoFacts div:last-child { border-bottom: 0; } .demoActions button { width: 100%; } }
+.evidenceLinks { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
+.evidenceLinks a { display: inline-flex; align-items: center; min-height: var(--tap); padding-inline: var(--space-3); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-sm); text-decoration: none; font-size: var(--text-xs); }
+.evidenceLinks a:hover { color: var(--accent); border-color: currentColor; }

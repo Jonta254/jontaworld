@@ -8,7 +8,7 @@ import { POSTS } from "@/content/blog";
    listed three portfolio slugs that had no page). */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
-  const now = new Date().toISOString();
+  const updated = SITE.updated;
 
   const statics: MetadataRoute.Sitemap = (
     [
@@ -20,11 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${base}/now`, changeFrequency: "weekly", priority: 0.6 },
       { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.6 },
     ] as const
-  ).map((e) => ({ ...e, lastModified: now }));
+  ).map((e) => ({ ...e, lastModified: updated }));
 
   const projects: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
     url: `${base}/portfolio/${p.slug}`,
-    lastModified: now,
+    lastModified: updated,
     changeFrequency: "monthly",
     priority: 0.8,
   }));

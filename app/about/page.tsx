@@ -56,6 +56,15 @@ export default function AboutPage() {
 
       <Statement>{ABOUT_STATEMENT}</Statement>
 
+      <section className={styles.profile} aria-labelledby="profile-title">
+        <div><p>Professional profile</p><h2 id="profile-title">Design judgment with engineering responsibility.</h2></div>
+        <dl>
+          <div><dt>Work</dt><dd>Independent product designer and developer</dd></div>
+          <div><dt>Background</dt><dd>Electrical trade and practical field systems</dd></div>
+          <div><dt>Focus</dt><dd>Websites, applications, tools, and product interfaces</dd></div>
+          <div><dt>Working style</dt><dd>Remote, direct, and responsible from scope through launch</dd></div>
+        </dl>
+      </section>
       <section className={styles.tools} aria-labelledby="tools-title">
         <p>Current tools</p>
         <h2 id="tools-title">A small stack, used deeply.</h2>

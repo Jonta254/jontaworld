@@ -76,6 +76,15 @@ function CodeBlock({ children, label }: { children: string; label: string }) {
   );
 }
 
+
+function EvidenceLinks({ live, source }: { live: string; source: string }) {
+  return (
+    <div className={styles.evidenceLinks}>
+      <a href={live} target="_blank" rel="noopener noreferrer">Open product</a>
+      <a href={source} target="_blank" rel="noopener noreferrer">Read source</a>
+    </div>
+  );
+}
 export default function LabPage() {
   return (
     <div className={styles.page}>
@@ -112,6 +121,7 @@ export default function LabPage() {
             <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts">{transitionCode}</CodeBlock>
             <LabStateDemo />
           </div>
+          <EvidenceLinks live="https://apprentice-log-xi.vercel.app" source="https://github.com/Jonta254/apprentice-log" />
         </article>
 
         <article id="responsive-systems" className={`${styles.panel} ${styles.responsive}`}>
@@ -124,12 +134,14 @@ export default function LabPage() {
             <figure className={styles.mobileDevice}><Image src="/showcase/traildesk-mobile.webp" alt="TrailDesk interface adapted to a narrow mobile viewport" width={390} height={844} sizes="180px" /><figcaption>Mobile · actions become linear</figcaption></figure>
           </div>
           <p className={styles.note}>The layout changes hierarchy rather than shrinking the desktop composition.</p>
+          <EvidenceLinks live="https://traildesk.vercel.app" source="https://github.com/Jonta254/traildesk" />
         </article>
 
         <article id="defensive-data" className={`${styles.panel} ${styles.storage}`}>
           <p className={styles.kind}>From DigiLearn · Engineering note</p><h2>Local progress is parsed defensively.</h2>
           <CodeBlock label="DigiLearn · lib/learning-storage.ts · excerpt">{progressCode}</CodeBlock>
           <p className={styles.note}>Versioned local storage learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
+          <EvidenceLinks live="https://digilearn-five.vercel.app" source="https://github.com/Jonta254/digilearn" />
         </article>
 
         <article id="accessible-states" className={`${styles.panel} ${styles.states}`}>
@@ -141,6 +153,7 @@ export default function LabPage() {
             <div><span className={styles.stateMark}>04</span><strong>Overdue</strong><small>Escalation required</small></div>
           </div>
           <details className={styles.details}><summary>See the real state logic</summary><CodeBlock label="SafeSignal · lib/session.ts · excerpt">{timerCode}</CodeBlock></details>
+          <EvidenceLinks live="https://safesignal-beta.vercel.app" source="https://github.com/Jonta254/safesignal" />
         </article>
 
         <article className={`${styles.panel} ${styles.technical}`}>
@@ -153,6 +166,7 @@ export default function LabPage() {
             <Image src="/showcase/electracore-feature.webp" alt="ElectraCore electrical calculation tools rendered from the live application" width={1440} height={900} sizes="(min-width: 900px) 70vw, 100vw" />
           </div>
           <p className={styles.note}>Calculation and learning routes are shown as working tools, not dressed up as a generic course dashboard.</p>
+          <EvidenceLinks live="https://electracore.vercel.app" source="https://github.com/Jonta254/electracore" />
         </article>
 
         <aside className={`${styles.panel} ${styles.observation}`}>

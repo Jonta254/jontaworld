@@ -19,3 +19,12 @@
 .secondary { color: var(--ink); border-bottom: 1px solid var(--line-strong); }
 .secondary:hover { color: var(--accent); border-color: currentColor; }
 @media (min-width: 820px) { .row { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-8); padding-block: var(--space-7); } .close { grid-template-columns: minmax(0, 1fr) auto; } }
+.process { display: grid; gap: var(--space-5); margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--line); }
+.processLabel { margin-bottom: var(--space-2); color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+.process h3 { max-width: 24ch; color: var(--ink); font-size: var(--text-xl); }
+.process ol { display: grid; }
+.process li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--line); }
+.process li > span { color: var(--faint); font: var(--text-xs)/1.6 var(--font-mono); }
+.process li p { color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }
+.process li strong { color: var(--ink); font-weight: 600; }
+@media (min-width: 820px) { .process { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-8); } }

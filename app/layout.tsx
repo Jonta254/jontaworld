@@ -8,7 +8,7 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Web & App Designer and Developer | ${SITE.brand}`,
+    default: `${SITE.name} | Web and App Designer and Developer | ${SITE.brand}`,
     // The pipe is the conventional title-tag separator, not prose punctuation.
     template: `%s | ${SITE.name} ${SITE.brand}`,
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   // Home canonical. Each page overrides with its own path, so a URL reached via
   // query strings or an alternate host consolidates to one address.
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": `${SITE.url}/feed.xml` } },
 };
 
 export default function RootLayout({
