@@ -26,7 +26,7 @@
   max-width: 17ch;
 }
 
-/* Fraunces has a genuinely good italic — worth using where the sentence
+/* Fraunces has a genuinely good italic , worth using where the sentence
    turns, rather than reaching for a colour change. */
 .headline em {
   font-style: italic;
@@ -40,9 +40,9 @@
   max-width: 56ch;
 }
 
-/* ── Sequence ───────────────────────────────────────────────────────────
+/*  Sequence
    A rail with nodes. Order and numbering carry the progression; there are
-   no dates anywhere (docs/design-system.md §10). */
+   no dates anywhere (docs/design-system.md section 10). */
 .sequence {
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@
   max-width: 62ch;
 }
 
-/* ── The essay ───────────────────────────────────────────────────────────
+/*  The essay
    An intimate reading column, deliberately narrower than the wide sequence
    above it. The rhythm shift from a structured rail to a single essay column
    is the point: the page stops presenting and starts talking. */
@@ -158,9 +158,17 @@
 .inline {
   color: var(--accent);
   text-decoration: none;
+  padding-block: 10px;
+  margin-block: -10px;
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
   transition: border-color var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out);
 }
 
 .inline:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
+
+.tools { width: min(var(--container-content), calc(100% - 2 * var(--gutter))); margin: 0 auto var(--space-9); padding: var(--space-6) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tools > p { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+.tools h2 { max-width: 18ch; margin-top: var(--space-2); font-size: var(--text-h3); }
+.tools ul { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+.tools li { padding: var(--space-1) var(--space-3); color: var(--muted); border: 1px solid var(--line); border-radius: var(--radius-full); font-size: var(--text-xs); }

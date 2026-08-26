@@ -4,7 +4,7 @@ import styles from "./showcase.module.css";
 /**
  * Presents a real screenshot inside minimal browser chrome.
  *
- * Flat by design — one border, one radius, no gloss, no perspective, no 3D
+ * Flat by design , one border, one radius, no gloss, no perspective, no 3D
  * tilt. The frame's job is to say "this is a running product", then get out of
  * the way. The screenshot is the marketing; the chrome is punctuation.
  */
@@ -46,7 +46,7 @@ export function BrowserFrame({
 /**
  * The mobile capture, overlapped against the desktop frame.
  *
- * Purely presentational — it repeats what the desktop shot already shows, so
+ * Purely presentational , it repeats what the desktop shot already shows, so
  * it is hidden from assistive tech rather than announced twice.
  */
 export function PhoneFrame({ src, priority = false }: { src: string; priority?: boolean }) {

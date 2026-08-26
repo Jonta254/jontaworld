@@ -3,7 +3,7 @@ import { SITE } from "@/content/site";
 import { PROJECTS } from "@/content/projects";
 import { POSTS } from "@/content/blog";
 
-/* Derived from the real content, not a hand-maintained list — so it can never
+/* Derived from the real content, not a hand-maintained list , so it can never
    drift out of sync with the pages that actually exist (the previous version
    listed three portfolio slugs that had no page). */
 export default function sitemap(): MetadataRoute.Sitemap {

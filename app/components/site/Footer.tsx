@@ -1,16 +1,16 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Mail } from "lucide-react";
 import { NAV, SITE, SOCIAL } from "@/content/site";
 import styles from "./footer.module.css";
 import BrandMark from "./BrandMark";
 
 /**
- * Server component â€” no client JavaScript.
+ * Server component : no client JavaScript.
  *
  * Every exit is a designed exit: the footer's job is to make the next action
  * obvious, not to hold a sitemap. Only meaningful navigation, one contact
  * method, and real professional links. No copyright year, per the no-dates
- * rule (docs/design-system.md Â§10).
+ * rule (docs/design-system.md section 10).
  */
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
           <a className={styles.email} href={`mailto:${SITE.email}`}>
             <Mail className={styles.mailIcon} aria-hidden="true" />
             Email Josiah
-            <span className={styles.arrow} aria-hidden="true">â†’</span>
+            <span className={styles.arrow} aria-hidden="true">→</span>
           </a>
         </div>
 
@@ -73,6 +73,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-

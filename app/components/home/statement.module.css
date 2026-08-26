@@ -2,7 +2,7 @@
    a deliberately tight measure, and no header, so it reads as a pause rather
    than another titled block. Every value is an existing token. */
 .statement {
-  padding-block: var(--space-11);
+  padding-block: var(--space-9);
 }
 
 .inner,

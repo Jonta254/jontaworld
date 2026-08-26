@@ -64,7 +64,7 @@
 }
 
 /* ── Prose ──────────────────────────────────────────────────────────────
-   The measure is capped and the leading is generous — this is the one place
+   The measure is capped and the leading is generous , this is the one place
    on the site built purely for sustained reading. */
 .prose {
   max-width: var(--container-prose);
@@ -81,7 +81,7 @@
   color: var(--body);
 }
 
-/* A restrained drop-cap opens the piece — one editorial gesture, no gimmick. */
+/* A restrained drop-cap opens the piece , one editorial gesture, no gimmick. */
 .prose p:first-child::first-letter {
   font-family: var(--font-serif);
   font-size: 3.4em;

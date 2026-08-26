@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * About, written as an essay rather than a biography or a résumé.
+ * About, written as an essay rather than a biography or a resume.
  *
  * The page moves from a wide, structured sequence (how the work got here),
  * through a quiet statement, into an intimate reading column (how I actually
@@ -55,6 +55,12 @@ export default function AboutPage() {
       </Section>
 
       <Statement>{ABOUT_STATEMENT}</Statement>
+
+      <section className={styles.tools} aria-labelledby="tools-title">
+        <p>Current tools</p>
+        <h2 id="tools-title">A small stack, used deeply.</h2>
+        <ul><li>Next.js</li><li>React</li><li>TypeScript</li><li>Node.js</li><li>Supabase</li><li>Vercel</li><li>CSS</li><li>Git</li></ul>
+      </section>
 
       <div className={styles.essay}>
         {ESSAY.map((chapter) => (

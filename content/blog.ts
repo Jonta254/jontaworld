@@ -1,5 +1,5 @@
 /**
- * Writing. Content as data — the pages carry no prose of their own.
+ * Writing. Content as data , the pages carry no prose of their own.
  *
  * No dates: posts are ordered by array position, newest first, and carry a
  * reading time rather than a publish date (docs/design-system.md §10).
@@ -17,7 +17,7 @@ export type Post = {
   image: { src: string; alt: string };
   /** A short first-person note on why the piece exists. */
   note: string;
-  /** Paragraphs. Plain strings — no markup in the data. */
+  /** Paragraphs. Plain strings , no markup in the data. */
   body: string[];
 };
 

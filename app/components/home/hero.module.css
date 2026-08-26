@@ -4,7 +4,7 @@
   padding: var(--space-10) var(--gutter) var(--space-9);
   display: flex;
   flex-direction: column;
-  /* Deliberately tighter than the section rhythm — a hero that breathes too
+  /* Deliberately tighter than the section rhythm , a hero that breathes too
      much reads as a splash screen rather than an opening statement. */
   gap: var(--space-5);
 }
@@ -33,7 +33,7 @@
   max-width: 20ch;
 }
 
-/* The one visual gesture — a schematic underline that reads as a conductor
+/* The one visual gesture , a schematic underline that reads as a conductor
    rather than a highlighter. Uses text-decoration so it wraps naturally across
    lines: an absolute-positioned rule overflowed the viewport on mobile when
    the phrase could not fit on one line. */
@@ -129,7 +129,7 @@
   display: inline-flex;
   align-items: center;
   /* Full 44px hit area (WCAG 2.5.5) while the visual stays a compact inline
-     link — the padding is invisible but tappable. */
+     link , the padding is invisible but tappable. */
   min-height: var(--tap);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
@@ -138,7 +138,7 @@
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-/* Separator dot between products — cheaper than borders, reads as a list. */
+/* Separator dot between products , cheaper than borders, reads as a list. */
 .proofList li:not(:last-child) .proofLink::after {
   content: "·";
   position: absolute;

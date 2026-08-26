@@ -1,5 +1,5 @@
 /* ============================================================================
-   Base layer — reset, document defaults, and shared primitives.
+   Base layer , reset, document defaults, and shared primitives.
    Consumes tokens.css only. No values are defined here.
    ========================================================================== */
 
@@ -58,7 +58,7 @@ a { color: inherit; }
 
 ::selection { background: var(--accent-wash); color: var(--ink); }
 
-/* Scrollbar — themed and unobtrusive. Thin, neutral at rest, accent on the
+/* Scrollbar , themed and unobtrusive. Thin, neutral at rest, accent on the
    thumb only, so it belongs to the page rather than the OS. */
 * { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
 ::-webkit-scrollbar { width: 12px; height: 12px; }
@@ -70,7 +70,7 @@ a { color: inherit; }
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
-/* Theme transition — a short cross-fade of surface colours when the OS theme
+/* Theme transition , a short cross-fade of surface colours when the OS theme
    flips. Scoped to the three properties that actually change between modes, so
    it never touches transforms or interaction feedback (components that define
    their own transition win by specificity). Reduced motion clamps it to 1ms
@@ -94,7 +94,7 @@ a { color: inherit; }
   border: 0;
 }
 
-/* Visible on focus — a skip link that can't be reached is decoration. */
+/* Visible on focus , a skip link that can't be reached is decoration. */
 .skip-link {
   position: absolute;
   top: var(--space-3);
@@ -124,7 +124,7 @@ a { color: inherit; }
 
 /* ── Print ──────────────────────────────────────────────────────────────
    A recruiter who prints the page (or saves to PDF) should get a clean,
-   ink-frugal document — not a screenshot of a dark UI. Chrome is dropped,
+   ink-frugal document , not a screenshot of a dark UI. Chrome is dropped,
    colours normalise, and links reveal their destination. */
 @media print {
   :root {
@@ -132,7 +132,7 @@ a { color: inherit; }
     --ink: #000; --body: #1a1a1a; --muted: #333; --faint: #555;
     --line: #ccc; --line-strong: #999; --accent: #6a3410;
   }
-  /* Stable element/global selectors — module hashes aren't printable targets.
+  /* Stable element/global selectors , module hashes aren't printable targets.
      The sticky header, the footer, and the skip link are page chrome, not
      content. */
   header, footer, .skip-link { display: none !important; }

@@ -1,4 +1,4 @@
-﻿export type NowGroup = {
+export type NowGroup = {
   label: string;
   intro: string;
   items: { title: string; note: string }[];

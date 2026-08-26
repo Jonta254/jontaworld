@@ -1,3 +1,7 @@
+.index { width: min(var(--container-content), calc(100% - 2 * var(--gutter))); margin: 0 auto var(--space-6); padding: var(--space-4) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.index > span { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+.index ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-3); }
+.index li { color: var(--muted); font-size: var(--text-xs); }
 .page { min-height: 100vh; background: var(--paper); }
 .grid { width: min(var(--container-content), calc(100% - 2 * var(--gutter))); margin: 0 auto; padding-bottom: var(--space-9); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-5); }
 .panel { grid-column: 1 / -1; min-width: 0; padding: clamp(var(--space-5), 3vw, var(--space-7)); border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
@@ -48,3 +52,9 @@
 @media (min-width: 980px) { .split { grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); } .storage { grid-column: span 7; } .states { grid-column: span 5; } }
 @media (max-width: 560px) { .headingRow { flex-direction: column; } .deviceRow { grid-template-columns: minmax(0, 1fr) 94px; } .panel { padding: var(--space-4); } .codeFigure pre { padding: var(--space-4); } .entryCard { flex-direction: column; } .stateStrip > div { grid-template-columns: auto 1fr; } .stateStrip small { grid-column: 2; } }
 @media (prefers-reduced-motion: reduce) { .page *, .page *::before, .page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+.accessibility h2 { margin-top: var(--space-2); }
+.accessibility ul { display: grid; gap: var(--space-3); margin-top: var(--space-5); }
+.accessibility li { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: 1px solid var(--line); }
+.accessibility strong { color: var(--ink); font-size: var(--text-sm); }
+.accessibility span { color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }

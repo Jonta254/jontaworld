@@ -80,14 +80,19 @@ export default function LabPage() {
     <div className={styles.page}>
       <PageHeader
         eyebrow="Lab"
-        title="Code, components, and working decisions."
-        lede="A place for interface experiments, prototypes, and the engineering details behind the finished work. Everything here comes from a real project."
+        title="Code, systems, and interface studies."
+        lede="Real components, real code, responsive studies, and engineering decisions from the products I build."
       />
+
+      <nav className={styles.index} aria-label="Lab contents">
+        <span>Inside the Lab</span>
+        <ul><li>Components</li><li>Responsive systems</li><li>Application state</li><li>Local storage</li><li>Accessibility</li><li>Performance</li></ul>
+      </nav>
 
       <main className={styles.grid}>
         <article className={`${styles.panel} ${styles.featured}`}>
           <div className={styles.headingRow}>
-            <div><p className={styles.kind}>Code + output study</p><h2>Approval is a state transition, not a badge.</h2></div>
+            <div><p className={styles.kind}>From ApprenticeLog · Code and result</p><h2>Approval is a state transition, not a badge.</h2></div>
             <span className={styles.status}>Production logic</span>
           </div>
           <div className={styles.split}>
@@ -108,7 +113,7 @@ export default function LabPage() {
 
         <article className={`${styles.panel} ${styles.responsive}`}>
           <div className={styles.headingRow}>
-            <div><p className={styles.kind}>Responsive study</p><h2>One product, two deliberate layouts.</h2></div>
+            <div><p className={styles.kind}>From TrailDesk · Responsive system</p><h2>One product, two deliberate layouts.</h2></div>
             <span className={styles.status}>Interface study</span>
           </div>
           <div className={styles.deviceRow}>
@@ -119,13 +124,13 @@ export default function LabPage() {
         </article>
 
         <article className={`${styles.panel} ${styles.storage}`}>
-          <p className={styles.kind}>Engineering note</p><h2>Local progress is parsed defensively.</h2>
+          <p className={styles.kind}>From DigiLearn · Engineering note</p><h2>Local progress is parsed defensively.</h2>
           <CodeBlock label="DigiLearn · lib/learning-storage.ts · excerpt">{progressCode}</CodeBlock>
-          <p className={styles.note}>Versioned local-first learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
+          <p className={styles.note}>Versioned local storage learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
         </article>
 
         <article className={`${styles.panel} ${styles.states}`}>
-          <p className={styles.kind}>Component study</p><h2>Safety states communicate without relying on colour.</h2>
+          <p className={styles.kind}>From SafeSignal · Component states</p><h2>Safety states communicate without relying on colour.</h2>
           <div className={styles.stateStrip}>
             <div><span className={styles.stateMark}>01</span><strong>Normal</strong><small>24 min remaining</small></div>
             <div><span className={styles.stateMark}>02</span><strong>Approaching</strong><small>Check-in soon</small></div>
@@ -137,7 +142,7 @@ export default function LabPage() {
 
         <article className={`${styles.panel} ${styles.technical}`}>
           <div className={styles.headingRow}>
-            <div><p className={styles.kind}>Working interface</p><h2>Technical content earns the screen.</h2></div>
+            <div><p className={styles.kind}>From ElectraCore · Code and result</p><h2>Technical content earns the screen.</h2></div>
             <span className={styles.status}>Live product</span>
           </div>
           <div className={styles.browserStudy}>
@@ -148,9 +153,18 @@ export default function LabPage() {
         </article>
 
         <aside className={`${styles.panel} ${styles.observation}`}>
-          <p className={styles.kind}>Engineering observation</p>
+          <p className={styles.kind}>From ElectraCore · Engineering observation</p>
           <blockquote>“The answer first, the reasoning underneath.”</blockquote>
           <p>Mid-task users need the result now. Learners need the working one glance later. The same screen can serve both.</p>
+        </aside>
+        <aside className={[styles.panel, styles.accessibility].join(" ")}>
+          <p className={styles.kind}>From this portfolio · Accessibility</p>
+          <h2>Keyboard first, motion optional.</h2>
+          <ul>
+            <li><strong>Focus</strong><span>Every control keeps a visible keyboard state.</span></li>
+            <li><strong>Motion</strong><span>Reduced motion removes decorative transitions.</span></li>
+            <li><strong>Meaning</strong><span>Status never depends on colour alone.</span></li>
+          </ul>
         </aside>
       </main>
 

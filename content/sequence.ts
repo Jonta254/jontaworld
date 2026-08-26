@@ -1,5 +1,5 @@
 /**
- * The Sequence — trade → code → craft, with no calendar.
+ * The Sequence , trade → code → craft, with no calendar.
  *
  * Progression is carried by order and numbering, never by dates. See
  * docs/design-system.md §10: this removes any invitation to compute years of

@@ -1,4 +1,4 @@
-﻿.footer {
+.footer {
   border-top: 1px solid var(--line);
   background: var(--sunken);
   /* No top margin: every page already ends on a Section that carries its own
@@ -22,7 +22,7 @@
   }
 }
 
-/* â”€â”€ The prompt â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  The prompt  */
 .prompt { display: flex; flex-direction: column; gap: var(--space-4); }
 
 .kicker {
@@ -59,7 +59,7 @@
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
 .email:hover .arrow { transform: translateX(var(--nudge)); }
 
-/* â”€â”€ Columns â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Columns  */
 .columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -91,7 +91,7 @@
 
 .link:hover { color: var(--ink); }
 
-/* â”€â”€ Base row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Base row  */
 .base {
   border-top: 1px solid var(--line);
   max-width: var(--container-wide);

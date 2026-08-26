@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "./components/site/Nav";
@@ -8,7 +8,7 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} â€” Developer / ${SITE.brand}`,
+    default: `${SITE.name} | Developer / ${SITE.brand}`,
     // The pipe is the conventional title-tag separator, not prose punctuation.
     template: `%s | ${SITE.name} ${SITE.brand}`,
   },
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     locale: "en_NZ",
     url: SITE.url,
     siteName: `${SITE.name} ${SITE.brand}`,
-    title: `${SITE.name} â€” Developer / ${SITE.brand}`,
+    title: `${SITE.name} | Developer / ${SITE.brand}`,
     description: `Design and engineering for the full web: apps, online stores, marketing sites, design systems, and brand. Every project is live and open to anyone.`,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Josiah â€” Developer / jontAWorld" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Josiah | Developer / jontAWorld" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} â€” Developer / ${SITE.brand}`,
+    title: `${SITE.name} | Developer / ${SITE.brand}`,
     description: SITE.positioning,
     images: ["/opengraph-image"],
   },
@@ -74,7 +74,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-
-

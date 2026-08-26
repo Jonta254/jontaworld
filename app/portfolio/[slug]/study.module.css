@@ -149,7 +149,7 @@
 /* ── Opening chapter ─────────────────────────────────────────────────────
    Full width and a touch larger than the two-column notes, so the case study
    opens like a standfirst rather than the first of many identical blocks.
-   (Named .opening, not .lead — .lead is the hero image container.) */
+   (Named .opening, not .lead , .lead is the hero image container.) */
 .opening {
   display: flex;
   flex-direction: column;

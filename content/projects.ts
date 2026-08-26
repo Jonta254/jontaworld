@@ -5,7 +5,7 @@
  * and cross-checked against the Vercel account. Nothing in this file is
  * aspirational, and nothing carries a date.
  *
- * Copy is drawn from each product's own description — not invented.
+ * Copy is drawn from each product's own description , not invented.
  * See docs/design-system.md §1 for the verification record.
  */
 
@@ -56,7 +56,7 @@ export type Project = {
   /** Longer positioning, used on the project page. */
   summary: string;
   url: string;
-  /** Shown next to the link — the domain, not the scheme. */
+  /** Shown next to the link , the domain, not the scheme. */
   displayUrl: string;
   /** Public source. Verified against the GitHub account before linking. */
   repo?: string;

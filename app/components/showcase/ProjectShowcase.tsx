@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { FLAGSHIPS, SUPPORTING } from "@/content/projects";
@@ -54,7 +54,7 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
         <div className={styles.actions}>
           <Link href={href} className={styles.readCta}>
             Read the case study
-            <span className={styles.arrow} aria-hidden="true">â†’</span>
+            <span className={styles.arrow} aria-hidden="true">→</span>
           </Link>
           <LiveLink project={project} />
         </div>
@@ -94,7 +94,7 @@ function SupportingCard({ project }: { project: Project }) {
         <div className={styles.actions}>
           <Link href={href} className={styles.readCtaSmall}>
             View project
-            <span className={styles.arrow} aria-hidden="true">â†’</span>
+            <span className={styles.arrow} aria-hidden="true">→</span>
           </Link>
           <LiveLink project={project} />
         </div>
@@ -128,4 +128,3 @@ export function ProjectShowcase() {
     </>
   );
 }
-

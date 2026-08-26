@@ -5,7 +5,7 @@ import styles from "./section.module.css";
  * is what makes the vertical rhythm consistent without anyone having to
  * remember the numbers.
  *
- * `eyebrow` is optional and numbered — it gives a long page a spine the eye
+ * `eyebrow` is optional and numbered , it gives a long page a spine the eye
  * can follow while scanning, which is the magazine behaviour we want rather
  * than a stack of undifferentiated cards.
  */

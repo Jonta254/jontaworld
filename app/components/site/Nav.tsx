@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ import BrandMark from "./BrandMark";
 /**
  * Sticky, minimal, keyboard-first.
  *
- * The only client state is a boolean for whether the page has scrolled â€” used
+ * The only client state is a boolean for whether the page has scrolled : used
  * to bring in a hairline border and a backdrop once the header stops sitting
  * on empty space. Everything else is CSS.
  *
@@ -76,5 +76,3 @@ export default function Nav() {
     </header>
   );
 }
-
-

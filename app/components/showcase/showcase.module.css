@@ -1,7 +1,7 @@
-﻿/* Showcase â€” presentation for real product screenshots.
+/* Showcase : presentation for real product screenshots.
    Every value comes from app/styles/tokens.css. No magic numbers. */
 
-/* â”€â”€ Browser frame â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Browser frame  */
 .frame {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -45,13 +45,13 @@
   height: auto;
 }
 
-/* â”€â”€ Phone overlap â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Phone overlap  */
 .phone {
   position: absolute;
   right: calc(var(--space-5) * -1);
   bottom: calc(var(--space-5) * -1);
   /* Kept narrow enough that the phone never grows taller than the browser
-     frame it overlaps â€” otherwise it covers the chrome bar and the URL. */
+     frame it overlaps : otherwise it covers the chrome bar and the URL. */
   width: 132px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -69,7 +69,7 @@
   .phone { display: none; }
 }
 
-/* â”€â”€ Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Card  */
 .card {
   min-width: 0;
   position: relative;
@@ -99,7 +99,7 @@
      does not read as a repeating template. */
   .flagship:nth-child(even) .media { order: -1; }
 
-  /* When the media moves left, mirror the phone too â€” otherwise it overlaps
+  /* When the media moves left, mirror the phone too : otherwise it overlaps
      inward and crowds the text column. */
   .flagship:nth-child(even) .phone {
     right: auto;
@@ -156,7 +156,7 @@
   border-radius: var(--radius-full);
 }
 
-/* â”€â”€ Actions row: internal case-study CTA + external live link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Actions row: internal case-study CTA + external live link  */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +185,7 @@
 .readCta:hover .arrow,
 .readCtaSmall:hover .arrow { transform: translateX(var(--nudge)); }
 
-/* â”€â”€ The live link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  The live link  */
 .live {
   display: inline-flex;
   align-items: center;
@@ -225,13 +225,13 @@
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
 .live:hover .arrow { transform: translateX(var(--nudge)); }
 
-/* â”€â”€ Layout stacks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   Named flagshipStack, not stack â€” `.stack` is already the tag list above,
+/*  Layout stacks
+   Named flagshipStack, not stack : `.stack` is already the tag list above,
    and CSS modules scope per file, so the two would collide. */
 .flagshipStack { display: flex; flex-direction: column; gap: var(--space-6); }
 .stackGap { margin-top: var(--space-8); }
 
-/* â”€â”€ Supporting grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/*  Supporting grid  */
 .grid {
   width: 100%;
   min-width: 0;
@@ -247,6 +247,3 @@
 .supporting { padding: var(--space-5); gap: var(--space-5); min-width: 0; }
 .supporting .name { font-size: var(--text-h3); }
 .supporting .outcome { font-size: var(--text-sm); }
-
-
-

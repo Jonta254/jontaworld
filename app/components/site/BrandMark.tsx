@@ -1,4 +1,4 @@
-﻿type BrandMarkProps = { className?: string; title?: string };
+type BrandMarkProps = { className?: string; title?: string };
 
 /** A custom J/A monogram drawn as one continuous, architectural gesture. */
 export default function BrandMark({ className, title }: BrandMarkProps) {
