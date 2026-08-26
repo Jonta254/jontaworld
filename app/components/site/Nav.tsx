@@ -1,15 +1,16 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/content/site";
 import styles from "./nav.module.css";
+import BrandMark from "./BrandMark";
 
 /**
  * Sticky, minimal, keyboard-first.
  *
- * The only client state is a boolean for whether the page has scrolled — used
+ * The only client state is a boolean for whether the page has scrolled â€” used
  * to bring in a hairline border and a backdrop once the header stops sitting
  * on empty space. Everything else is CSS.
  *
@@ -45,6 +46,7 @@ export default function Nav() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.inner} aria-label="Primary">
         <Link href="/" className={styles.brand}>
+          <BrandMark className={styles.logo} />
           <span className={styles.brandName}>{SITE.name}</span>
           <span className={styles.brandMark}>{SITE.brand}</span>
         </Link>
@@ -74,3 +76,5 @@ export default function Nav() {
     </header>
   );
 }
+
+

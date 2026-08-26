@@ -1,61 +1,43 @@
-/**
- * What I can be hired to do.
- *
- * A clean capability list, no images and no per item links. The evidence lives
- * elsewhere and is not repeated here: shipped products in the showcase and on
- * /portfolio, interface studies in the Lab. One closing line points to both.
- *
- * Copy is written without dashes, per the house style.
- */
-
-export type Service = {
+﻿export type Service = {
   num: string;
   title: string;
+  promise: string;
   body: string;
   deliverables: string[];
+  proof: string;
 };
 
 export const SERVICES: Service[] = [
   {
     num: "01",
-    title: "Business web applications",
-    body: "Platforms with real logic behind them: dashboards, user accounts, billing and admin. The kind of tool a business runs on rather than markets with.",
-    deliverables: ["Full stack build", "Auth & accounts", "Dashboards", "Admin tooling", "Payments"],
+    title: "Design and build a complete product",
+    promise: "From a rough idea to something people can use.",
+    body: "I can shape the problem, design the experience, write the interface, and build the working product. One person keeps the thinking connected from the first conversation to launch.",
+    deliverables: ["Product direction", "UX and interface", "Full stack build", "Launch"],
+    proof: "ApprenticeLog and ElectraCore",
   },
   {
     num: "02",
-    title: "Mobile and offline apps",
-    body: "Installable apps that keep working with no connection. Local storage, background sync, and interfaces you can use with one hand, in gloves, in bad light.",
-    deliverables: ["PWA", "Offline storage", "Sync", "Geolocation", "Push"],
+    title: "Build a tool for real work",
+    promise: "Clear software for a process that is slow, manual, or confusing.",
+    body: "Dashboards, admin tools, offline workflows, calculators, and internal systems. I learn how the work happens first, then remove the parts that waste time or create mistakes.",
+    deliverables: ["Workflow design", "Accounts and data", "Offline support", "Admin tools"],
+    proof: "ApprenticeLog, SafeSignal, and TrailDesk",
   },
   {
     num: "03",
-    title: "Full stack engineering",
-    body: "React and Next.js on the front, typed APIs and data on the back. Auth, databases, payments and third party integrations wired up and tested, on a fresh codebase or an existing one.",
-    deliverables: ["React / Next.js", "TypeScript", "APIs & databases", "Auth & payments", "Testing"],
+    title: "Create a site that earns trust",
+    promise: "A fast, thoughtful website that explains the value clearly.",
+    body: "For a business, product, shop, or personal brand. I bring the words, structure, visual identity, responsive design, and production build together so the result feels specific rather than templated.",
+    deliverables: ["Content structure", "Visual direction", "Responsive build", "SEO and performance"],
+    proof: "This portfolio and the shipped product sites",
   },
   {
     num: "04",
-    title: "Ecommerce and online stores",
-    body: "Storefronts that are quick to browse and simple to buy from, with checkout, payments, inventory and orders handled properly. The parts a customer never notices, built to hold up under real use.",
-    deliverables: ["Storefront", "Cart & checkout", "Payments", "Inventory", "Orders"],
-  },
-  {
-    num: "05",
-    title: "Marketing sites and landing pages",
-    body: "Pages built to convert and to load instantly. Copy, layout and motion decided together, so the page reads as one thing rather than a template with content poured in.",
-    deliverables: ["Landing pages", "Copy & layout", "SEO", "Analytics", "A/B ready"],
-  },
-  {
-    num: "06",
-    title: "Design systems and UI",
-    body: "Tokens, components and the documentation that keeps them honest. Colour, type, spacing and motion decided once, so the tenth screen costs less to build than the first.",
-    deliverables: ["Design tokens", "Component library", "Figma", "Documentation", "Dark mode"],
-  },
-  {
-    num: "07",
-    title: "Brand and visual identity",
-    body: "Logos, wordmarks and the assets around them, from social templates to app icons to store graphics, drawn to work at every size they will actually appear at.",
-    deliverables: ["Logo & wordmark", "App icons", "Social templates", "Store assets", "Brand guide"],
+    title: "Improve an existing product",
+    promise: "Find the weak points and make the whole experience stronger.",
+    body: "I can join an existing codebase, understand what is already working, and improve the interface, product flow, accessibility, performance, or design system without throwing away its identity.",
+    deliverables: ["Product audit", "UI refinement", "Engineering fixes", "Design system"],
+    proof: "Continuous work across all five live products",
   },
 ];

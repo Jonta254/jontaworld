@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BrowserFrame, PhoneFrame } from "../../components/showcase/BrowserFrame";
@@ -86,10 +86,10 @@ export default async function ProjectPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Header ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <header className={styles.header}>
         <Link href="/portfolio" className={styles.back}>
-          <span aria-hidden="true">←</span> Work
+          <span aria-hidden="true">â†</span> Work
         </Link>
         <h1 className={styles.title}>{project.name}</h1>
         <p className={styles.summary}>{project.summary}</p>
@@ -114,7 +114,7 @@ export default async function ProjectPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {project.displayUrl}
+                Open live product
               </a>
             </dd>
           </div>
@@ -128,7 +128,7 @@ export default async function ProjectPage({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {project.repo.replace("https://github.com/", "")}
+                  View source on GitHub
                 </a>
               </dd>
             </div>
@@ -136,7 +136,7 @@ export default async function ProjectPage({
         </dl>
       </header>
 
-      {/* ── Lead image: the landing view, desktop and mobile ────── */}
+      {/* â”€â”€ Lead image: the landing view, desktop and mobile â”€â”€â”€â”€â”€â”€ */}
       <div className={styles.lead}>
         <div className={styles.leadMedia}>
           <BrowserFrame
@@ -149,7 +149,7 @@ export default async function ProjectPage({
         </div>
       </div>
 
-      {/* ── A closer look: a real working screen past the hero ──── */}
+      {/* â”€â”€ A closer look: a real working screen past the hero â”€â”€â”€â”€ */}
       <section className={styles.closer} aria-label="A closer look inside the product">
         <p className={styles.closerLabel}>A closer look</p>
         <BrowserFrame
@@ -159,11 +159,11 @@ export default async function ProjectPage({
         />
       </section>
 
-      {/* ── Case study body ─────────────────────────────────────────
+      {/* â”€â”€ Case study body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           Composed as chapters, not identical blocks. A full-width lead opens
           it; two-column notes carry the middle; a pulled turning point marks
           the decision that mattered; the solution turns visual; the closing
-          reflection is quiet and italic. ─────────────────────────────────── */}
+          reflection is quiet and italic. â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {s ? (
         <div className={styles.body}>
           <section className={styles.opening}>
@@ -210,7 +210,7 @@ export default async function ProjectPage({
                 rel="noopener noreferrer"
               >
                 Open {project.name}
-                <span className={styles.arrow} aria-hidden="true">→</span>
+                <span className={styles.arrow} aria-hidden="true">â†’</span>
               </a>
               {project.repo && (
                 <a
@@ -253,7 +253,7 @@ export default async function ProjectPage({
                 rel="noopener noreferrer"
               >
                 Open {project.name}
-                <span className={styles.arrow} aria-hidden="true">→</span>
+                <span className={styles.arrow} aria-hidden="true">â†’</span>
               </a>
               {project.repo && (
                 <a
@@ -270,7 +270,7 @@ export default async function ProjectPage({
         </div>
       )}
 
-      {/* ── More work ──────────────────────────────────────────── */}
+      {/* â”€â”€ More work â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <nav className={styles.more} aria-label="More work">
         <h2 className={styles.moreTitle}>More work</h2>
         <ul className={styles.moreList}>
@@ -279,7 +279,7 @@ export default async function ProjectPage({
               <Link href={`/portfolio/${o.slug}`} className={styles.moreLink}>
                 <span className={styles.moreName}>{o.name}</span>
                 <span className={styles.moreOutcome}>{o.outcome}</span>
-                <span className={styles.arrow} aria-hidden="true">→</span>
+                <span className={styles.arrow} aria-hidden="true">â†’</span>
               </Link>
             </li>
           ))}
@@ -288,3 +288,5 @@ export default async function ProjectPage({
     </article>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const MAX_NAME = 120;
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const recipient = process.env.CONTACT_EMAIL;
+    const recipient = process.env.CONTACT_EMAIL || "jontaworld@gmail.com";
     const sender = process.env.CONTACT_FROM_EMAIL;
 
     if (!apiKey || !recipient || !sender) {
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
       subject: `New message from ${name}`,
       html: `
         <div style="font-family:ui-monospace,monospace;max-width:560px;margin:0 auto;padding:32px;background:#17140F;color:#F7F4EF;border:1px solid #6F675E;border-radius:6px;">
-          <h2 style="color:#E8925A;letter-spacing:0.12em;font-size:13px;text-transform:uppercase;margin:0 0 24px;">jontAWorld — New contact</h2>
+          <h2 style="color:#E8925A;letter-spacing:0.12em;font-size:13px;text-transform:uppercase;margin:0 0 24px;">jontAWorld â€” New contact</h2>
           <p style="margin:0 0 6px;font-size:11px;color:#A69D90;letter-spacing:0.12em;text-transform:uppercase;">From</p>
           <p style="margin:0 0 24px;font-size:15px;">${escHtml(name)} &lt;${escHtml(email)}&gt;</p>
           <p style="margin:0 0 6px;font-size:11px;color:#A69D90;letter-spacing:0.12em;text-transform:uppercase;">Message</p>
@@ -87,3 +87,4 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+

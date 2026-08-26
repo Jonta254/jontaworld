@@ -1,4 +1,5 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { FLAGSHIPS, SUPPORTING } from "@/content/projects";
 import { BrowserFrame, PhoneFrame } from "./BrowserFrame";
@@ -26,8 +27,8 @@ function LiveLink({ project }: { project: Project }) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className={styles.liveDot} aria-hidden="true" />
-      <span>{project.displayUrl}</span>
+      <ExternalLink aria-hidden="true" className={styles.liveIcon} />
+      <span>Open live app</span>
       <span className="sr-only"> opens {project.name} in a new tab</span>
     </a>
   );
@@ -53,7 +54,7 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
         <div className={styles.actions}>
           <Link href={href} className={styles.readCta}>
             Read the case study
-            <span className={styles.arrow} aria-hidden="true">→</span>
+            <span className={styles.arrow} aria-hidden="true">â†’</span>
           </Link>
           <LiveLink project={project} />
         </div>
@@ -93,7 +94,7 @@ function SupportingCard({ project }: { project: Project }) {
         <div className={styles.actions}>
           <Link href={href} className={styles.readCtaSmall}>
             View project
-            <span className={styles.arrow} aria-hidden="true">→</span>
+            <span className={styles.arrow} aria-hidden="true">â†’</span>
           </Link>
           <LiveLink project={project} />
         </div>
@@ -127,3 +128,4 @@ export function ProjectShowcase() {
     </>
   );
 }
+

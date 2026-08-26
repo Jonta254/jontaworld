@@ -1,14 +1,16 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+import { Mail } from "lucide-react";
 import { NAV, SITE, SOCIAL } from "@/content/site";
 import styles from "./footer.module.css";
+import BrandMark from "./BrandMark";
 
 /**
- * Server component — no client JavaScript.
+ * Server component â€” no client JavaScript.
  *
  * Every exit is a designed exit: the footer's job is to make the next action
  * obvious, not to hold a sitemap. Only meaningful navigation, one contact
  * method, and real professional links. No copyright year, per the no-dates
- * rule (docs/design-system.md §10).
+ * rule (docs/design-system.md Â§10).
  */
 export default function Footer() {
   return (
@@ -20,8 +22,9 @@ export default function Footer() {
             Have something that needs building properly?
           </h2>
           <a className={styles.email} href={`mailto:${SITE.email}`}>
-            {SITE.email}
-            <span className={styles.arrow} aria-hidden="true">→</span>
+            <Mail className={styles.mailIcon} aria-hidden="true" />
+            Email Josiah
+            <span className={styles.arrow} aria-hidden="true">â†’</span>
           </a>
         </div>
 
@@ -64,12 +67,12 @@ export default function Footer() {
       </div>
 
       <div className={styles.base}>
-        <span className={styles.wordmark}>
-          {SITE.fullName}{" "}
-          <span className={styles.brand}>{SITE.brand}</span>
-        </span>
+        <span className={styles.identity}><BrandMark className={styles.logo} /><span className={styles.wordmark}>{SITE.fullName} <span className={styles.brand}>{SITE.brand}</span></span></span>
         <span className={styles.availability}>{SITE.availability}</span>
       </div>
     </footer>
   );
 }
+
+
+

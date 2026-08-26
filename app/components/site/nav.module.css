@@ -1,9 +1,9 @@
-.header {
+﻿.header {
   position: sticky;
   top: 0;
   z-index: 50;
   /* Solid, not translucent. A blurred bar is the default choice right now,
-     which is reason enough to avoid it — and design-system §6 rules out
+     which is reason enough to avoid it â€” and design-system Â§6 rules out
      backdrop-filter outright: it is a real paint cost on mobile and lets
      text ghost through behind the nav. */
   background: var(--paper);
@@ -28,18 +28,21 @@
   gap: var(--space-5);
 }
 
-/* ── Brand ──────────────────────────────────────────────────────────────── */
+/* â”€â”€ Brand â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .brand {
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
   text-decoration: none;
   margin-right: auto;
-  /* Meets the 44px target the rest of the nav uses — the wordmark is a link
+  /* Meets the 44px target the rest of the nav uses â€” the wordmark is a link
      like any other and shouldn't be the one thing that's hard to hit. */
   min-height: var(--tap);
   padding-block: var(--space-2);
 }
+
+.logo { width: 28px; height: 28px; flex: none; color: var(--ink); transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.brand:hover .logo { color: var(--accent); transform: translateY(-1px); }
 
 .brandName {
   font-family: var(--font-serif);
@@ -61,7 +64,7 @@
 
 .brand:hover .brandMark { color: var(--accent); }
 
-/* ── Links ──────────────────────────────────────────────────────────────── */
+/* â”€â”€ Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .links {
   display: flex;
   align-items: center;
@@ -83,7 +86,7 @@
 
 .link:hover { color: var(--ink); }
 
-/* Underline grows from the centre — 160ms, transform only. The one piece of
+/* Underline grows from the centre â€” 160ms, transform only. The one piece of
    decoration in the header, and it carries state rather than just moving. */
 .link::after {
   content: "";
@@ -103,7 +106,7 @@
 .active { color: var(--ink); }
 .active::after { transform: scaleX(1); background: var(--accent); }
 
-/* ── CTA ────────────────────────────────────────────────────────────────── */
+/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -130,7 +133,7 @@
 }
 
 @media (max-width: 620px) {
-  /* The CTA repeats in the footer and at the end of every page — dropping it
+  /* The CTA repeats in the footer and at the end of every page â€” dropping it
      here buys the nav links the room they need. */
   .cta { display: none; }
 }
@@ -145,7 +148,9 @@
     gap: var(--space-2) var(--space-3);
   }
   .brand { margin-right: 0; }
+  .logo { width: 26px; height: 26px; }
   .links { width: 100%; justify-content: space-between; }
   .link { padding-inline: var(--space-1); }
   .link::after { left: var(--space-1); right: var(--space-1); }
 }
+

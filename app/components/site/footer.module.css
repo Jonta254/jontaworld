@@ -1,4 +1,4 @@
-.footer {
+﻿.footer {
   border-top: 1px solid var(--line);
   background: var(--sunken);
   /* No top margin: every page already ends on a Section that carries its own
@@ -22,7 +22,7 @@
   }
 }
 
-/* ── The prompt ─────────────────────────────────────────────────────────── */
+/* â”€â”€ The prompt â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .prompt { display: flex; flex-direction: column; gap: var(--space-4); }
 
 .kicker {
@@ -59,7 +59,7 @@
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
 .email:hover .arrow { transform: translateX(var(--nudge)); }
 
-/* ── Columns ────────────────────────────────────────────────────────────── */
+/* â”€â”€ Columns â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -91,7 +91,7 @@
 
 .link:hover { color: var(--ink); }
 
-/* ── Base row ───────────────────────────────────────────────────────────── */
+/* â”€â”€ Base row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .base {
   border-top: 1px solid var(--line);
   max-width: var(--container-wide);
@@ -107,6 +107,8 @@
 }
 
 .wordmark { color: var(--muted); }
+.identity { display: inline-flex; align-items: center; gap: var(--space-3); }
+.logo { width: 24px; height: 24px; color: var(--ink); flex: none; }
 
 .brand {
   font-family: var(--font-mono);
@@ -115,3 +117,6 @@
 }
 
 .availability { font-family: var(--font-mono); }
+
+
+.mailIcon { width: 18px; height: 18px; }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SITE } from "@/content/site";
 import { PROJECTS } from "@/content/projects";
 import styles from "./hero.module.css";
@@ -25,16 +25,14 @@ export default function Hero() {
       </h1>
 
       <p className={styles.lede}>
-        Whether you need a website, an online store, or a simple app, I handle
-        the whole thing: the design, the words, the structure behind it, and the
-        build. You get something clean, fast, and easy to use, made by one
-        person who keeps it clear and simple to work with.
+        I turn real operational problems into clear digital products—design,
+        content, systems, and code handled as one connected piece.
       </p>
 
       <div className={styles.actions}>
         <Link href="/portfolio" className={styles.primary}>
           See the work
-          <span className={styles.arrow} aria-hidden="true">→</span>
+          <span className={styles.arrow} aria-hidden="true">â†’</span>
         </Link>
         <Link href="/contact" className={styles.secondary}>
           Start a project
@@ -64,3 +62,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Hero from "./components/home/Hero";
 import Section from "./components/home/Section";
 import Statement from "./components/home/Statement";
@@ -10,7 +10,7 @@ import { SITE, SOCIAL } from "@/content/site";
 import styles from "./home.module.css";
 
 /* Person + WebSite structured data. Drives the name-search result and the
-   knowledge panel (docs/design-system.md §15). Only verifiable facts —
+   knowledge panel (docs/design-system.md Â§15). Only verifiable facts â€”
    the same discipline as the visible copy. */
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": `${SITE.url}/#profile`,
       url: SITE.url,
-      name: `${SITE.name} — Developer / ${SITE.brand}`,
+      name: `${SITE.name} â€” Developer / ${SITE.brand}`,
       mainEntity: { "@id": `${SITE.url}/#josiah` },
     },
     {
@@ -59,14 +59,14 @@ const jsonLd = {
 };
 
 /**
- * Homepage. A server component end to end — zero client JavaScript ships for
+ * Homepage. A server component end to end â€” zero client JavaScript ships for
  * anything on this page except the nav's scroll sentinel.
  *
  * Order is the argument:
- *   hero       → what he does, in one sentence
- *   work       → proof, immediately, before any claim about himself
- *   principles → how he works, once the work has earned the attention
- *   craft      → what he can be hired for
+ *   hero       â†’ what he does, in one sentence
+ *   work       â†’ proof, immediately, before any claim about himself
+ *   principles â†’ how he works, once the work has earned the attention
+ *   craft      â†’ what he can be hired for
  *
  * Proof precedes personality deliberately. A visitor deciding whether to keep
  * reading wants evidence first; the biography only becomes interesting after
@@ -99,7 +99,7 @@ export default function HomePage() {
 
         <Link href="/portfolio" className={styles.more}>
           All work
-          <span className={styles.arrow} aria-hidden="true">→</span>
+          <span className={styles.arrow} aria-hidden="true">â†’</span>
         </Link>
       </Section>
 
@@ -121,11 +121,12 @@ export default function HomePage() {
 
       <Section
         eyebrow="Services"
-        title="What I can be hired to do."
-        lede="Seven things I build, every one of them held to the same standard."
+        title="What I can help you make."
+        lede="Four ways to work together, from a first idea to a stronger version of something already in use."
       >
         <Services />
       </Section>
     </>
   );
 }
+

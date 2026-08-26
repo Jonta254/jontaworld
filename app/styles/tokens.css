@@ -1,52 +1,52 @@
-/* ============================================================================
-   jontAWorld — design tokens
+﻿/* ============================================================================
+   jontAWorld â€” design tokens
    The single source of truth. Nothing outside this file hard-codes a colour,
    size, radius, shadow, duration or easing value.
 
    Every colour pair below was verified with a WCAG contrast calculation before
-   being written here — ratios are in the comments and in docs/design-system.md §3.
+   being written here â€” ratios are in the comments and in docs/design-system.md Â§3.
    ========================================================================== */
 
 :root {
-  /* ── Colour · light ─────────────────────────────────────────────────────
+  /* â”€â”€ Colour Â· light â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
      Warm neutrals (paper, graphite, ink) + a single copper accent.
      One accent only, so it always means something.                        */
   --paper:         #FBF9F6;
   --surface:       #FFFFFF;
   --sunken:        #F2EEE8;
 
-  --ink:           #17140F;  /* 17.48:1 on paper — AAA */
-  --body:          #3D372E;  /* 11.20:1 — AAA */
-  --muted:         #6B6459;  /*  5.56:1 — AA  */
-  --faint:         #7A7266;  /*  4.51:1 — AA  */
+  --ink:           #17140F;  /* 17.48:1 on paper â€” AAA */
+  --body:          #3D372E;  /* 11.20:1 â€” AAA */
+  --muted:         #6B6459;  /*  5.56:1 â€” AA  */
+  --faint:         #7A7266;  /*  4.51:1 â€” AA  */
 
-  --line:          #DED7CC;  /* decorative dividers only — not a UI boundary */
-  --line-strong:   #8C8478;  /*  3.51:1 — AA non-text; inputs, interactive edges */
+  --line:          #DED7CC;  /* decorative dividers only â€” not a UI boundary */
+  --line-strong:   #8C8478;  /*  3.51:1 â€” AA non-text; inputs, interactive edges */
 
-  --accent:        #9A4F1B;  /*  5.70:1 on paper — AA; also 5.70:1 for paper-on-accent */
+  --accent:        #9A4F1B;  /*  5.70:1 on paper â€” AA; also 5.70:1 for paper-on-accent */
   --accent-hover:  #7E3F14;  /*  8.05:1 on surface */
   --accent-wash:   #9A4F1B14;
 
-  /* Semantic — defined only where a real state exists (form validation).
+  /* Semantic â€” defined only where a real state exists (form validation).
      Verified: 6.26:1 on paper. */
   --danger:        #B42318;
 
   --focus:         var(--accent);
 
-  /* ── Elevation · light ─────────────────────────────────────────────────
+  /* â”€â”€ Elevation Â· light â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
      Low-opacity, never coloured. Most surfaces are defined by border,
-     not by shadow — --shadow-0 is the default.                            */
+     not by shadow â€” --shadow-0 is the default.                            */
   --shadow-0: none;
   --shadow-1: 0 1px 2px rgb(0 0 0 / .04), 0 2px 8px rgb(0 0 0 / .04);
   --shadow-2: 0 2px 4px rgb(0 0 0 / .05), 0 8px 24px rgb(0 0 0 / .07);
   --shadow-3: 0 8px 16px rgb(0 0 0 / .07), 0 24px 56px rgb(0 0 0 / .10);
 
-  /* ── Type ──────────────────────────────────────────────────────────────
+  /* â”€â”€ Type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
      Two families. The mono is a restricted third, used only where it
      carries information.                                                  */
-  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans:  var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-mono:  var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  --font-sans:  Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:  "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   --text-display: clamp(2.75rem, 6vw, 4.5rem);
   --text-h1:      clamp(2.25rem, 4vw, 3rem);
@@ -60,7 +60,7 @@
   --leading-tight: 1.08;
   --leading-snug:  1.25;
   --leading-base:  1.65;
-  --leading-loose: 1.75;  /* long-form reading columns — essay, blog, case-study prose */
+  --leading-loose: 1.75;  /* long-form reading columns â€” essay, blog, case-study prose */
 
   --tracking-tight: -0.02em;
   --tracking-base:   0;
@@ -68,7 +68,7 @@
 
   --measure: 68ch;
 
-  /* ── Space · 8px base ──────────────────────────────────────────────── */
+  /* â”€â”€ Space Â· 8px base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -81,7 +81,7 @@
   --space-10: 128px;
   --space-11: 160px;
 
-  /* ── Layout ────────────────────────────────────────────────────────── */
+  /* â”€â”€ Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --container-prose:   68ch;
   --container-content: 1120px;
   --container-wide:    1360px;
@@ -93,12 +93,12 @@
   --tap: 44px;
   --nudge: 3px;
 
-  /* ── Shape — two radii, nothing else ───────────────────────────────── */
+  /* â”€â”€ Shape â€” two radii, nothing else â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-full: 999px;
 
-  /* ── Motion ────────────────────────────────────────────────────────────
+  /* â”€â”€ Motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
      Ceiling is 400ms. One house curve for entrances.                      */
   --dur-instant: 100ms;
   --dur-fast:    160ms;
@@ -114,7 +114,7 @@
 @media (min-width: 768px)  { :root { --gutter: var(--space-7); } }
 @media (min-width: 1024px) { :root { --gutter: var(--space-8); } }
 
-/* ── Colour · dark ─────────────────────────────────────────────────────────
+/* â”€â”€ Colour Â· dark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    A genuinely equal mode, not an inversion. Shadows are near-useless on dark,
    so elevation is carried by --surface and --line instead.                 */
 @media (prefers-color-scheme: dark) {
@@ -123,15 +123,15 @@
     --surface:     #1A1713;
     --sunken:      #0C0A08;
 
-    --ink:         #F7F4EF;  /* 17.31:1 — AAA */
-    --body:        #D2CBC0;  /* 11.80:1 — AAA */
-    --muted:       #A69D90;  /*  7.10:1 — AAA */
-    --faint:       #9A9184;  /*  6.11:1 — AAA */
+    --ink:         #F7F4EF;  /* 17.31:1 â€” AAA */
+    --body:        #D2CBC0;  /* 11.80:1 â€” AAA */
+    --muted:       #A69D90;  /*  7.10:1 â€” AAA */
+    --faint:       #9A9184;  /*  6.11:1 â€” AAA */
 
     --line:        #2E2925;
-    --line-strong: #6F675E;  /*  3.42:1 — AA non-text */
+    --line-strong: #6F675E;  /*  3.42:1 â€” AA non-text */
 
-    --accent:       #E8925A; /*  7.86:1 — AAA */
+    --accent:       #E8925A; /*  7.86:1 â€” AAA */
     --accent-hover: #F2A870; /*  9.02:1 on surface */
     --accent-wash:  #E8925A1A;
 
@@ -145,7 +145,7 @@
   }
 }
 
-/* Explicit override — the theme toggle stamps data-theme on :root and must
+/* Explicit override â€” the theme toggle stamps data-theme on :root and must
    win over the media query in both directions. */
 :root[data-theme="dark"] {
   --paper:       #12100D;
@@ -170,7 +170,7 @@
   color-scheme: dark;
 }
 
-/* ── Reduced motion ────────────────────────────────────────────────────────
+/* â”€â”€ Reduced motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    A first-class design, not a fallback. Handled once here so no component can
    forget it: entrance transforms collapse to a short opacity fade and all
    continuous motion stops.                                                 */
@@ -189,3 +189,4 @@
     scroll-behavior: auto !important;
   }
 }
+

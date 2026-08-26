@@ -1,4 +1,4 @@
-.page {
+﻿.page {
   min-height: 100vh;
   background: var(--paper);
 }
@@ -21,7 +21,7 @@
   }
 }
 
-/* ── Intro ──────────────────────────────────────────────────────────────── */
+/* â”€â”€ Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .intro { display: flex; flex-direction: column; gap: var(--space-4); }
 
 .eyebrow {
@@ -111,7 +111,7 @@
 .copyBtn:hover { color: var(--ink); border-color: var(--ink); }
 .copyBtn[data-copied] { color: var(--accent); border-color: var(--accent); }
 
-/* ── Form ───────────────────────────────────────────────────────────────── */
+/* â”€â”€ Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .formWrap {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -185,7 +185,7 @@
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
 .submit:hover:not(:disabled) .arrow { transform: translateX(var(--nudge)); }
 
-/* ── Success ────────────────────────────────────────────────────────────── */
+/* â”€â”€ Success â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .success {
   display: flex;
   flex-direction: column;
@@ -214,3 +214,23 @@
   color: var(--muted);
   max-width: 40ch;
 }
+
+.contactTabs { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
+.contactTab { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: var(--space-3); align-items: center; min-height: 68px; padding: var(--space-3) var(--space-4); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); text-decoration: none; transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out); }
+.contactTab:hover { border-color: var(--accent); background: var(--accent-wash); transform: translateX(var(--nudge)); }
+.contactTab > svg { width: 20px; color: var(--accent); }
+.contactTab span { display: grid; gap: 2px; min-width: 0; }
+.contactTab strong { font-size: var(--text-sm); font-weight: 500; }
+.contactTab small { overflow: hidden; color: var(--muted); font: var(--text-xs)/1.4 var(--font-mono); text-overflow: ellipsis; white-space: nowrap; }
+.copyRow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-3) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font: var(--text-xs)/1.5 var(--font-mono); }
+.location { display: flex; align-items: center; gap: var(--space-2); color: var(--muted); font-size: var(--text-sm); }
+.location svg { width: 16px; color: var(--accent); }
+.formIntro { margin-bottom: var(--space-6); padding-bottom: var(--space-5); border-bottom: 1px solid var(--line); }
+.formIntro > p { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+.formIntro h2 { margin-top: var(--space-2); font-size: var(--text-h3); }
+.formIntro > span { display: block; margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }
+.submit svg, .gmailFallback svg { width: 17px; height: 17px; }
+.errorBox { display: grid; gap: var(--space-3); }
+.gmailFallback { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap); width: fit-content; color: var(--accent); font-size: var(--text-sm); text-decoration: none; border-bottom: 1px solid currentColor; }
+.reset { min-height: var(--tap); padding: 0; color: var(--accent); background: transparent; border: 0; border-bottom: 1px solid currentColor; cursor: pointer; }
+@media (max-width: 420px) { .grid { padding-top: var(--space-8); } .formWrap { padding: var(--space-5); } }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Site-wide facts and navigation.
  *
  * Single source for anything that appears in more than one place: name,
@@ -22,9 +22,9 @@ export const SITE = {
     "web and mobile apps, online stores, marketing sites, design systems, and brand identities",
   /** One line, plain, no metaphor. The signature headline. */
   positioning: "I design and build websites and apps, start to finish.",
-  /** Deliberately no city. See docs/design-system.md §11. */
+  /** Deliberately no city. See docs/design-system.md Â§11. */
   availability: "Available for new projects, working remotely",
-  email: "josiah@rawsignal.dev",
+  email: "jontaworld@gmail.com",
   url: "https://jontaworld.com",
 } as const;
 
@@ -40,3 +40,4 @@ export const SOCIAL = [
   { href: "https://github.com/Jonta254", label: "GitHub" },
   { href: "https://x.com/jontAWorld", label: "X" },
 ] as const;
+

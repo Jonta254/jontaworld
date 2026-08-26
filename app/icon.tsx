@@ -1,32 +1,15 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-/* Favicon — copper "J" monogram on ink, matching the site identity.
-   Token values inlined (Satori can't read CSS custom properties). */
 export default function Icon() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: 32,
-          height: 32,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#17140F",
-          borderRadius: 7,
-          color: "#E8925A",
-          fontFamily: "serif",
-          fontSize: 22,
-          fontWeight: 600,
-          paddingBottom: 2,
-        }}
-      >
-        J
-      </div>
+      <svg viewBox="0 0 32 32" width="32" height="32" style={{ background: "#17140F", borderRadius: 7 }}>
+        <path d="M10 9h9v10.3c0 4.2-2.3 6.7-6.2 6.7-2.3 0-4.2-1-5.3-2.7" fill="none" stroke="#FBF9F6" strokeWidth="2.35" strokeLinecap="square" />
+        <path d="M18.7 20.5 24 9l3.2 7.1M21.1 15.1h4.8" fill="none" stroke="#E8925A" strokeWidth="2" strokeLinecap="square" />
+      </svg>
     ),
     { ...size }
   );

@@ -1,46 +1,35 @@
-/**
- * A "now" page — what has my attention at the moment.
- *
- * Deliberately not a status feed and not dated. It exists to give a returning
- * visitor a reason to come back and to show a working mind, not to log activity.
- */
-
-export type NowGroup = {
+﻿export type NowGroup = {
   label: string;
+  intro: string;
   items: { title: string; note: string }[];
 };
 
 export const NOW: NowGroup[] = [
   {
     label: "Building",
+    intro: "Real products, improved one useful decision at a time.",
     items: [
-      { title: "This site", note: "Rebuilding it from first principles on a single design system." },
-      { title: "ElectraCore", note: "Extending the calculator set with the tools that come up most on site." },
-      { title: "A component library", note: "Carving the shared pieces out of real project work rather than a blank Figma file." },
-    ],
-  },
-  {
-    label: "Reading",
-    items: [
-      { title: "Shop Class as Soulcraft", note: "Matthew Crawford. On the value of work you can see the result of." },
-      { title: "The Design of Everyday Things", note: "Norman. Still the clearest thinking on why things frustrate us." },
-      { title: "Thinking in Systems", note: "Donella Meadows. Loops, delays, and leverage points." },
+      { title: "ElectraCore", note: "Making electrical lessons, diagrams, and calculators clearer for the moment they are actually needed." },
+      { title: "ApprenticeLog", note: "Reducing the distance between doing the work and recording it properly." },
+      { title: "This portfolio", note: "Learning how much trust can come from better words, stronger proof, and quieter design." },
     ],
   },
   {
     label: "Learning",
+    intro: "I do not separate learning from the work. Each new thing changes the next thing I build.",
     items: [
-      { title: "Rust", note: "Slowly, and with the humility it demands." },
-      { title: "Motor control", note: "Variable frequency drives and field oriented control." },
-      { title: "Composition", note: "Deliberate framing, not just pointing the lens." },
+      { title: "From people", note: "A question, a hesitation, or the way someone uses a screen often teaches more than a long report." },
+      { title: "From the trade", note: "Electrical work keeps teaching me about safety, sequence, accuracy, and making decisions that hold up." },
+      { title: "From the code", note: "Every bug is a lesson in assumptions. Every refactor is a lesson in making the next change easier." },
     ],
   },
   {
-    label: "Thinking about",
+    label: "Noticing",
+    intro: "Every minute, something small can become a useful lesson if I pay attention.",
     items: [
-      { title: "Generalists in specialist worlds", note: "The case for breadth is stronger than most will admit." },
-      { title: "Physical vs digital making", note: "Why they need each other, and always have." },
-      { title: "Durability as a design principle", note: "What gets built to last, and exactly why." },
+      { title: "Why simple work feels difficult", note: "The clearest interface usually has the most thinking hidden behind it." },
+      { title: "Where people pause", note: "Confusion often appears before anyone has the words to explain it." },
+      { title: "What lasts", note: "Good systems, good tools, and good relationships all leave room for change." },
     ],
   },
 ];

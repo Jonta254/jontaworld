@@ -1,9 +1,9 @@
-# jontAWorld
+﻿# jontAWorld
 
 A design and engineering portfolio for Josiah. The site presents shipped digital products, detailed case studies, interface studies, and writing about the overlap between electrical work, software architecture, and visual design.
 
 **Live site:** [jontaworld.com](https://jontaworld.com)
-**Contact:** [josiah@rawsignal.dev](mailto:josiah@rawsignal.dev)
+**Contact:** [jontaworld@gmail.com](mailto:jontaworld@gmail.com)
 
 ## What the site demonstrates
 
@@ -61,7 +61,7 @@ Copy `.env.example` to `.env.local` and provide server-side values:
 
 ```bash
 RESEND_API_KEY=re_replace_me
-CONTACT_EMAIL=josiah@rawsignal.dev
+CONTACT_EMAIL=jontaworld@gmail.com
 CONTACT_FROM_EMAIL=jontAWorld Contact <hello@rawsignal.dev>
 ```
 
@@ -105,3 +105,4 @@ The project is designed for Vercel. Production requires the three contact enviro
 ## License
 
 The source is publicly visible as portfolio evidence. No reuse license is currently granted. All written content, visual identity, and generated editorial artwork remain reserved unless permission is provided explicitly.
+

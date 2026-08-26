@@ -1,12 +1,11 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Josiah. I design and build websites and apps, start to finish.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/* Share card. Mirrors the site's actual identity — warm paper, one copper
-   accent, editorial serif — rather than the retired neon look. Token values
+/* Share card. Mirrors the site's actual identity â€” warm paper, one copper
+   accent, editorial serif â€” rather than the retired neon look. Token values
    are inlined because Satori (next/og) can't read CSS custom properties.
    Kept in sync with app/styles/tokens.css by hand. */
 const PAPER = "#FBF9F6";
@@ -31,7 +30,8 @@ export default function OgImage() {
         }}
       >
         {/* Wordmark */}
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <div style={{ width: 52, height: 52, borderRadius: 11, background: INK, color: ACCENT, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, fontWeight: 600, letterSpacing: -2 }}>JA</div>
           <div style={{ display: "flex", fontSize: 32, color: INK, fontFamily: "serif" }}>
             Josiah
           </div>
@@ -99,3 +99,4 @@ export default function OgImage() {
     size
   );
 }
+
