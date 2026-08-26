@@ -1,4 +1,4 @@
-﻿/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 
 // Fast Refresh / Turbopack use eval() in development only. Production ships no
 // eval, so 'unsafe-eval' is scoped to dev instead of shipped to every visitor.
@@ -9,8 +9,8 @@ const csp = [
   // 'unsafe-inline' stays: a fully static App Router site injects inline
   // bootstrap/style with no nonce available (nonces require dynamic rendering).
   // 'unsafe-eval' is dev-only. Vercel Analytics loads from va.vercel-scripts.com.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
-  // Fonts are self-hosted by next/font at build time â€” no request ever reaches
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com https://static.cloudflareinsights.com`,
+  // Fonts are self-hosted by next/font at build time, so no request ever reaches
   // Google, so fonts.googleapis.com / fonts.gstatic.com are removed.
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
