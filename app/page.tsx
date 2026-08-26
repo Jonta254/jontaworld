@@ -7,6 +7,7 @@ import { FlagshipCard, SupportingGrid } from "./components/showcase/ProjectShowc
 import { FLAGSHIPS, SUPPORTING, PROJECTS } from "@/content/projects";
 import { PRINCIPLES } from "@/content/sequence";
 import { SITE, SOCIAL } from "@/content/site";
+import { SERVICES } from "@/content/services";
 import styles from "./home.module.css";
 
 /* Person + WebSite structured data. Drives the name-search result and the
@@ -51,12 +52,44 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE.url}/#website`,
-      name: `${SITE.name} ${SITE.brand}`,
+      name: SITE.brand,
+      alternateName: [`${SITE.name} ${SITE.brand}`, SITE.name],
       url: SITE.url,
-      publisher: { "@id": `${SITE.url}/#josiah` },
+      publisher: { "@id": `${SITE.url}/#business` },
     },
-  ],
-};
+    {
+      "@type": ["Organization", "OnlineBusiness"],
+      "@id": `${SITE.url}/#business`,
+      name: SITE.brand,
+      alternateName: `${SITE.name} ${SITE.brand}`,
+      url: SITE.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}/icon.png`,
+        contentUrl: `${SITE.url}/icon.png`,
+        width: 512,
+        height: 512,
+        caption: `${SITE.brand} JA logo`,
+      },
+      image: `${SITE.url}/opengraph-image`,
+      email: `mailto:${SITE.email}`,
+      founder: { "@id": `${SITE.url}/#josiah` },
+      sameAs: SOCIAL.map((social) => social.href),
+      slogan: SITE.positioning,
+      description: `${SITE.role} offering ${SITE.services}.`,
+      areaServed: "Worldwide",
+      makesOffer: SERVICES.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+          provider: { "@id": `${SITE.url}/#business` },
+          areaServed: "Worldwide",
+        },
+      })),
+    },
+  ],};
 
 /**
  * Homepage. A server component end to end : zero client JavaScript ships for

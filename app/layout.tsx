@@ -8,11 +8,11 @@ import { SITE } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | Developer / ${SITE.brand}`,
+    default: `${SITE.name} — Web & App Designer and Developer | ${SITE.brand}`,
     // The pipe is the conventional title-tag separator, not prose punctuation.
     template: `%s | ${SITE.name} ${SITE.brand}`,
   },
-  description: `${SITE.role}. I design and build complete digital products: ${SITE.services}. Every project shown is live and open to anyone.`,
+  description: `I design and build websites, apps, online stores and digital products from strategy to launch. View live work and start a project with ${SITE.name}.`,
   keywords: [
     "website designer",
     "web developer",
@@ -43,10 +43,24 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
   icons: {
-    icon: [{ url: "/icon", type: "image/png", sizes: "32x32" }],
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icons/jontaworld-48.png", type: "image/png", sizes: "48x48" },
+    ],
+    shortcut: [{ url: "/icons/jontaworld-48.png", type: "image/png", sizes: "48x48" }],
     apple: [{ url: "/icons/jontaworld-180.png", sizes: "180x180", type: "image/png" }],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   // Home canonical. Each page overrides with its own path, so a URL reached via
   // query strings or an alternate host consolidates to one address.
   alternates: { canonical: "/" },

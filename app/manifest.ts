@@ -10,6 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#FBF9F6",
     theme_color: "#17140F",
     icons: [
+      { src: "/icons/jontaworld-48.png", sizes: "48x48", type: "image/png" },
       { src: "/icons/jontaworld-192.png", sizes: "192x192", type: "image/png" },
       { src: "/icons/jontaworld-512.png", sizes: "512x512", type: "image/png" },
     ],
