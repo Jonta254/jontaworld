@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "../components/site/PageHeader";
+import LabStateDemo from "./LabStateDemo";
 import styles from "./lab.module.css";
 
 export const metadata: Metadata = {
@@ -81,37 +82,39 @@ export default function LabPage() {
       <PageHeader
         eyebrow="Lab"
         title="Code, systems, and interface studies."
-        lede="Real components, real code, responsive studies, and engineering decisions from the products I build."
+        lede="A close look at the product logic, interface systems, and verification work behind what I build."
       />
 
       <nav className={styles.index} aria-label="Lab contents">
         <span>Inside the Lab</span>
-        <ul><li>Components</li><li>Responsive systems</li><li>Application state</li><li>Local storage</li><li>Accessibility</li><li>Performance</li></ul>
+        <ul>
+          <li><a href="#product-logic">Product logic</a></li>
+          <li><a href="#responsive-systems">Responsive systems</a></li>
+          <li><a href="#defensive-data">Defensive data</a></li>
+          <li><a href="#accessible-states">Accessible states</a></li>
+          <li><a href="#verification">Verification</a></li>
+        </ul>
       </nav>
 
+      <section className={styles.proof} aria-label="Lab proof summary">
+        <div><strong>5</strong><span>shipped products examined</span></div>
+        <div><strong>3</strong><span>real code paths explained</span></div>
+        <div><strong>1</strong><span>working state model to test</span></div>
+      </section>
+
       <main className={styles.grid}>
-        <article className={`${styles.panel} ${styles.featured}`}>
+        <article id="product-logic" className={`${styles.panel} ${styles.featured}`}>
           <div className={styles.headingRow}>
             <div><p className={styles.kind}>From ApprenticeLog · Code and result</p><h2>Approval is a state transition, not a badge.</h2></div>
             <span className={styles.status}>Production logic</span>
           </div>
           <div className={styles.split}>
             <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts">{transitionCode}</CodeBlock>
-            <div className={styles.output}>
-              <p className={styles.outputLabel}>Rendered behavior</p>
-              <div className={styles.entryCard}>
-                <div><span className={styles.entryRef}>ENTRY · AL-184</span><strong>Install final subcircuit</strong></div>
-                <span className={styles.approved}>Approved</span>
-              </div>
-              <div className={styles.transition} aria-label="Editing an approved entry returns it to submitted status">
-                <span>Edit saved</span><span aria-hidden="true">→</span><span>Approval withdrawn</span><span aria-hidden="true">→</span><span className={styles.submitted}>Submitted</span>
-              </div>
-              <p className={styles.note}>Editing approved work automatically invalidates the previous approval and preserves the audit history.</p>
-            </div>
+            <LabStateDemo />
           </div>
         </article>
 
-        <article className={`${styles.panel} ${styles.responsive}`}>
+        <article id="responsive-systems" className={`${styles.panel} ${styles.responsive}`}>
           <div className={styles.headingRow}>
             <div><p className={styles.kind}>From TrailDesk · Responsive system</p><h2>One product, two deliberate layouts.</h2></div>
             <span className={styles.status}>Interface study</span>
@@ -123,13 +126,13 @@ export default function LabPage() {
           <p className={styles.note}>The layout changes hierarchy rather than shrinking the desktop composition.</p>
         </article>
 
-        <article className={`${styles.panel} ${styles.storage}`}>
+        <article id="defensive-data" className={`${styles.panel} ${styles.storage}`}>
           <p className={styles.kind}>From DigiLearn · Engineering note</p><h2>Local progress is parsed defensively.</h2>
           <CodeBlock label="DigiLearn · lib/learning-storage.ts · excerpt">{progressCode}</CodeBlock>
           <p className={styles.note}>Versioned local storage learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
         </article>
 
-        <article className={`${styles.panel} ${styles.states}`}>
+        <article id="accessible-states" className={`${styles.panel} ${styles.states}`}>
           <p className={styles.kind}>From SafeSignal · Component states</p><h2>Safety states communicate without relying on colour.</h2>
           <div className={styles.stateStrip}>
             <div><span className={styles.stateMark}>01</span><strong>Normal</strong><small>24 min remaining</small></div>
@@ -155,8 +158,23 @@ export default function LabPage() {
         <aside className={`${styles.panel} ${styles.observation}`}>
           <p className={styles.kind}>From ElectraCore · Engineering observation</p>
           <blockquote>“The answer first, the reasoning underneath.”</blockquote>
-          <p>Mid-task users need the result now. Learners need the working one glance later. The same screen can serve both.</p>
+          <p>People in the middle of a task need the result now. Learners need the working one glance later. The same screen can serve both.</p>
         </aside>
+        <article id="verification" className={`${styles.panel} ${styles.verification}`}>
+          <div className={styles.headingRow}>
+            <div><p className={styles.kind}>Verification · This portfolio</p><h2>A feature is not finished when it only looks right.</h2></div>
+            <span className={styles.status}>Repeatable checks</span>
+          </div>
+          <div className={styles.checkGrid}>
+            <section><span>01</span><h3>Code</h3><p>Lint, TypeScript, and a production build catch structural failures before release.</p></section>
+            <section><span>02</span><h3>Routes</h3><p>Every internal route and every external project link is checked for a real response.</p></section>
+            <section><span>03</span><h3>Interface</h3><p>Phone and desktop viewports are checked for overflow, missing labels, small controls, and browser errors.</p></section>
+            <section><span>04</span><h3>Human use</h3><p>Keyboard focus, reduced motion, readable hierarchy, and status meaning are treated as product requirements.</p></section>
+          </div>
+          <div className={styles.commandRow} aria-label="Verification commands">
+            <code>npm run lint</code><code>npm run typecheck</code><code>npm run build</code><code>npm run check:links</code>
+          </div>
+        </article>
         <aside className={[styles.panel, styles.accessibility].join(" ")}>
           <p className={styles.kind}>From this portfolio · Accessibility</p>
           <h2>Keyboard first, motion optional.</h2>
