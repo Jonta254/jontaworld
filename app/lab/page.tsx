@@ -115,7 +115,7 @@ export default function LabPage() {
         <article id="product-logic" className={`${styles.panel} ${styles.featured}`}>
           <div className={styles.headingRow}>
             <div><p className={styles.kind}>From ApprenticeLog · Code and result</p><h2>Approval is a state transition, not a badge.</h2></div>
-            <span className={styles.status}>Production logic</span>
+            <span className={styles.status}>Shipped logic</span>
           </div>
           <div className={styles.split}>
             <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts">{transitionCode}</CodeBlock>
@@ -161,11 +161,19 @@ export default function LabPage() {
             <div><p className={styles.kind}>From ElectraCore · Code and result</p><h2>Technical content earns the screen.</h2></div>
             <span className={styles.status}>Live product</span>
           </div>
-          <div className={styles.browserStudy}>
-            <div className={styles.browserBar}><i /><i /><i /><span>electracore.vercel.app/calculate</span></div>
-            <Image src="/showcase/electracore-feature.webp" alt="ElectraCore electrical calculation tools rendered from the live application" width={1440} height={900} sizes="(min-width: 900px) 70vw, 100vw" />
+          <div className={styles.technicalViews}>
+            <figure className={styles.browserStudy}>
+              <div className={styles.browserBar}><i /><i /><i /><span>electracore.vercel.app/calculate</span></div>
+              <Image src="/showcase/electracore-feature.webp" alt="ElectraCore electrical calculation tools rendered from the live application" width={1440} height={900} sizes="(min-width: 900px) 43vw, 100vw" />
+              <figcaption>Eight calculators with local saved results</figcaption>
+            </figure>
+            <figure className={styles.browserStudy}>
+              <div className={styles.browserBar}><i /><i /><i /><span>electracore.vercel.app/design</span></div>
+              <Image src="/showcase/electracore-design.webp" alt="ElectraCore circuit designer rendered from the live application" width={1440} height={900} sizes="(min-width: 900px) 43vw, 100vw" />
+              <figcaption>Load to cable design workflow</figcaption>
+            </figure>
           </div>
-          <p className={styles.note}>Calculation and learning routes are shown as working tools, not dressed up as a generic course dashboard.</p>
+          <p className={styles.note}>The calculator, designer, lesson diagrams, checks, and progress state are separate working systems. Each screen states its assumptions and review limits.</p>
           <EvidenceLinks live="https://electracore.vercel.app" source="https://github.com/Jonta254/electracore" />
         </article>
 

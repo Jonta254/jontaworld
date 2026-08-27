@@ -73,6 +73,12 @@ export type Project = {
     /** Describes the feature screenshot. */
     featureAlt: string;
   };
+  /** Optional real product screens that show meaningful depth beyond the lead view. */
+  depth?: {
+    src: string;
+    alt: string;
+    label: string;
+  }[];
   /** Present on flagships. Drives the /portfolio/[slug] case study. */
   study?: CaseStudy;
 };
@@ -82,13 +88,13 @@ export const PROJECTS: Project[] = [
     slug: "apprenticelog",
     name: "ApprenticeLog",
     outcome:
-      "Turns a quick voice note into a compliant logbook entry, so apprentices stop losing evenings to paperwork.",
+      "Keeps apprenticeship work records, competency links, review states, and exports together in one clear local workspace.",
     summary:
-      "A logbook app built for New Zealand trade apprentices. Record what you did out loud, and it becomes a structured entry in the format BCITO expects. Works offline, because job sites do not have signal.",
+      "A practical apprenticeship record preview for New Zealand trades. Entries, competencies, review history, and backups stay in the current browser. No account or cloud sync is active.",
     url: "https://apprentice-log-xi.vercel.app",
     displayUrl: "apprentice-log-xi.vercel.app",
     repo: "https://github.com/Jonta254/apprentice-log",
-    stack: ["Next.js", "TypeScript", "Voice to text", "Offline first", "PWA"],
+    stack: ["Next.js", "TypeScript", "Local browser storage", "Export and restore"],
     tier: "flagship",
     shot: {
       desktop: "/showcase/apprenticelog-desktop.webp",
@@ -100,60 +106,60 @@ export const PROJECTS: Project[] = [
     study: {
       role: "Sole designer and engineer. Product definition, interface, and build.",
       problem:
-        "New Zealand trade apprentices have to keep a logbook for BCITO, and the logging is universally disliked. It happens at the end of a long day, from memory, in a format that fights the person filling it in. The work itself is done well. The record of it is done badly, late, or not at all, and a thin logbook can hold up qualification.",
+        "Apprenticeship records are easy to postpone. A useful log needs enough structure for work details, competency links, evidence, and review history without turning each entry into a long administrative task.",
       objective:
-        "Make the record as easy to produce as the work is hard. An apprentice should be able to log a day in under a minute, in a form BCITO accepts as it stands, without a desk, a signal, or a second attempt.",
+        "Make everyday record keeping clear on a phone and useful during review. Keep the current preview honest about what is stored locally and what still needs a configured production service.",
       research:
-        "The research was observation rather than a survey. I looked at how the log actually gets kept: hands full through the day, memory fading by evening, and an official format written for the assessor rather than the apprentice. The existing options were generic note apps that produce nothing submittable, or the paper process the app is meant to replace. The gap was a tool shaped like the job.",
+        "I mapped the information an apprentice, supervisor, and assessor need at different points in the record. That led to separate entry, competency, review, report, and backup views instead of one oversized form.",
       decisions: [
         {
           kind: "Design",
-          step: "One button, because hands are busy",
+          step: "Start with the next useful action",
           detail:
-            "The core interaction is a single record button. You say what you did and it becomes a structured entry. Typing on a phone with dusty hands at the end of a shift is the failure case the whole interface is designed around, so the happy path avoids the keyboard entirely.",
+            "The dashboard shows recorded time, review status, and a direct route to a new entry. It keeps the first screen about progress and the next task rather than filling it with administration.",
         },
         {
           kind: "Design",
-          step: "Compliant by construction",
+          step: "Make review state visible",
           detail:
-            "Entries map to the BCITO structure directly, so the output is something an apprentice can submit as it stands rather than raw text they still have to reformat. The compliance is the product, not a feature bolted on beside it.",
+            "Draft, submitted, returned, and approved records use text labels as well as colour. The history stays attached to the entry so a change can be understood later.",
         },
         {
           kind: "Engineering",
-          step: "Offline as the default, not a fallback",
+          step: "Treat local storage as a real constraint",
           detail:
-            "Everything works with no connection and syncs when one returns. A tool that needs a bar of signal on a construction site is a tool that gets abandoned in the first week, so local first storage came before anything that talked to a server.",
+            "The open preview stores records in the current browser. Export, restore, validation, and safe migration paths are part of the product because local data can disappear when browser storage is cleared.",
         },
         {
           kind: "Engineering",
-          step: "Installable, so it lives on the home screen",
+          step: "Separate preview and server capabilities",
           detail:
-            "Built as a progressive web app so it installs like a native app without an app store gate, launches straight to the record screen, and updates itself. The lowest friction between wanting to log and having logged.",
+            "Account, organization, evidence upload, and migration routes check their configuration before claiming to work. The public interface says clearly when those services are unavailable.",
         },
       ],
       challenges:
-        "The honest constraint is compliance I do not own. BCITO can change its format, and the product has to track that or it stops being useful the day it drifts. I traded a faster first release for an entry structure kept in one place, so a format change is an edit rather than a rebuild. The other trade was scope: voice capture that is genuinely reliable mattered more than a wide feature list, so the feature list stayed short on purpose.",
+        "The main tradeoff is usefulness without pretending the preview is a connected apprenticeship service. Local records make the workflow testable now, but they do not provide shared access, notifications, secure cloud evidence, or an independent audit trail.",
       turningPoint:
-        "It worked the moment the compliance format stopped being a feature and became the product itself. After that, every other decision got simpler.",
+        "The product became more credible when the storage limits moved into the interface instead of being left in technical notes.",
       solution:
-        "A voice to logbook app, free for NZ apprentices, spanning construction, carpentry, electrical, plumbing and automotive. Record a day out loud, review the structured entry, and keep a running log that works with no signal and installs to the home screen.",
+        "A responsive apprenticeship workspace for entries, competencies, review states, reports, backups, and an explicit future migration path. The public preview works locally and labels every connected capability that is not active.",
       results:
-        "Live and open to anyone, running as a real deployment you can put through a day. The full loop, from a spoken note to a structured entry, runs in the browser right now. I am not going to claim adoption numbers I cannot show you. Open it and try it for yourself.",
+        "The current deployment lets anyone create and review sample apprenticeship records in their own browser, export a backup, restore it, and inspect the full workflow without creating an account.",
       lessons:
-        "The build was the easy part. The lasting lesson was to design around the constraint I do not control from the very start. Keeping the compliance format editable without a redeploy should have been the first decision, not a correction. I learned that the slightly harder way, and it changed how I scope anything that depends on someone else's rules.",
+        "Clear limits build more trust than an ambitious feature list. The next production step is not more interface. It is a configured identity, database, storage, and notification service with the same honesty at every failure state.",
     },
   },
   {
     slug: "electracore",
     name: "ElectraCore",
     outcome:
-      "The everyday calculations an electrician reaches for on site, from voltage drop to cable sizing to load analysis, gathered into one place.",
+      "Electrical calculations, circuit design, reference guides, and structured lessons gathered into one practical learning workspace.",
     summary:
-      "Circuit calculators, wiring guides, and learning paths for students, engineers, apprentices and trade workers. Built from the job up, by someone who has done the job.",
+      "A technical learning preview for students, apprentices, engineers, and trade workers, with eight calculators, a circuit designer, structured lessons, diagrams, knowledge checks, and saved local progress.",
     url: "https://electracore.vercel.app",
     displayUrl: "electracore.vercel.app",
     repo: "https://github.com/Jonta254/electracore",
-    stack: ["Next.js", "TypeScript", "React", "Calculators"],
+    stack: ["Next.js", "TypeScript", "React", "SVG diagrams", "Local progress"],
     tier: "flagship",
     shot: {
       desktop: "/showcase/electracore-desktop.webp",
@@ -162,12 +168,24 @@ export const PROJECTS: Project[] = [
       alt: "ElectraCore landing page for an electrical calculators and guides platform, built from real site experience.",
       featureAlt: "ElectraCore electrical calculators route showing real Ohm's law, power, voltage-drop and cable-sizing tools with saved calculations.",
     },
+    depth: [
+      {
+        src: "/showcase/electracore-design.webp",
+        label: "Circuit designer",
+        alt: "ElectraCore circuit designer showing a structured path from load details to a checked cable design.",
+      },
+      {
+        src: "/showcase/electracore-learning.webp",
+        label: "Lesson and progress system",
+        alt: "ElectraCore Electrical Fundamentals course with lesson modules, progress controls, diagrams, exercises, and knowledge checks.",
+      },
+    ],
     study: {
       role: "Sole designer and engineer. Scope, interface, calculators, and build.",
       problem:
         "The reference tools an electrician needs are scattered. One calculator lives on a forum, a wiring chart in a PDF, the theory in a textbook that assumes you are sitting an exam rather than standing in front of a panel. Nothing pulled the everyday calculations and guides into one place written for the job instead of the classroom.",
       objective:
-        "One place an electrician, an apprentice, or a student can reach for the calculation they need and trust the answer. Fast enough to use mid job, clear enough to learn from, and correct enough that someone would rely on it with a meter in the other hand.",
+        "One place an electrician, an apprentice, or a student can reach for the calculation they need and trust the answer. Fast enough to use mid job, clear enough to learn from, and transparent enough that someone can inspect the method, assumptions, source notes, and review status before using it.",
       research:
         "I did not need to invent the requirements. I have done the trade. The research was cataloguing the calculations I actually reach for and the guides I wished existed, then checking each against how it comes up on site. The comparison set was the scattered tools already out there, which told me the gap was not another single calculator but a coherent set written for the work.",
       decisions: [
@@ -232,19 +250,19 @@ export const PROJECTS: Project[] = [
     slug: "safesignal",
     name: "SafeSignal",
     outcome:
-      "Shares your live location with the people who would need it, and raises the alarm if you stop moving.",
+      "Runs timed lone worker check ins, captures optional location evidence, and keeps a clear session record on the current device.",
     summary:
-      "Real time location sharing with accident sensing. Built for lone workers and anyone heading out alone.",
+      "An on device lone working preview with timed check ins, optional GPS captures, local records, and clearly labelled sample supervisor states. It does not monitor, message, call, or dispatch help.",
     url: "https://safesignal-beta.vercel.app",
     displayUrl: "safesignal-beta.vercel.app",
     repo: "https://github.com/Jonta254/safesignal",
-    stack: ["Next.js", "Geolocation", "Real time"],
+    stack: ["Next.js", "TypeScript", "Geolocation", "Local browser storage"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/safesignal-desktop.webp",
       feature: "/showcase/safesignal-feature.webp",
       mobile: "/showcase/safesignal-mobile.webp",
-      alt: "SafeSignal landing page showing live location sharing and accident detection.",
+      alt: "SafeSignal landing page explaining timed personal check ins and the limits of its on device preview.",
       featureAlt: "SafeSignal supervisor dashboard preview showing active check-ins, due-soon and overdue states, and an illustrative incident record clearly labelled as sample data.",
     },
   },

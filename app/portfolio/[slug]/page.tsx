@@ -159,6 +159,27 @@ export default async function ProjectPage({
         />
       </section>
 
+      {project.depth?.length ? (
+        <section className={styles.depth} aria-labelledby="product-depth-title">
+          <div className={styles.depthHeading}>
+            <p className={styles.closerLabel}>Inside the product</p>
+            <h2 id="product-depth-title">More than a landing screen.</h2>
+            <p>Real working views from the current product, included to show the system behind the first impression.</p>
+          </div>
+          <div className={styles.depthGrid}>
+            {project.depth.map((view) => (
+              <figure className={styles.depthItem} key={view.src}>
+                <BrowserFrame
+                  src={view.src}
+                  alt={view.alt}
+                  url={project.displayUrl}
+                />
+                <figcaption>{view.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
       {/*  Case study body
           Composed as chapters, not identical blocks. A full-width lead opens
           it; two-column notes carry the middle; a pulled turning point marks

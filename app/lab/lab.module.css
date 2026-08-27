@@ -37,6 +37,9 @@
 .details { margin-top: var(--space-4); }
 .details summary { min-height: var(--tap); display: flex; align-items: center; cursor: pointer; color: var(--accent); font-size: var(--text-sm); }
 .details .codeFigure { margin-top: var(--space-3); }
+.technicalViews { display: grid; gap: var(--space-5); }
+@media (min-width: 1100px) { .technicalViews { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.browserStudy figcaption { padding: var(--space-3); border-top: 1px solid var(--line); color: var(--muted); font: var(--text-xs)/1.5 var(--font-mono); }
 .browserStudy { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-1); }
 .browserBar { display: flex; align-items: center; gap: 6px; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--line); background: var(--sunken); }
 .browserBar i { width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); opacity: .5; }
