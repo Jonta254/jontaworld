@@ -35,7 +35,7 @@ A design and engineering portfolio for Josiah. The site presents shipped digital
 - React 19 and TypeScript
 - CSS Modules and a token-based design system
 - `next/image` and `next/font`
-- Web3Forms for contact delivery
+- FormSubmit for contact delivery
 - Vercel Analytics
 - GitHub Actions and Lighthouse CI
 
@@ -57,7 +57,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Contact delivery
 
-The contact form sends through the free Web3Forms browser API. Its access key is a public form identifier by design, so no private runtime credential is required. The interface stays on the page and reports success only when Web3Forms accepts the message.
+The contact form sends through the free FormSubmit AJAX endpoint. No account or private runtime credential is required. The interface stays on the page and reports success only when FormSubmit accepts the message.
 
 ## Quality checks
 

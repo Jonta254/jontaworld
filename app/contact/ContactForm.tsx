@@ -4,11 +4,9 @@ import { FormEvent, useRef, useState } from "react";
 import { Send } from "lucide-react";
 import styles from "./contact.module.css";
 
-const WEB3FORMS_ACCESS_KEY = "08c185dd-0178-49dd-93c0-52582b3e26bc";
-
 type FormState = "idle" | "sending" | "sent" | "error";
 
-type Web3FormsResult = {
+type FormSubmitResult = {
   success?: boolean;
   message?: string;
 };
@@ -34,21 +32,23 @@ export default function ContactForm() {
     setStatusMessage("");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/jontaworld@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: String(formData.projectType || "General enquiry") + ": message from " + String(formData.name),
-          from_name: "jontAWorld Website",
+          _subject: String(formData.projectType || "General enquiry") + ": message from " + String(formData.name),
+          _template: "table",
           name: formData.name,
           email: formData.email,
           enquiry: formData.projectType || "General enquiry",
+          _captcha: "false",
+          _honey: "",
+          _url: "https://jontaworld.com/contact",
           message: formData.message,
           botcheck: "",
         }),
       });
-      const result = (await response.json()) as Web3FormsResult;
+      const result = (await response.json()) as FormSubmitResult;
 
       if (!response.ok || !result.success) {
         throw new Error(result.message || "Your message could not be sent.");
