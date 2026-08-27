@@ -63,6 +63,12 @@ const nextConfig = {
         destination: 'https://jontaworld.com/:path*',
         permanent: true,
       },
+      {
+        source: '/:path*',
+        has: [{ type: 'header', key: 'cf-visitor', value: '.*http.*' }],
+        destination: 'https://jontaworld.com/:path*',
+        permanent: true,
+      },
     ];
   },
   async headers() {
