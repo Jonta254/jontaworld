@@ -55,15 +55,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Environment
+## Contact delivery
 
-Copy `.env.example` to `.env.local` and provide the free Web3Forms access key:
-
-```bash
-WEB3FORMS_ACCESS_KEY=replace_me
-```
-
-The contact endpoint validates each request before forwarding it to Web3Forms. If delivery is not configured or the provider rejects the request, the interface tells the visitor to use the direct email address. It never reports a message as sent when delivery did not occur.
+The contact form sends through the free Web3Forms browser API. Its access key is a public form identifier by design, so no private runtime credential is required. The interface stays on the page and reports success only when Web3Forms accepts the message.
 
 ## Quality checks
 
@@ -98,7 +92,7 @@ Writing artwork lives in `public/writing/`. Production pages reference optimized
 
 ## Deployment
 
-The project is designed for Vercel. Production requires the contact access key above. The canonical production domain is `jontaworld.com`, served through Cloudflare and connected to the deployment origin.
+The project is designed for Vercel. The canonical production domain is `jontaworld.com`, served through Cloudflare and connected to the deployment origin.
 
 ## License
 

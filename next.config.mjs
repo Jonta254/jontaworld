@@ -18,7 +18,7 @@ const csp = [
   "media-src 'self' blob: data:",
   // Vercel Analytics beacons to same-origin /_vercel/insights. In dev, Turbopack
   // Fast Refresh needs its websocket, so ws: is allowed only there.
-  `connect-src 'self' https://va.vercel-scripts.com${isDev ? ' ws:' : ''}`,
+  `connect-src 'self' https://va.vercel-scripts.com https://api.web3forms.com${isDev ? ' ws:' : ''}`,
   "worker-src 'self' blob:",
   "base-uri 'self'",
   "form-action 'self'",

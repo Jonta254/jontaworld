@@ -4,7 +4,14 @@ import { FormEvent, useRef, useState } from "react";
 import { Send } from "lucide-react";
 import styles from "./contact.module.css";
 
+const WEB3FORMS_ACCESS_KEY = "08c185dd-0178-49dd-93c0-52582b3e26bc";
+
 type FormState = "idle" | "sending" | "sent" | "error";
+
+type Web3FormsResult = {
+  success?: boolean;
+  message?: string;
+};
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -15,18 +22,35 @@ export default function ContactForm() {
     event.preventDefault();
     if (state === "sending") return;
 
+    const formData = Object.fromEntries(new FormData(event.currentTarget));
+    if (formData.website) {
+      formRef.current?.reset();
+      setState("sent");
+      setStatusMessage("Message sent. Thank you. I will reply by email.");
+      return;
+    }
+
     setState("sending");
     setStatusMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: String(formData.projectType || "General enquiry") + ": message from " + String(formData.name),
+          from_name: "jontAWorld Website",
+          name: formData.name,
+          email: formData.email,
+          enquiry: formData.projectType || "General enquiry",
+          message: formData.message,
+          botcheck: "",
+        }),
       });
-      const result = (await response.json()) as { message?: string };
+      const result = (await response.json()) as Web3FormsResult;
 
-      if (!response.ok) {
+      if (!response.ok || !result.success) {
         throw new Error(result.message || "Your message could not be sent.");
       }
 
