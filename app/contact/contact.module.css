@@ -4,6 +4,26 @@
 .eyebrow, .label { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 .intro h1 { max-width: 13ch; margin-top: var(--space-4); font-size: var(--text-display); }
 .intro > p:last-child { max-width: 48ch; margin-top: var(--space-5); color: var(--muted); font-size: var(--text-lg); line-height: var(--leading-base); }
+.formSection { margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); border: 1px solid var(--line); background: var(--surface); }
+.formIntro h2 { margin-top: var(--space-2); font-size: var(--text-h2); }
+.formIntro > p:last-child { max-width: 48ch; margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }
+.form { position: relative; display: grid; gap: var(--space-4); margin-top: var(--space-6); }
+.formRow { display: grid; gap: var(--space-4); }
+.form label { display: grid; gap: var(--space-2); color: var(--body); font-size: var(--text-sm); }
+.form input, .form select, .form textarea { width: 100%; min-height: var(--tap); padding: 12px 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); outline: none; }
+.form textarea { min-height: 164px; resize: vertical; line-height: var(--leading-base); }
+.form input:focus-visible, .form select:focus-visible, .form textarea:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-wash); }
+.form input::placeholder, .form textarea::placeholder { color: var(--faint); }
+.formFooter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); }
+.formFooter button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--tap); padding: 0 var(--space-5); color: var(--paper); background: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius-sm); cursor: pointer; }
+.formFooter button:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+.formFooter button:disabled { cursor: wait; opacity: .7; }
+.formFooter svg { width: 17px; }
+.formNote { color: var(--muted); font-size: var(--text-xs); }
+.formStatus { min-height: 1.5em; color: var(--muted); font-size: var(--text-sm); }
+.formStatus[data-state="sent"] { color: #34744a; }
+.formStatus[data-state="error"] { color: #a33d2f; }
+.honeypot { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .emailBlock { display: grid; gap: var(--space-5); align-items: end; margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); background: var(--surface); border: 1px solid var(--line); }
 .emailBlock h2 { margin-top: var(--space-2); overflow-wrap: anywhere; font-size: var(--text-h2); }
 .emailBlock > div > p:last-child { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); }
@@ -23,7 +43,7 @@
 .actions .primary svg, .actions .primary small { color: inherit; }
 .availability { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-6); color: var(--muted); font-size: var(--text-sm); }
 .availability svg { width: 16px; color: var(--accent); }
-@media (min-width: 640px) { .emailBlock { grid-template-columns: minmax(0, 1fr) auto; } .actions { grid-template-columns: repeat(3, minmax(0, 1fr)); } .actions a { align-content: center; min-height: 108px; } }
+@media (min-width: 640px) { .formRow { grid-template-columns: repeat(2, minmax(0, 1fr)); } .emailBlock { grid-template-columns: minmax(0, 1fr) auto; } .actions { grid-template-columns: repeat(3, minmax(0, 1fr)); } .actions a { align-content: center; min-height: 108px; } }
 .brief { margin-top: var(--space-7); padding-top: var(--space-6); border-top: 1px solid var(--line); }
 .brief h2 { margin-top: var(--space-2); font-size: var(--text-h3); }
 .brief ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2) var(--space-5); margin-top: var(--space-4); }

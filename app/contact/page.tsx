@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Code2, Copy, Mail, MapPin, Send } from "lucide-react";
 import { SITE, SOCIAL } from "@/content/site";
 import CopyEmail from "./CopyEmail";
+import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
@@ -15,12 +16,14 @@ export default function ContactPage() {
   const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(SITE.email) + "&su=" + subject;
   return (
     <div className={styles.page}>
-      <main className={styles.shell}>
+      <div className={styles.shell}>
         <header className={styles.intro}>
           <p className={styles.eyebrow}>Contact</p>
           <h1>Let us talk about what you are building.</h1>
           <p>Share the problem, the stage you are at, and what a good result would look like. A rough idea is enough to begin.</p>
         </header>
+
+        <ContactForm />
 
         <section className={styles.emailBlock} aria-labelledby="email-title">
           <div>
@@ -49,7 +52,7 @@ export default function ContactPage() {
           <p>If some of that is still unclear, send the problem as you understand it. We can shape the rest together.</p>
         </section>
         <p className={styles.availability}><MapPin aria-hidden="true" />Available for selected new projects and remote roles.</p>
-      </main>
+      </div>
     </div>
   );
 }
