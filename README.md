@@ -1,4 +1,4 @@
-﻿# jontAWorld
+# jontAWorld
 
 A design and engineering portfolio for Josiah. The site presents shipped digital products, detailed case studies, interface studies, and writing about the overlap between electrical work, software architecture, and visual design.
 
@@ -35,7 +35,7 @@ A design and engineering portfolio for Josiah. The site presents shipped digital
 - React 19 and TypeScript
 - CSS Modules and a token-based design system
 - `next/image` and `next/font`
-- Resend for contact delivery
+- Web3Forms for contact delivery
 - Vercel Analytics
 - GitHub Actions and Lighthouse CI
 
@@ -57,15 +57,13 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and provide server-side values:
+Copy `.env.example` to `.env.local` and provide the free Web3Forms access key:
 
 ```bash
-RESEND_API_KEY=re_replace_me
-CONTACT_EMAIL=jontaworld@gmail.com
-CONTACT_FROM_EMAIL=jontAWorld Contact <hello@rawsignal.dev>
+WEB3FORMS_ACCESS_KEY=replace_me
 ```
 
-`CONTACT_FROM_EMAIL` must use a sender identity verified in Resend. If delivery is not configured or Resend rejects the request, the API returns an error and the interface tells the visitor to use the direct email address. It never reports a message as sent when delivery did not occur.
+The contact endpoint validates each request before forwarding it to Web3Forms. If delivery is not configured or the provider rejects the request, the interface tells the visitor to use the direct email address. It never reports a message as sent when delivery did not occur.
 
 ## Quality checks
 
@@ -100,7 +98,7 @@ Writing artwork lives in `public/writing/`. Production pages reference optimized
 
 ## Deployment
 
-The project is designed for Vercel. Production requires the three contact environment variables above. The canonical production domain is `jontaworld.com`, served through Cloudflare and connected to the deployment origin.
+The project is designed for Vercel. Production requires the contact access key above. The canonical production domain is `jontaworld.com`, served through Cloudflare and connected to the deployment origin.
 
 ## License
 

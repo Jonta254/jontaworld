@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { SITE } from "@/content/site";
 
 const MAX_BODY_BYTES = 12_000;
@@ -14,20 +13,15 @@ type ContactBody = {
   website?: unknown;
 };
 
+type Web3FormsResult = {
+  success?: boolean;
+  message?: string;
+};
+
 const attempts = new Map<string, number[]>();
 
 function text(value: unknown, max: number) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
-}
-
-function escapeHtml(value: string) {
-  return value.replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;",
-  })[character] || character);
 }
 
 function clientKey(request: Request) {
@@ -95,35 +89,35 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Please complete your name, email, and message." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_EMAIL || SITE.email;
-
-  if (!apiKey || !from) {
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
     return NextResponse.json(
       { message: "Direct sending is not available right now. Please email " + SITE.email + "." },
       { status: 503 },
     );
   }
 
-  const resend = new Resend(apiKey);
-  const safeName = escapeHtml(name);
-  const safeEmail = escapeHtml(email);
-  const safeType = escapeHtml(projectType);
-  const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
-  const subject = (projectType + ": message from " + name).slice(0, 180);
-
   try {
-    const { error } = await resend.emails.send({
-      from,
-      to,
-      replyTo: email,
-      subject,
-      text: "Name: " + name + "\nEmail: " + email + "\nEnquiry: " + projectType + "\n\n" + message,
-      html: "<h2>New website message</h2><p><strong>Name:</strong> " + safeName + "</p><p><strong>Email:</strong> " + safeEmail + "</p><p><strong>Enquiry:</strong> " + safeType + "</p><p><strong>Message:</strong><br />" + safeMessage + "</p>",
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: (projectType + ": message from " + name).slice(0, 180),
+        from_name: "jontAWorld Website",
+        name,
+        email,
+        enquiry: projectType,
+        message,
+      }),
+      cache: "no-store",
     });
 
-    if (error) throw new Error(error.message);
+    const result = await response.json() as Web3FormsResult;
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Delivery was not accepted.");
+    }
+
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json(
