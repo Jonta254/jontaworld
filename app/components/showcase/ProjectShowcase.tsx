@@ -40,12 +40,15 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
     <article className={`${styles.card} ${styles.flagship}`}>
       <div className={styles.body}>
         <p className={styles.kicker}>Case study</p>
-        <h3 className={styles.name}>
+        <h2 className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
           </Link>
-        </h3>
+        </h2>
         <p className={styles.outcome}>{project.outcome}</p>
+        <ul className={styles.evidence} aria-label={`${project.name} product proof`}>
+          {project.evidence.map((item) => <li key={item}>{item}</li>)}
+        </ul>
         <ul className={styles.stack}>
           {project.stack.map((s) => (
             <li key={s} className={styles.tag}>{s}</li>
@@ -85,12 +88,15 @@ function SupportingCard({ project }: { project: Project }) {
         />
       </div>
       <div className={styles.body}>
-        <h3 className={styles.name}>
+        <h2 className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
           </Link>
-        </h3>
+        </h2>
         <p className={styles.outcome}>{project.outcome}</p>
+        <ul className={styles.evidence} aria-label={`${project.name} product proof`}>
+          {project.evidence.map((item) => <li key={item}>{item}</li>)}
+        </ul>
         <div className={styles.actions}>
           <Link href={href} className={styles.readCtaSmall}>
             View project

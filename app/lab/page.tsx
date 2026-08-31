@@ -111,7 +111,7 @@ export default function LabPage() {
         <div><strong>1</strong><span>working state model to test</span></div>
       </section>
 
-      <main className={styles.grid}>
+      <div className={styles.grid}>
         <article id="product-logic" className={`${styles.panel} ${styles.featured}`}>
           <div className={styles.headingRow}>
             <div><p className={styles.kind}>From ApprenticeLog · Code and result</p><h2>Approval is a state transition, not a badge.</h2></div>
@@ -206,7 +206,7 @@ export default function LabPage() {
             <li><strong>Meaning</strong><span>Status never depends on colour alone.</span></li>
           </ul>
         </aside>
-      </main>
+      </div>
 
       <div className={styles.foot}><Link href="/portfolio">See the shipped work <span aria-hidden="true">→</span></Link></div>
     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { NAV, SITE, SOCIAL } from "@/content/site";
 import styles from "./footer.module.css";
 import BrandMark from "./BrandMark";
@@ -21,11 +21,11 @@ export default function Footer() {
           <h2 className={styles.headline}>
             Have something that needs building properly?
           </h2>
-          <a className={styles.email} href={`mailto:${SITE.email}`}>
-            <Mail className={styles.mailIcon} aria-hidden="true" />
-            Email Josiah
+          <Link className={styles.contact} href="/contact#message">
+            <MessageSquare className={styles.contactIcon} aria-hidden="true" />
+            Contact Josiah
             <span className={styles.arrow} aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
 
         <nav className={styles.columns} aria-label="Footer">

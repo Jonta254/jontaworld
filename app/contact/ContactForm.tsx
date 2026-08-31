@@ -64,7 +64,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className={styles.formSection} aria-labelledby="message-title">
+    <section id="message" className={styles.formSection} aria-labelledby="message-title">
       <div className={styles.formIntro}>
         <p className={styles.label}>Send a message</p>
         <h2 id="message-title">Write to me here.</h2>

@@ -26,7 +26,7 @@ export default function NowPage() {
         lede="I am always building, noticing, and learning. A new screen, a hard problem, a small mistake, or a good question can change how I make the next thing."
       />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <figure className={styles.moments}>
           {MOMENTS.map((moment) => (
             <div className={styles.moment} key={moment.src}>
@@ -68,7 +68,7 @@ export default function NowPage() {
           </div>
           <Link href="/contact">Tell me what you are building <span aria-hidden="true">→</span></Link>
         </aside>
-      </main>
+      </div>
     </div>
   );
 }

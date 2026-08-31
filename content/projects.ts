@@ -61,6 +61,8 @@ export type Project = {
   /** Public source. Verified against the GitHub account before linking. */
   repo?: string;
   stack: string[];
+  /** Short facts that can be verified in the live product. */
+  evidence: string[];
   /** Flagships lead the page and get full case studies. */
   tier: "flagship" | "supporting";
   shot: {
@@ -95,6 +97,7 @@ export const PROJECTS: Project[] = [
     displayUrl: "apprentice-log-xi.vercel.app",
     repo: "https://github.com/Jonta254/apprentice-log",
     stack: ["Next.js", "TypeScript", "Local browser storage", "Export and restore"],
+    evidence: ["4 record states", "Export and restore", "On-device preview"],
     tier: "flagship",
     shot: {
       desktop: "/showcase/apprenticelog-desktop.webp",
@@ -160,6 +163,7 @@ export const PROJECTS: Project[] = [
     displayUrl: "electracore.vercel.app",
     repo: "https://github.com/Jonta254/electracore",
     stack: ["Next.js", "TypeScript", "React", "SVG diagrams", "Local progress"],
+    evidence: ["8 calculators", "Circuit design workflow", "Saved local results"],
     tier: "flagship",
     shot: {
       desktop: "/showcase/electracore-desktop.webp",
@@ -221,7 +225,7 @@ export const PROJECTS: Project[] = [
       solution:
         "A platform of circuit calculators, wiring guides, and structured learning paths, live and free for the core tools. It describes itself, accurately, as built by an electrician with real site experience, because it was.",
       results:
-        "Live at electracore.vercel.app and open to anyone. Every calculator and guide is there to be used and checked right now. There are no usage figures on this page because I would rather you tested the tools than took my word for a number.",
+        "The live product includes eight working calculators, a circuit design workflow, structured lessons, knowledge checks, and saved local results. Each can be opened and checked directly without relying on an adoption claim.",
       lessons:
         "Leaving tools out was the discipline that mattered most, and it was harder than adding them. Next time I would push that further and lead even harder with the three or four calculations that come up every day, treating the rest as depth for the people who go looking. Restraint reads as confidence, and it is usually right.",
     },
@@ -237,6 +241,7 @@ export const PROJECTS: Project[] = [
     displayUrl: "traildesk.vercel.app",
     repo: "https://github.com/Jonta254/traildesk",
     stack: ["Next.js", "Offline first", "Mapping"],
+    evidence: ["Offline-first planning", "Routes and gear lists", "Emergency contacts"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/traildesk-desktop.webp",
@@ -257,6 +262,7 @@ export const PROJECTS: Project[] = [
     displayUrl: "safesignal-beta.vercel.app",
     repo: "https://github.com/Jonta254/safesignal",
     stack: ["Next.js", "TypeScript", "Geolocation", "Local browser storage"],
+    evidence: ["4 visible safety states", "Timed check-ins", "On-device records"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/safesignal-desktop.webp",
@@ -277,6 +283,7 @@ export const PROJECTS: Project[] = [
     displayUrl: "digilearn-five.vercel.app",
     repo: "https://github.com/Jonta254/digilearn",
     stack: ["Next.js", "TypeScript", "Learning paths"],
+    evidence: ["72 courses", "864 guided lessons", "Open access"],
     tier: "supporting",
     shot: {
       desktop: "/showcase/digilearn-desktop.webp",
