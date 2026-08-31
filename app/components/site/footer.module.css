@@ -39,7 +39,7 @@
   max-width: 18ch;
 }
 
-.email {
+.contact {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -54,10 +54,10 @@
               border-color var(--dur-fast) var(--ease-out);
 }
 
-.email:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
+.contact:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
 
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
-.email:hover .arrow { transform: translateX(var(--nudge)); }
+.contact:hover .arrow { transform: translateX(var(--nudge)); }
 
 /*  Columns  */
 .columns {
@@ -119,4 +119,4 @@
 .availability { font-family: var(--font-mono); }
 
 
-.mailIcon { width: 18px; height: 18px; }
+.contactIcon { width: 18px; height: 18px; }
