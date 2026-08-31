@@ -145,6 +145,21 @@
   max-width: 46ch;
 }
 
+.evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent);
+}
+
+.evidence li:not(:last-child)::after {
+  content: "·";
+  margin-left: var(--space-4);
+  color: var(--line-strong);
+}
+
 .stack { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
 .tag {

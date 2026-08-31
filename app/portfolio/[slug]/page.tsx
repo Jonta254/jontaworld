@@ -106,6 +106,10 @@ export default async function ProjectPage({
             <dd className={styles.factValue}>{project.stack.join(", ")}</dd>
           </div>
           <div className={styles.fact}>
+            <dt className={styles.factLabel}>Proof</dt>
+            <dd className={styles.factValue}>{project.evidence.join(" · ")}</dd>
+          </div>
+          <div className={styles.fact}>
             <dt className={styles.factLabel}>Live</dt>
             <dd className={styles.factValue}>
               <a

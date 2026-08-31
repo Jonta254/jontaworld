@@ -29,20 +29,10 @@ export default function Hero() {
         content, systems, and code handled as one connected piece.
       </p>
 
-      <div className={styles.actions}>
-        <Link href="/portfolio" className={styles.primary}>
-          See the work
-          <span className={styles.arrow} aria-hidden="true">→</span>
-        </Link>
-        <Link href="/contact" className={styles.secondary}>
-          Start a project
-        </Link>
-      </div>
-
       {/* Proof, above the fold. The claim above is a sentence. This is the
           evidence: five products a visitor can open before scrolling once. */}
       <div className={styles.proof}>
-        <span className={styles.proofLabel}>In production</span>
+        <span className={styles.proofLabel}>5 live products</span>
         <ul className={styles.proofList}>
           {PROJECTS.map((p) => (
             <li key={p.slug}>
@@ -58,6 +48,16 @@ export default function Hero() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className={styles.actions}>
+        <Link href="/portfolio" className={styles.primary}>
+          See the work
+          <span className={styles.arrow} aria-hidden="true">→</span>
+        </Link>
+        <Link href="/contact" className={styles.secondary}>
+          Start a project
+        </Link>
       </div>
     </section>
   );

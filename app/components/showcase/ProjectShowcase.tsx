@@ -46,6 +46,9 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
           </Link>
         </h2>
         <p className={styles.outcome}>{project.outcome}</p>
+        <ul className={styles.evidence} aria-label={`${project.name} product proof`}>
+          {project.evidence.map((item) => <li key={item}>{item}</li>)}
+        </ul>
         <ul className={styles.stack}>
           {project.stack.map((s) => (
             <li key={s} className={styles.tag}>{s}</li>
@@ -91,6 +94,9 @@ function SupportingCard({ project }: { project: Project }) {
           </Link>
         </h2>
         <p className={styles.outcome}>{project.outcome}</p>
+        <ul className={styles.evidence} aria-label={`${project.name} product proof`}>
+          {project.evidence.map((item) => <li key={item}>{item}</li>)}
+        </ul>
         <div className={styles.actions}>
           <Link href={href} className={styles.readCtaSmall}>
             View project
