@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { NAV, SITE, SOCIAL } from "@/content/site";
 import styles from "./footer.module.css";
 import BrandMark from "./BrandMark";
@@ -21,26 +21,27 @@ export default function Footer() {
           <h2 className={styles.headline}>
             Have something that needs building properly?
           </h2>
-          <a className={styles.email} href={`mailto:${SITE.email}`}>
-            <Mail className={styles.mailIcon} aria-hidden="true" />
-            Email Josiah
+          <p className={styles.promptMeta}>Product direction · Interface design · Engineering</p>
+          <Link className={styles.email} href="/contact">
+            <MessageSquare className={styles.mailIcon} aria-hidden="true" />
+            Contact here
             <span className={styles.arrow} aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
 
         <nav className={styles.columns} aria-label="Footer">
           <div className={styles.column}>
-            <h3 className={styles.columnTitle}>Site</h3>
+            <h3 className={styles.columnTitle}>Explore</h3>
             <ul className={styles.list}>
               {NAV.map((item) => (
                 <li key={item.href}>
                   <Link className={styles.link} href={item.href}>
-                    {item.label}
+                    <span>{item.label}</span><span className={styles.linkArrow} aria-hidden="true">→</span>
                   </Link>
                 </li>
               ))}
               <li>
-                <Link className={styles.link} href="/contact">Contact</Link>
+                <Link className={styles.link} href="/contact"><span>Contact</span><span className={styles.linkArrow} aria-hidden="true">→</span></Link>
               </li>
             </ul>
           </div>
@@ -57,6 +58,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     {item.label}
+                    <span className={styles.linkArrow} aria-hidden="true">↗</span>
                     <span className="sr-only"> opens in a new tab</span>
                   </a>
                 </li>
@@ -67,8 +69,11 @@ export default function Footer() {
       </div>
 
       <div className={styles.base}>
-        <span className={styles.identity}><BrandMark className={styles.logo} /><span className={styles.wordmark}>{SITE.fullName} <span className={styles.brand}>{SITE.brand}</span></span></span>
-        <span className={styles.availability}>{SITE.availability}</span>
+        <Link href="/" className={styles.identity} aria-label={`${SITE.brand} home`}>
+          <BrandMark className={styles.logo} />
+          <span className={styles.brand}>{SITE.brand}</span>
+        </Link>
+        <span className={styles.availability}><i aria-hidden="true" />{SITE.availability}</span>
       </div>
     </footer>
   );

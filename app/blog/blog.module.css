@@ -19,9 +19,15 @@
   gap: clamp(var(--space-5), 5vw, var(--space-8));
   padding-block: var(--space-7);
   border-top: 1px solid var(--line);
+  padding-inline: clamp(var(--space-3), 3vw, var(--space-6));
+  border-radius: var(--radius-md);
   text-decoration: none;
   /* The whole row is the target; the internal spacing does the visual work. */
 }
+
+.list li:nth-child(3n + 1) .item { background: color-mix(in srgb, var(--project-coral-wash) 34%, transparent); }
+.list li:nth-child(3n + 2) .item { background: color-mix(in srgb, var(--project-blue-wash) 30%, transparent); }
+.list li:nth-child(3n) .item { background: color-mix(in srgb, var(--project-green-wash) 30%, transparent); }
 
 .list li:last-child .item { border-bottom: 1px solid var(--line); }
 
@@ -83,3 +89,8 @@
 .meta time { color: var(--faint); }
 .meta time::before { content: "·"; margin-right: var(--space-3); color: var(--line-strong); }
 @media (max-width: 719px) { .item { grid-template-columns: 1fr; gap: var(--space-5); } }
+
+@media (max-width: 620px) {
+  .list { padding-inline: var(--space-2); }
+  .item { padding: var(--space-5) var(--space-4); }
+}

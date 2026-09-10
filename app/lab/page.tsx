@@ -85,17 +85,37 @@ function EvidenceLinks({ live, source }: { live: string; source: string }) {
     </div>
   );
 }
+
+function ProblemFrame({
+  problem,
+  decision,
+  result,
+}: {
+  problem: string;
+  decision: string;
+  result: string;
+}) {
+  return (
+    <dl className={styles.problemFrame}>
+      <div><dt>Problem</dt><dd>{problem}</dd></div>
+      <div><dt>Decision</dt><dd>{decision}</dd></div>
+      <div><dt>Result</dt><dd>{result}</dd></div>
+    </dl>
+  );
+}
+
 export default function LabPage() {
   return (
     <div className={styles.page}>
       <PageHeader
         eyebrow="Lab"
-        title="Code, systems, and interface studies."
-        lede="A close look at the product logic, interface systems, and verification work behind what I build."
+        tone="blue"
+        title="Engineering decisions, tested in the product."
+        lede="Real failure modes, working code, interface decisions, and the evidence used to verify each solution."
       />
 
       <nav className={styles.index} aria-label="Lab contents">
-        <span>Inside the Lab</span>
+        <span>Problems inside the lab</span>
         <ul>
           <li><a href="#product-logic">Product logic</a></li>
           <li><a href="#responsive-systems">Responsive systems</a></li>
@@ -111,12 +131,17 @@ export default function LabPage() {
         <div><strong>1</strong><span>working state model to test</span></div>
       </section>
 
-      <main className={styles.grid}>
+      <div className={styles.grid}>
         <article id="product-logic" className={`${styles.panel} ${styles.featured}`}>
           <div className={styles.headingRow}>
             <div><p className={styles.kind}>From ApprenticeLog · Code and result</p><h2>Approval is a state transition, not a badge.</h2></div>
             <span className={styles.status}>Shipped logic</span>
           </div>
+          <ProblemFrame
+            problem="An edited record could appear approved after the approved content had changed."
+            decision="Version every edit and withdraw approval when reviewed content changes."
+            result="The visible state and audit history continue to describe the same record."
+          />
           <div className={styles.split}>
             <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts">{transitionCode}</CodeBlock>
             <LabStateDemo />
@@ -129,6 +154,11 @@ export default function LabPage() {
             <div><p className={styles.kind}>From TrailDesk · Responsive system</p><h2>One product, two deliberate layouts.</h2></div>
             <span className={styles.status}>Interface study</span>
           </div>
+          <ProblemFrame
+            problem="A desktop planning hierarchy becomes cramped and ambiguous on a phone."
+            decision="Reorder the interface around the next useful action instead of shrinking it."
+            result="Context remains visible on desktop while mobile actions become linear."
+          />
           <div className={styles.deviceRow}>
             <figure className={styles.desktopDevice}><Image src="/showcase/traildesk-feature.webp" alt="TrailDesk destination discovery interface at desktop width" width={1440} height={900} sizes="(min-width: 900px) 62vw, 100vw" /><figcaption>Desktop · destination context stays visible</figcaption></figure>
             <figure className={styles.mobileDevice}><Image src="/showcase/traildesk-mobile.webp" alt="TrailDesk interface adapted to a narrow mobile viewport" width={390} height={844} sizes="180px" /><figcaption>Mobile · actions become linear</figcaption></figure>
@@ -139,6 +169,11 @@ export default function LabPage() {
 
         <article id="defensive-data" className={`${styles.panel} ${styles.storage}`}>
           <p className={styles.kind}>From DigiLearn · Engineering note</p><h2>Local progress is parsed defensively.</h2>
+          <ProblemFrame
+            problem="Browser storage can be missing, malformed, duplicated, or unexpectedly large."
+            decision="Validate shape, size, version, and identifiers before accepting saved progress."
+            result="A damaged payload falls back safely without breaking the learning interface."
+          />
           <CodeBlock label="DigiLearn · lib/learning-storage.ts · excerpt">{progressCode}</CodeBlock>
           <p className={styles.note}>Versioned local storage learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
           <EvidenceLinks live="https://digilearn-five.vercel.app" source="https://github.com/Jonta254/digilearn" />
@@ -146,6 +181,11 @@ export default function LabPage() {
 
         <article id="accessible-states" className={`${styles.panel} ${styles.states}`}>
           <p className={styles.kind}>From SafeSignal · Component states</p><h2>Safety states communicate without relying on colour.</h2>
+          <ProblemFrame
+            problem="Colour alone cannot reliably explain an urgent check-in state."
+            decision="Pair every state with a name, time signal, and explicit next action."
+            result="Meaning survives low vision, poor screens, bright light, and grayscale."
+          />
           <div className={styles.stateStrip}>
             <div><span className={styles.stateMark}>01</span><strong>Normal</strong><small>24 min remaining</small></div>
             <div><span className={styles.stateMark}>02</span><strong>Approaching</strong><small>Check-in soon</small></div>
@@ -161,6 +201,11 @@ export default function LabPage() {
             <div><p className={styles.kind}>From ElectraCore · Code and result</p><h2>Technical content earns the screen.</h2></div>
             <span className={styles.status}>Live product</span>
           </div>
+          <ProblemFrame
+            problem="A calculator answer without assumptions is difficult to trust or learn from."
+            decision="Show the result first, then expose the reasoning and design path beneath it."
+            result="The same workflow supports quick trade use and deeper technical learning."
+          />
           <div className={styles.technicalViews}>
             <figure className={styles.browserStudy}>
               <div className={styles.browserBar}><i /><i /><i /><span>electracore.vercel.app/calculate</span></div>
@@ -206,7 +251,7 @@ export default function LabPage() {
             <li><strong>Meaning</strong><span>Status never depends on colour alone.</span></li>
           </ul>
         </aside>
-      </main>
+      </div>
 
       <div className={styles.foot}><Link href="/portfolio">See the shipped work <span aria-hidden="true">→</span></Link></div>
     </div>

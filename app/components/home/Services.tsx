@@ -7,7 +7,7 @@ export default function Services() {
     <>
       <ol className={styles.list}>
         {SERVICES.map((service) => (
-          <li key={service.num} className={styles.row}>
+          <li key={service.num} className={styles.row} data-service={service.num}>
             <div className={styles.heading}>
               <span className={styles.num} aria-hidden="true">{service.num}</span>
               <div><h3>{service.title}</h3><p>{service.description}</p></div>

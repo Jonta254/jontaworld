@@ -1,16 +1,38 @@
-.page { background: var(--paper); padding-bottom: var(--space-10); }
+.page { --project-wash: var(--chapter-warm); --project-ink: var(--accent); background: var(--paper); padding-bottom: var(--space-10); }
+.page[data-project="apprenticelog"] { --project-wash: var(--project-blue-wash); --project-ink: var(--project-blue-ink); }
+.page[data-project="electracore"] { --project-wash: var(--project-amber-wash); --project-ink: var(--project-amber-ink); }
+.page[data-project="traildesk"] { --project-wash: var(--project-green-wash); --project-ink: var(--project-green-ink); }
+.page[data-project="safesignal"] { --project-wash: var(--project-coral-wash); --project-ink: var(--project-coral-ink); }
+.page[data-project="digilearn"] { --project-wash: var(--project-violet-wash); --project-ink: var(--project-violet-ink); }
 
 /* ── Header ─────────────────────────────────────────────────────────────── */
 .header {
-  max-width: var(--container-content);
-  margin-inline: auto;
-  padding: var(--space-9) var(--gutter) var(--space-7);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-block: clamp(var(--space-7), 7vw, var(--space-10));
+  padding-inline: max(var(--gutter), calc((100vw - var(--container-content)) / 2));
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  position: relative;
+  background: var(--project-wash);
+  border-bottom: 1px solid color-mix(in srgb, var(--project-ink) 18%, var(--line));
 }
 
-@media (min-width: 1024px) { .header { padding-top: var(--space-10); } }
+.header::after { content: ""; width: min(8rem, 32vw); height: 3px; margin-top: var(--space-3); border-radius: var(--radius-full); background: color-mix(in srgb, var(--project-ink) 62%, transparent); }
+
+@media (max-width: 620px) {
+  .header { padding-block: var(--space-7); }
+  .title { font-size: clamp(2.45rem, 12vw, 2.9rem); overflow-wrap: anywhere; }
+  .summary { font-size: var(--text-base); max-width: 34ch; }
+  .lead, .closer, .depth, .body, .more { padding-inline: var(--space-4); }
+  .leadMedia { padding: var(--space-3); }
+}
+
+@media (max-width: 360px) {
+  .title { font-size: clamp(2.05rem, 10.5vw, 2.3rem); overflow-wrap: normal; }
+}
 
 .back {
   display: inline-flex;
@@ -41,11 +63,32 @@
   max-width: 54ch;
 }
 
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  min-height: var(--tap);
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--paper);
+  background: var(--project-ink);
+  border: 1px solid var(--project-ink);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: filter var(--dur-fast) var(--ease-out);
+}
+.heroCta:hover { filter: brightness(.9); }
+
 .facts {
+  width: calc(100% - (var(--gutter) * 2));
+  max-width: var(--container-content);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  margin-top: var(--space-4);
+  margin: 0 auto var(--space-8);
   padding-top: var(--space-5);
   border-top: 1px solid var(--line);
 }
@@ -85,7 +128,7 @@
   padding: var(--space-5) var(--gutter) var(--space-8);
 }
 
-.leadMedia { position: relative; max-width: var(--container-content); margin-inline: auto; }
+.leadMedia { position: relative; max-width: var(--container-content); margin-inline: auto; padding: clamp(var(--space-3), 3vw, var(--space-7)); border-radius: var(--radius-md); background: var(--project-wash); }
 
 /* A second framed screenshot, a real working screen rather than the landing
    view. Labelled quietly so it reads as evidence, not decoration. */
@@ -181,7 +224,7 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--project-ink);
   font-weight: 400;
   /* Aligns the label baseline with the first line of body text alongside it. */
   padding-top: var(--space-1);

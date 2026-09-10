@@ -1,4 +1,7 @@
 .section { padding-block: 0; }
+.paper { background: var(--paper); }
+.warm { background: var(--chapter-warm); }
+.stone { background: var(--chapter-stone); }
 
 .inner {
   max-width: var(--container-content);

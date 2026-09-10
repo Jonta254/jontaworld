@@ -11,7 +11,11 @@
   gap: var(--space-4);
   margin-bottom: var(--space-9);
   max-width: var(--measure);
+  position: relative;
 }
+
+.header::after { content: ""; width: min(7rem, 30vw); height: 3px; margin-top: var(--space-4); border-radius: var(--radius-full); background: linear-gradient(90deg, var(--project-blue-ink), var(--project-blue-wash)); }
+.eyebrow { color: var(--project-blue-ink); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 
 .title {
   font-family: var(--font-serif);
@@ -26,4 +30,11 @@
   line-height: var(--leading-base);
   color: var(--muted);
   max-width: 54ch;
+}
+
+@media (max-width: 620px) {
+  .page { padding-top: var(--space-8); padding-bottom: var(--space-9); }
+  .header { margin-bottom: var(--space-8); }
+  .title { font-size: clamp(2.5rem, 13vw, 3.25rem); }
+  .lede { font-size: var(--text-base); }
 }

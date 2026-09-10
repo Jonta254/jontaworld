@@ -1,6 +1,8 @@
 .footer {
   border-top: 1px solid var(--line);
-  background: var(--sunken);
+  background:
+    linear-gradient(110deg, color-mix(in srgb, var(--project-blue-wash) 28%, transparent), transparent 55%),
+    var(--sunken);
   /* No top margin: every page already ends on a Section that carries its own
      bottom padding, and stacking the two left ~290px of dead space. */
 }
@@ -39,6 +41,8 @@
   max-width: 18ch;
 }
 
+.promptMeta { max-width: 46ch; color: var(--faint); font: var(--text-xs)/1.6 var(--font-mono); }
+
 .email {
   display: inline-flex;
   align-items: center;
@@ -47,14 +51,17 @@
   min-height: var(--tap);
   font-family: var(--font-mono);
   font-size: var(--text-lg);
-  color: var(--accent);
+  margin-top: var(--space-2);
+  padding-inline: var(--space-4);
+  color: var(--paper);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out);
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
 
-.email:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
+.email:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
 .arrow { transition: transform var(--dur-fast) var(--ease-out); }
 .email:hover .arrow { transform: translateX(var(--nudge)); }
@@ -66,7 +73,7 @@
   gap: var(--space-6);
 }
 
-.column { display: flex; flex-direction: column; gap: var(--space-3); }
+.column { display: flex; flex-direction: column; gap: var(--space-4); }
 
 .columnTitle {
   font-family: var(--font-mono);
@@ -77,12 +84,16 @@
   font-weight: 400;
 }
 
-.list { display: flex; flex-direction: column; }
+.list { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
 
 .link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
   min-height: var(--tap);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--line);
   font-size: var(--text-sm);
   color: var(--muted);
   text-decoration: none;
@@ -90,6 +101,8 @@
 }
 
 .link:hover { color: var(--ink); }
+.linkArrow { color: var(--faint); font-family: var(--font-mono); transition: transform var(--dur-fast) var(--ease-out); }
+.link:hover .linkArrow { color: var(--accent); transform: translateX(var(--nudge)); }
 
 /*  Base row  */
 .base {
@@ -106,17 +119,24 @@
   color: var(--faint);
 }
 
-.wordmark { color: var(--muted); }
-.identity { display: inline-flex; align-items: center; gap: var(--space-3); }
+.identity { display: inline-flex; align-items: center; gap: var(--space-3); min-height: var(--tap); color: var(--ink); text-decoration: none; }
 .logo { width: 24px; height: 24px; color: var(--ink); flex: none; }
 
 .brand {
-  font-family: var(--font-mono);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-tight);
 }
 
-.availability { font-family: var(--font-mono); }
+.availability { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); }
+.availability i { width: 7px; height: 7px; flex: none; border-radius: var(--radius-full); background: var(--success); box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 14%, transparent); }
 
 
 .mailIcon { width: 18px; height: 18px; }
+
+@media (max-width: 620px) {
+  .inner { padding-top: var(--space-8); gap: var(--space-7); }
+  .columns { grid-template-columns: minmax(0, 1.45fr) minmax(0, .85fr); gap: var(--space-5); }
+  .base { align-items: flex-start; }
+  .availability { max-width: 29ch; line-height: var(--leading-snug); }
+}

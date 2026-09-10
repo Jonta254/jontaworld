@@ -27,9 +27,42 @@
   --accent-hover:  #7E3F14;  /*  8.05:1 on surface */
   --accent-wash:   #9A4F1B14;
 
+  /* Project atmospheres. These are deliberately close to paper: each product
+     gets a recognisable field without turning the portfolio into a rainbow. */
+  --project-blue-wash:   #E8EDF1;
+  --project-blue-ink:    #526B7A;
+  --project-amber-wash:  #F2E9D5;
+  --project-amber-ink:   #8B5A18;
+  --project-green-wash:  #E3EBE3;
+  --project-green-ink:   #4F7059;
+  --project-coral-wash:  #F0E2DE;
+  --project-coral-ink:   #8B4C42;
+  --project-violet-wash: #EAE5F0;
+  --project-violet-ink:  #705E85;
+
+  /* Section and service fields share the same warm base as the existing
+     paper, so colour changes read as chapters rather than theme changes. */
+  --chapter-warm: #F6F1EA;
+  --chapter-stone: #F3EFE9;
+  --service-lilac: #F1EDF3;
+  --service-sand:  #F4EDE3;
+  --service-steel: #EBF0F0;
+  --service-peach: #F4EAE3;
+  --service-hay:   #F4F0E1;
+  --service-blush: #F3E9E8;
+  --service-sage:  #EAF0E9;
+
   /* Semantic : defined only where a real state exists (form validation).
      Verified: 6.26:1 on paper. */
   --danger:        #B42318;
+  --success:       #34744A;
+
+  --code-surface:  #1E1D1B;
+  --code-border:   #34312D;
+  --code-text:     #ECE6DC;
+  --code-muted:    #A9A198;
+  --image-overlay: rgb(23 20 15 / .72);
+  --on-image:      #FFFFFF;
 
   --focus:         var(--accent);
 
@@ -135,7 +168,19 @@
     --accent-hover: #F2A870; /*  9.02:1 on surface */
     --accent-wash:  #E8925A1A;
 
+    --project-blue-wash: #1A2228; --project-blue-ink: #A8C2D0;
+    --project-amber-wash: #282116; --project-amber-ink: #E4B66A;
+    --project-green-wash: #19231B; --project-green-ink: #A7C8AE;
+    --project-coral-wash: #291D1A; --project-coral-ink: #E2AAA0;
+    --project-violet-wash: #221D29; --project-violet-ink: #C8B6D8;
+    --chapter-warm: #17130F; --chapter-stone: #191612;
+    --service-lilac: #201B23; --service-sand: #221D16;
+    --service-steel: #192021; --service-peach: #231B17;
+    --service-hay: #211E15; --service-blush: #231B1B;
+    --service-sage: #192019;
+
     --danger:       #F97066; /*  6.41:1 on surface */
+    --success:      #7FC995;
 
     --shadow-1: 0 1px 2px rgb(0 0 0 / .30), 0 2px 8px rgb(0 0 0 / .24);
     --shadow-2: 0 2px 4px rgb(0 0 0 / .34), 0 8px 24px rgb(0 0 0 / .30);
@@ -161,7 +206,19 @@
   --accent-hover: #F2A870;
   --accent-wash:  #E8925A1A;
 
+  --project-blue-wash: #1A2228; --project-blue-ink: #A8C2D0;
+  --project-amber-wash: #282116; --project-amber-ink: #E4B66A;
+  --project-green-wash: #19231B; --project-green-ink: #A7C8AE;
+  --project-coral-wash: #291D1A; --project-coral-ink: #E2AAA0;
+  --project-violet-wash: #221D29; --project-violet-ink: #C8B6D8;
+  --chapter-warm: #17130F; --chapter-stone: #191612;
+  --service-lilac: #201B23; --service-sand: #221D16;
+  --service-steel: #192021; --service-peach: #231B17;
+  --service-hay: #211E15; --service-blush: #231B1B;
+  --service-sage: #192019;
+
   --danger:       #F97066;
+  --success:      #7FC995;
 
   --shadow-1: 0 1px 2px rgb(0 0 0 / .30), 0 2px 8px rgb(0 0 0 / .24);
   --shadow-2: 0 2px 4px rgb(0 0 0 / .34), 0 8px 24px rgb(0 0 0 / .30);

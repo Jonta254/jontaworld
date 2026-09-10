@@ -80,7 +80,7 @@ export default async function ProjectPage({
   };
 
   return (
-    <article className={styles.page}>
+    <article className={styles.page} data-project={project.slug}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -93,8 +93,24 @@ export default async function ProjectPage({
         </Link>
         <h1 className={styles.title}>{project.name}</h1>
         <p className={styles.summary}>{project.summary}</p>
+        <a
+          className={styles.heroCta}
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open live product <span aria-hidden="true">→</span>
+        </a>
+      </header>
 
-        <dl className={styles.facts}>
+      <div className={styles.lead}>
+        <div className={styles.leadMedia}>
+          <BrowserFrame src={project.shot.desktop} alt={project.shot.alt} url={project.displayUrl} priority />
+          <PhoneFrame src={project.shot.mobile} priority />
+        </div>
+      </div>
+
+      <dl className={styles.facts}>
           {s && (
             <div className={styles.fact}>
               <dt className={styles.factLabel}>Role</dt>
@@ -104,19 +120,6 @@ export default async function ProjectPage({
           <div className={styles.fact}>
             <dt className={styles.factLabel}>Stack</dt>
             <dd className={styles.factValue}>{project.stack.join(", ")}</dd>
-          </div>
-          <div className={styles.fact}>
-            <dt className={styles.factLabel}>Live</dt>
-            <dd className={styles.factValue}>
-              <a
-                className={styles.factLink}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open live product
-              </a>
-            </dd>
           </div>
           {project.repo && (
             <div className={styles.fact}>
@@ -133,21 +136,7 @@ export default async function ProjectPage({
               </dd>
             </div>
           )}
-        </dl>
-      </header>
-
-      {/*  Lead image: the landing view, desktop and mobile  */}
-      <div className={styles.lead}>
-        <div className={styles.leadMedia}>
-          <BrowserFrame
-            src={project.shot.desktop}
-            alt={project.shot.alt}
-            url={project.displayUrl}
-            priority
-          />
-          <PhoneFrame src={project.shot.mobile} priority />
-        </div>
-      </div>
+      </dl>
 
       {/*  A closer look: a real working screen past the hero  */}
       <section className={styles.closer} aria-label="A closer look inside the product">

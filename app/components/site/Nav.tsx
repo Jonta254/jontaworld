@@ -51,6 +51,14 @@ export default function Nav() {
           <span className={styles.brandMark}>{SITE.brand}</span>
         </Link>
 
+        <Link
+          href="/contact"
+          className={`${styles.mobileCta} ${pathname === "/contact" ? styles.active : ""}`}
+          aria-current={pathname === "/contact" ? "page" : undefined}
+        >
+          Contact
+        </Link>
+
         <ul className={styles.links}>
           {NAV.map((item) => {
             const active =

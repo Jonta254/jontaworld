@@ -13,6 +13,7 @@ export default function PortfolioPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
+        <p className={styles.eyebrow}>Selected work</p>
         <h1 className={styles.title}>Work</h1>
         <p className={styles.lede}>
           Five products, all live. Every link below opens the real thing. No

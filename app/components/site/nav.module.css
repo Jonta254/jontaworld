@@ -125,6 +125,8 @@
 
 .cta:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
+.mobileCta { display: none; }
+
 @media (max-width: 900px) {
   .links { gap: 0; }
   .link { padding-inline: var(--space-2); }
@@ -133,9 +135,43 @@
 }
 
 @media (max-width: 620px) {
-  /* The CTA repeats in the footer and at the end of every page : dropping it
-     here buys the nav links the room they need. */
   .cta { display: none; }
+  .inner {
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
+    padding-bottom: 0;
+  }
+  .brand { margin-right: 0; }
+  .mobileCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--tap);
+    padding-inline: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-left: auto;
+  }
+  .mobileCta:hover { border-color: var(--accent); }
+  .links {
+    width: calc(100% + (var(--gutter) * 2));
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    justify-content: flex-start;
+    gap: var(--space-1);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    border-top: 1px solid var(--line);
+    background: color-mix(in srgb, var(--sunken) 52%, var(--paper));
+  }
+  .links::-webkit-scrollbar { display: none; }
+  .links li { flex: none; }
+  .link { padding-inline: var(--space-3); }
+  .link::after { left: var(--space-3); right: var(--space-3); bottom: 7px; }
 }
 
 /* At 320px (WCAG 1.4.10 reflow, which is 400% zoom on a 1280 screen) the
@@ -143,13 +179,14 @@
    Wrapping is used rather than tighter padding because it holds regardless of
    font metrics or a longer label, and it avoids a hamburger for four links. */
 @media (max-width: 420px) {
-  .inner {
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-3);
-  }
-  .brand { margin-right: 0; }
   .logo { width: 26px; height: 26px; }
-  .links { width: 100%; justify-content: space-between; }
-  .link { padding-inline: var(--space-1); }
-  .link::after { left: var(--space-1); right: var(--space-1); }
+  .links { justify-content: space-between; }
+  .link { padding-inline: var(--space-2); }
+  .link::after { left: var(--space-2); right: var(--space-2); }
+}
+
+@media (max-width: 350px) {
+  .brandName { font-size: var(--text-base); }
+  .mobileCta { padding-inline: var(--space-2); }
+  .links { justify-content: flex-start; }
 }

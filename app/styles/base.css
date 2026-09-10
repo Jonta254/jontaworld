@@ -70,18 +70,6 @@ a { color: inherit; }
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
-/* Theme transition , a short cross-fade of surface colours when the OS theme
-   flips. Scoped to the three properties that actually change between modes, so
-   it never touches transforms or interaction feedback (components that define
-   their own transition win by specificity). Reduced motion clamps it to 1ms
-   via the global rule below. Applied globally because CSS-module class names
-   are opaque hashes in production and can't be targeted by substring. */
-*, *::before, *::after {
-  transition-property: background-color, border-color, color;
-  transition-duration: var(--dur-base);
-  transition-timing-function: var(--ease-out);
-}
-
 /* ── Shared primitives ──────────────────────────────────────────────────── */
 
 .sr-only {

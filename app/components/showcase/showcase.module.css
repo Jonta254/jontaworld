@@ -69,8 +69,18 @@
   .phone { display: none; }
 }
 
+@media (max-width: 620px) {
+  .card { margin-inline: calc((var(--gutter) - var(--space-2)) * -1); padding: var(--space-5); border-radius: var(--radius-sm); }
+  .supporting { padding: var(--space-5); }
+  .media, .mediaBlock { padding: var(--space-3); }
+  .projectMeta { gap: var(--space-2); }
+  .projectCount { font-size: 0.75rem; letter-spacing: 0.04em; }
+}
+
 /*  Card  */
 .card {
+  --project-wash: var(--sunken);
+  --project-ink: var(--accent);
   min-width: 0;
   position: relative;
   display: grid;
@@ -78,15 +88,43 @@
   padding: var(--space-6);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background: color-mix(in srgb, var(--project-wash) 56%, var(--surface));
   transition: border-color var(--dur-fast) var(--ease-out),
               box-shadow var(--dur-fast) var(--ease-out);
 }
+
+.card[data-project="apprenticelog"] { --project-wash: var(--project-blue-wash); --project-ink: var(--project-blue-ink); }
+.card[data-project="electracore"] { --project-wash: var(--project-amber-wash); --project-ink: var(--project-amber-ink); }
+.card[data-project="traildesk"] { --project-wash: var(--project-green-wash); --project-ink: var(--project-green-ink); }
+.card[data-project="safesignal"] { --project-wash: var(--project-coral-wash); --project-ink: var(--project-coral-ink); }
+.card[data-project="digilearn"] { --project-wash: var(--project-violet-wash); --project-ink: var(--project-violet-ink); }
 
 .card:hover { border-color: var(--line-strong); box-shadow: var(--shadow-2); }
 .card:hover .frame { box-shadow: var(--shadow-2); }
 
 .flagship { grid-template-columns: 1fr; }
+
+.projectMeta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid color-mix(in srgb, var(--project-ink) 18%, var(--line));
+}
+
+.projectCount {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (max-width: 1023px) {
+  .flagship .media { order: -1; }
+}
 
 @media (min-width: 1024px) {
   .flagship {
@@ -99,6 +137,8 @@
      does not read as a repeating template. */
   .flagship:nth-child(even) .media { order: -1; }
 
+  .flagship:nth-child(odd) .media { order: initial; }
+
   /* When the media moves left, mirror the phone too : otherwise it overlaps
      inward and crowds the text column. */
   .flagship:nth-child(even) .phone {
@@ -107,7 +147,14 @@
   }
 }
 
-.media { position: relative; min-width: 0; }
+.media,
+.mediaBlock {
+  position: relative;
+  min-width: 0;
+  padding: clamp(var(--space-3), 2vw, var(--space-5));
+  border-radius: var(--radius-md);
+  background: var(--project-wash);
+}
 
 .body { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
 
@@ -116,7 +163,7 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--project-ink);
 }
 
 .name {
@@ -243,7 +290,7 @@
 @media (min-width: 768px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
 
-.mediaBlock { min-width: 0; overflow: hidden; }
+.mediaBlock { overflow: hidden; }
 .supporting { padding: var(--space-5); gap: var(--space-5); min-width: 0; }
 .supporting .name { font-size: var(--text-h3); }
 .supporting .outcome { font-size: var(--text-sm); }

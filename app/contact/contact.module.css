@@ -1,10 +1,11 @@
 .page { min-height: 100vh; background: var(--paper); }
 .shell { width: min(760px, calc(100% - 2 * var(--gutter))); margin-inline: auto; padding: clamp(var(--space-9), 11vw, var(--space-11)) 0 var(--space-11); }
-.intro { max-width: 660px; }
+.intro { max-width: 660px; position: relative; }
+.intro::after { content: ""; display: block; width: min(7rem, 30vw); height: 3px; margin-top: var(--space-6); border-radius: var(--radius-full); background: linear-gradient(90deg, var(--accent), var(--project-coral-wash)); }
 .eyebrow, .label { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 .intro h1 { max-width: 13ch; margin-top: var(--space-4); font-size: var(--text-display); }
 .intro > p:last-child { max-width: 48ch; margin-top: var(--space-5); color: var(--muted); font-size: var(--text-lg); line-height: var(--leading-base); }
-.formSection { margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); border: 1px solid var(--line); background: var(--surface); }
+.formSection { margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); border: 1px solid var(--line); border-radius: var(--radius-md); background: color-mix(in srgb, var(--project-blue-wash) 24%, var(--surface)); box-shadow: var(--shadow-1); }
 .formIntro h2 { margin-top: var(--space-2); font-size: var(--text-h2); }
 .formIntro > p:last-child { max-width: 48ch; margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }
 .form { position: relative; display: grid; gap: var(--space-4); margin-top: var(--space-6); }
@@ -21,10 +22,10 @@
 .formFooter svg { width: 17px; }
 .formNote { color: var(--muted); font-size: var(--text-xs); }
 .formStatus { min-height: 1.5em; color: var(--muted); font-size: var(--text-sm); }
-.formStatus[data-state="sent"] { color: #34744a; }
-.formStatus[data-state="error"] { color: #a33d2f; }
+.formStatus[data-state="sent"] { color: var(--success); }
+.formStatus[data-state="error"] { color: var(--danger); }
 .honeypot { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
-.emailBlock { display: grid; gap: var(--space-5); align-items: end; margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); background: var(--surface); border: 1px solid var(--line); }
+.emailBlock { display: grid; gap: var(--space-5); align-items: end; margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); background: color-mix(in srgb, var(--project-amber-wash) 28%, var(--surface)); border: 1px solid var(--line); border-radius: var(--radius-md); }
 .emailBlock h2 { margin-top: var(--space-2); overflow-wrap: anywhere; font-size: var(--text-h2); }
 .emailBlock > div > p:last-child { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); }
 .copy { display: flex; align-items: center; gap: var(--space-2); color: var(--accent); }
@@ -51,3 +52,9 @@
 .brief li::before { content: ""; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 .brief > p:last-child { max-width: 52ch; margin-top: var(--space-4); color: var(--muted); font-size: var(--text-sm); line-height: var(--leading-base); }
 @media (max-width: 520px) { .brief ul { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  .shell { width: calc(100% - (2 * var(--space-4))); padding-top: var(--space-8); }
+  .intro h1 { font-size: clamp(2.5rem, 13vw, 3.25rem); }
+  .intro > p:last-child { font-size: var(--text-base); }
+  .formSection, .emailBlock { padding: var(--space-5) var(--space-4); }
+}

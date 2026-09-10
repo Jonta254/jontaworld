@@ -10,14 +10,16 @@ export default function PageHeader({
   title,
   lede,
   children,
+  tone = "neutral",
 }: {
   eyebrow: string;
   title: React.ReactNode;
   lede?: string;
   children?: React.ReactNode;
+  tone?: "neutral" | "blue" | "green" | "coral";
 }) {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-tone={tone}>
       <p className={styles.eyebrow}>{eyebrow}</p>
       <h1 className={styles.title}>{title}</h1>
       {lede && <p className={styles.lede}>{lede}</p>}

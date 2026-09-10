@@ -122,7 +122,7 @@ export default function HomePage() {
       >
         <div className={styles.flagships}>
           {FLAGSHIPS.map((p, i) => (
-            <FlagshipCard key={p.slug} project={p} priority={i === 0} />
+            <FlagshipCard key={p.slug} project={p} priority={i === 0} index={i} />
           ))}
         </div>
 

@@ -16,7 +16,7 @@ const formatMonth = (date: string) => new Intl.DateTimeFormat("en", { month: "sh
 export default function BlogPage() {
   return (
     <div className={styles.page}>
-      <PageHeader eyebrow="Writing" title="Notes from the overlap." lede="A few pieces on what the trade taught me about software, and what software taught me back." />
+      <PageHeader eyebrow="Writing" tone="coral" title="Notes from the overlap." lede="A few pieces on what the trade taught me about software, and what software taught me back." />
       <ol className={styles.list}>
         {POSTS.map((post, index) => (
           <li key={post.slug}>

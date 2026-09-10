@@ -16,28 +16,43 @@ import styles from "./hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <p className={styles.kicker}>{SITE.availability}</p>
+      <div className={styles.intro}>
+        <p className={styles.kicker}>{SITE.availability}</p>
 
-      <h1 className={styles.headline}>
-        I design and build websites and apps,
-        <br className={styles.br} />
-        <span className={styles.emphasis}> start to finish</span>.
-      </h1>
+        <h1 className={styles.headline}>
+          Digital products,
+          <br className={styles.br} />
+          <span className={styles.emphasis}> built end to end.</span>
+        </h1>
 
-      <p className={styles.lede}>
-        I turn real operational problems into clear digital products. design,
-        content, systems, and code handled as one connected piece.
-      </p>
+        <p className={styles.lede}>
+          I design the interface and engineer the system behind it—clear,
+          fast, and built for real use.
+        </p>
 
-      <div className={styles.actions}>
-        <Link href="/portfolio" className={styles.primary}>
-          See the work
-          <span className={styles.arrow} aria-hidden="true">→</span>
-        </Link>
-        <Link href="/contact" className={styles.secondary}>
-          Start a project
-        </Link>
+        <div className={styles.actions}>
+          <Link href="/portfolio" className={styles.primary}>
+            See the work
+            <span className={styles.arrow} aria-hidden="true">→</span>
+          </Link>
+          <Link href="/contact" className={styles.secondary}>
+            Start a project
+          </Link>
+        </div>
       </div>
+
+      <aside className={styles.system} aria-label="Connected build process">
+        <div className={styles.systemHead}>
+          <span>Build system</span>
+          <span>01—03</span>
+        </div>
+        <dl className={styles.brief}>
+          <div><dt>01</dt><dd>Product direction</dd><span>Research + scope</span></div>
+          <div><dt>02</dt><dd>Interface system</dd><span>UX + visual design</span></div>
+          <div><dt>03</dt><dd>Engineering</dd><span>Next.js + TypeScript</span></div>
+        </dl>
+        <p className={styles.systemFoot}><span aria-hidden="true" />From first decision to production</p>
+      </aside>
 
       {/* Proof, above the fold. The claim above is a sentence. This is the
           evidence: five products a visitor can open before scrolling once. */}
