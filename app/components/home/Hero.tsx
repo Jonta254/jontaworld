@@ -22,7 +22,7 @@ export default function Hero() {
         <h1 className={styles.headline}>
           Digital products,
           <br className={styles.br} />
-          <span className={styles.emphasis}> built end to end.</span>
+          <span className={styles.emphasis}> built to work.</span>
         </h1>
 
         <p className={styles.lede}>
