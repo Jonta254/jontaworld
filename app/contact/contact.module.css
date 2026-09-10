@@ -1,9 +1,9 @@
 .page { min-height: 100vh; background: var(--paper); }
-.shell { width: min(760px, calc(100% - 2 * var(--gutter))); margin-inline: auto; padding: clamp(var(--space-9), 11vw, var(--space-11)) 0 var(--space-11); }
-.intro { max-width: 660px; position: relative; }
+.shell { width: min(960px, calc(100% - 2 * var(--gutter))); margin-inline: auto; padding: clamp(var(--space-8), 8vw, var(--space-10)) 0 var(--space-11); }
+.intro { max-width: 760px; position: relative; }
 .intro::after { content: ""; display: block; width: min(7rem, 30vw); height: 3px; margin-top: var(--space-6); border-radius: var(--radius-full); background: linear-gradient(90deg, var(--accent), var(--project-coral-wash)); }
 .eyebrow, .label { color: var(--accent); font: var(--text-xs)/1.4 var(--font-mono); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
-.intro h1 { max-width: 13ch; margin-top: var(--space-4); font-size: var(--text-display); }
+.intro h1 { max-width: 17ch; margin-top: var(--space-4); font-size: clamp(3.8rem, 6vw, 5.5rem); line-height: .98; }
 .intro > p:last-child { max-width: 48ch; margin-top: var(--space-5); color: var(--muted); font-size: var(--text-lg); line-height: var(--leading-base); }
 .formSection { margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); border: 1px solid var(--line); border-radius: var(--radius-md); background: color-mix(in srgb, var(--project-blue-wash) 24%, var(--surface)); box-shadow: var(--shadow-1); }
 .formIntro h2 { margin-top: var(--space-2); font-size: var(--text-h2); }
@@ -28,10 +28,6 @@
 .emailBlock { display: grid; gap: var(--space-5); align-items: end; margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); background: color-mix(in srgb, var(--project-amber-wash) 28%, var(--surface)); border: 1px solid var(--line); border-radius: var(--radius-md); }
 .emailBlock h2 { margin-top: var(--space-2); overflow-wrap: anywhere; font-size: var(--text-h2); }
 .emailBlock > div > p:last-child { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); }
-.copy { display: flex; align-items: center; gap: var(--space-2); color: var(--accent); }
-.copy > svg { width: 18px; }
-.copyBtn { min-height: var(--tap); padding: 0 var(--space-3); color: var(--ink); background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); cursor: pointer; font-size: var(--text-xs); }
-.copyBtn:hover, .copyBtn[data-copied] { color: var(--accent); border-color: currentColor; }
 .actions { display: grid; gap: var(--space-2); margin-top: var(--space-5); }
 .actions a { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: var(--space-3); align-items: center; min-height: 68px; padding: var(--space-3) var(--space-4); color: var(--ink); border: 1px solid var(--line); text-decoration: none; transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
 .actions a:hover { border-color: var(--accent); background: var(--accent-wash); transform: translateY(-1px); }
@@ -54,7 +50,7 @@
 @media (max-width: 520px) { .brief ul { grid-template-columns: 1fr; } }
 @media (max-width: 620px) {
   .shell { width: calc(100% - (2 * var(--space-4))); padding-top: var(--space-8); }
-  .intro h1 { font-size: clamp(2.5rem, 13vw, 3.25rem); }
+  .intro h1 { font-size: clamp(2.5rem, 13vw, 3.25rem); line-height: var(--leading-tight); }
   .intro > p:last-child { font-size: var(--text-base); }
   .formSection, .emailBlock { padding: var(--space-5) var(--space-4); }
 }

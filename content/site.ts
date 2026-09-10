@@ -23,7 +23,7 @@ export const SITE = {
   /** One line, plain, no metaphor. The signature headline. */
   positioning: "I design and build websites and apps, start to finish.",
   /** Deliberately no city. See docs/design-system.md section 11. */
-  availability: "Available for new projects, working remotely",
+  availability: "Available for digital work",
   email: "jontaworld@gmail.com",
   url: "https://jontaworld.com",
   updated: "2026-08-27",

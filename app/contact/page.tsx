@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Code2, Copy, Mail, MapPin, Send } from "lucide-react";
+import { Code2, Mail, MapPin, Send } from "lucide-react";
 import { SITE, SOCIAL } from "@/content/site";
-import CopyEmail from "./CopyEmail";
 import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
@@ -31,7 +30,6 @@ export default function ContactPage() {
             <h2 id="email-title">{SITE.email}</h2>
             <p>I read every message myself and reply personally.</p>
           </div>
-          <div className={styles.copy}><Copy aria-hidden="true" /><CopyEmail value={SITE.email} /></div>
         </section>
 
         <nav className={styles.actions} aria-label="Contact options">
