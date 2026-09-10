@@ -16,22 +16,22 @@ export const SEQUENCE: Chapter[] = [
   {
     num: "01",
     title: "The trade",
-    body: "Electrical work, inside walls, tracing faults by feel. A circuit either carries current or it does not. There is no persuading it, and no partial credit. That is the standard I still work to.",
+    body: "Electrical work taught me to trace problems carefully and build systems that must work in real conditions.",
   },
   {
     num: "02",
     title: "The first tool",
-    body: "The paperwork around the job was worse than the job. So I built something to fix it. That was the first time software solved a problem I had actually stood in, and I have not been interested in building anything else since.",
+    body: "I started building software to improve the paperwork and repeated tasks around practical work.",
   },
   {
     num: "03",
     title: "The craft",
-    body: "Then design, and by choice. Type, spacing, motion, and systems, not decoration. It is the discipline of deciding something once and applying it everywhere, the same discipline as wiring a panel properly.",
+    body: "Design gave those tools clearer structure, language, and interfaces. Engineering made them dependable.",
   },
   {
     num: "04",
     title: "The work now",
-    body: "Software for people who work with their hands: electricians, apprentices, anyone whose job happens away from a desk and outside of signal. Built to the standard the trade taught me.",
+    body: "Today I design and build websites, applications, and tools for real workflows and everyday use.",
   },
 ];
 

@@ -28,16 +28,15 @@ export default function AboutPage() {
       <header className={styles.hero}>
         <p className={styles.kicker}>About</p>
         <h1 className={styles.headline}>
-          I build things that <em>have to work</em>.
+          I design and build <em>useful digital products</em>.
         </h1>
         <p className={styles.lede}>
-          Most of what I know about software I learned somewhere else first, in
-          walls and ceiling cavities, on jobs where a mistake is not a bug
-          report. It is the reason the work looks the way it does.
+          My approach comes from electrical work: understand the problem,
+          build carefully, and make the result dependable.
         </p>
       </header>
 
-      <Section eyebrow="The sequence" title="How the work got here.">
+      <Section eyebrow="Background" title="From field work to digital products.">
         <ol className={styles.sequence}>
           {SEQUENCE.map((c) => (
             <li key={c.num} className={styles.chapter}>
@@ -57,17 +56,19 @@ export default function AboutPage() {
       <Statement>{ABOUT_STATEMENT}</Statement>
 
       <section className={styles.profile} aria-labelledby="profile-title">
-        <div><p>Professional profile</p><h2 id="profile-title">Design judgment with engineering responsibility.</h2></div>
+        <div className={styles.profileIntro}>
+          <h2 id="profile-title">Design judgment. Engineering responsibility.</h2>
+          <p>I shape the product, design the interface, and stay responsible through launch.</p>
+        </div>
         <dl>
-          <div><dt>Work</dt><dd>Independent product designer and developer</dd></div>
-          <div><dt>Background</dt><dd>Electrical trade and practical field systems</dd></div>
-          <div><dt>Focus</dt><dd>Websites, applications, tools, and product interfaces</dd></div>
-          <div><dt>Working style</dt><dd>Remote, direct, and responsible from scope through launch</dd></div>
+          <div><dt>Practice</dt><dd>Product design and development</dd></div>
+          <div><dt>Foundation</dt><dd>Electrical trade and field systems</dd></div>
+          <div><dt>Work</dt><dd>Websites, applications, and digital tools</dd></div>
+          <div><dt>Approach</dt><dd>Direct, practical, and responsible through launch</dd></div>
         </dl>
       </section>
       <section className={styles.tools} aria-labelledby="tools-title">
-        <p>Current tools</p>
-        <h2 id="tools-title">A small stack, used deeply.</h2>
+        <h2 id="tools-title">Tools I work with.</h2>
         <ul><li>Next.js</li><li>React</li><li>TypeScript</li><li>Node.js</li><li>Supabase</li><li>Vercel</li><li>CSS</li><li>Git</li></ul>
       </section>
 

@@ -26,8 +26,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.lede}>
-          I design the interface and engineer the system behind it—clear,
-          fast, and built for real use.
+          I design the interface and engineer the system behind it. Clear,
+          fast, and made for real use.
         </p>
 
         <div className={styles.actions}>

@@ -50,6 +50,15 @@
 }
 .back:hover { color: var(--accent); }
 
+.caseLabel {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--project-ink);
+}
+
 .title {
   font-size: var(--text-display);
   letter-spacing: -0.028em;
@@ -69,18 +78,20 @@
   gap: var(--space-2);
   align-self: flex-start;
   min-height: var(--tap);
-  margin-top: var(--space-2);
-  padding-inline: var(--space-4);
-  color: var(--paper);
-  background: var(--project-ink);
-  border: 1px solid var(--project-ink);
-  border-radius: var(--radius-sm);
+  margin-top: var(--space-1);
+  padding: 0;
+  color: var(--project-ink);
+  background: transparent;
+  border-bottom: 1px solid color-mix(in srgb, var(--project-ink) 45%, transparent);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   text-decoration: none;
-  transition: filter var(--dur-fast) var(--ease-out);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
 }
-.heroCta:hover { filter: brightness(.9); }
+.heroCta:hover { color: var(--ink); border-bottom-color: currentColor; }
+
+.opening { scroll-margin-top: calc(var(--tap) * 2); }
 
 .facts {
   width: calc(100% - (var(--gutter) * 2));

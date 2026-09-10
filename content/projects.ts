@@ -83,7 +83,7 @@ export type Project = {
   study?: CaseStudy;
 };
 
-export const PROJECTS: Project[] = [
+const PROJECT_CATALOG: Project[] = [
   {
     slug: "apprenticelog",
     name: "ApprenticeLog",
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/electracore-feature.webp",
       mobile: "/showcase/electracore-mobile.webp",
       alt: "ElectraCore landing page for an electrical calculators and guides platform, built from real site experience.",
-      featureAlt: "ElectraCore electrical calculators route showing real Ohm's law, power, voltage-drop and cable-sizing tools with saved calculations.",
+      featureAlt: "ElectraCore electrical calculators route showing real Ohm's law, power, voltage drop and cable sizing tools with saved calculations.",
     },
     depth: [
       {
@@ -243,7 +243,52 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/traildesk-feature.webp",
       mobile: "/showcase/traildesk-mobile.webp",
       alt: "TrailDesk landing page showing offline trip planning with route mapping and gear checklists.",
-      featureAlt: "TrailDesk destination catalogue showing international route discovery, regional filters and researched trip-planning context.",
+      featureAlt: "TrailDesk destination catalogue showing international route discovery, regional filters and researched trip planning context.",
+    },
+    study: {
+      role: "Sole designer and engineer. Product structure, interface, and build.",
+      problem:
+        "Trip plans often sit across map tabs, notes, gear lists, and messages. That becomes a practical problem when the connection disappears and the important detail is no longer easy to reach.",
+      objective:
+        "Bring route context, preparation, and essential contacts into one calm mobile workspace that remains useful beyond reliable coverage.",
+      research:
+        "I mapped what changes between planning at home and checking a plan outdoors. The useful information became a short sequence: choose a destination, understand the route, prepare the kit, and keep essential details close.",
+      decisions: [
+        {
+          kind: "Design",
+          step: "Organise around the trip",
+          detail:
+            "Destinations lead into route context and preparation instead of exposing separate tools. The interface follows the way a plan is assembled, so the next useful action stays clear.",
+        },
+        {
+          kind: "Design",
+          step: "Let mobile set the hierarchy",
+          detail:
+            "Wide screens keep destination context visible beside the work. On a phone, the same information becomes a direct reading order with actions placed where they are needed.",
+        },
+        {
+          kind: "Engineering",
+          step: "Keep critical information portable",
+          detail:
+            "Route details, lists, and contacts are structured as durable trip data rather than a collection of temporary screens. The product is designed to remain understandable after a connection drops.",
+        },
+        {
+          kind: "Engineering",
+          step: "Separate saved facts from changing conditions",
+          detail:
+            "The interface does not present cached planning information as live conditions. That distinction keeps an offline tool useful without giving old information false authority.",
+        },
+      ],
+      challenges:
+        "Offline access creates a responsibility as well as a convenience. A saved route can support preparation, but it cannot guarantee current weather, access, or emergency coverage. The design has to keep those limits visible without making every screen feel like a warning.",
+      turningPoint:
+        "The product became clearer when I stopped treating the map as the product. The real product is a prepared trip that still makes sense when the map cannot update.",
+      solution:
+        "A responsive trip planning workspace that brings destination discovery, route context, gear preparation, and essential contacts into one continuous flow.",
+      results:
+        "The live product can be opened today to browse destinations, inspect the planning structure, and compare the complete desktop and mobile experience.",
+      lessons:
+        "Offline design is less about adding a cache badge and more about deciding what remains trustworthy. Future development should deepen saved route detail while preserving a clear boundary around information that can change.",
     },
   },
   {
@@ -263,7 +308,52 @@ export const PROJECTS: Project[] = [
       feature: "/showcase/safesignal-feature.webp",
       mobile: "/showcase/safesignal-mobile.webp",
       alt: "SafeSignal landing page explaining timed personal check ins and the limits of its on device preview.",
-      featureAlt: "SafeSignal supervisor dashboard preview showing active check-ins, due-soon and overdue states, and an illustrative incident record clearly labelled as sample data.",
+      featureAlt: "SafeSignal supervisor dashboard preview showing active check ins, due soon and overdue states, and an illustrative incident record clearly labelled as sample data.",
+    },
+    study: {
+      role: "Product design and engineering.",
+      problem:
+        "Lone workers need a clear way to record check ins. A preview must not imply that anyone is actively monitoring it.",
+      objective:
+        "Make the timer, status, next action, and product limits clear at a glance.",
+      research:
+        "I mapped four timer states: normal, approaching, grace, and overdue. Each needed a name, time, and next action.",
+      decisions: [
+        {
+          kind: "Design",
+          step: "Name every state",
+          detail:
+            "Colour supports the status, but text carries the meaning. Time and action stay together.",
+        },
+        {
+          kind: "Design",
+          step: "Put the limitation beside the promise",
+          detail:
+            "The preview states that it cannot monitor, call, message, or dispatch help. Sample data is labelled in place.",
+        },
+        {
+          kind: "Engineering",
+          step: "Derive status from one timer model",
+          detail:
+            "One deadline and grace period determine every visible state, keeping the interface consistent.",
+        },
+        {
+          kind: "Engineering",
+          step: "Keep evidence optional and local",
+          detail:
+            "Location is optional. Session records stay on the current device.",
+        },
+      ],
+      challenges:
+        "An overdue state must feel urgent without suggesting that an alert has been sent. The interface says exactly what has and has not happened.",
+      turningPoint:
+        "The product became clearer when its limits moved into the main interface.",
+      solution:
+        "A local preview with timed check ins, optional location, session history, and four clear timer states.",
+      results:
+        "Visitors can start a session, record a check in, and inspect the local history. The limits remain visible throughout.",
+      lessons:
+        "A working interface is not a monitored safety service. Real alerts require a tested notification and response system.",
     },
   },
   {
@@ -285,8 +375,69 @@ export const PROJECTS: Project[] = [
       alt: "DigiLearn landing page showing learning paths across coding, AI and data science.",
       featureAlt: "DigiLearn open course library showing searchable, filterable structured courses with lesson counts and access status.",
     },
+    study: {
+      role: "Sole designer and engineer. Learning model, content structure, interface, and build.",
+      problem:
+        "Digital learning is easy to start and hard to navigate. Tutorials, videos, and tools accumulate without showing what to learn next or what a learner should be able to make at the end.",
+      objective:
+        "Turn a broad modern development curriculum into clear learning paths, visible project outcomes, and a course library that can be searched without losing the larger direction.",
+      research:
+        "I mapped the capabilities behind practical web, automation, AI, and data work, then grouped them by dependency rather than popularity. The audit exposed two needs: a guided path for direction and an open library for deliberate lookup.",
+      decisions: [
+        {
+          kind: "Design",
+          step: "Lead with paths, not volume",
+          detail:
+            "The first choice is a direction with an outcome. Course counts and individual lessons remain visible, but they support the path instead of becoming the product headline.",
+        },
+        {
+          kind: "Design",
+          step: "Make the library useful on its own",
+          detail:
+            "Search, topic filters, lesson counts, and access status let someone find a specific course while still understanding where it belongs in the wider programme.",
+        },
+        {
+          kind: "Engineering",
+          step: "Protect saved progress",
+          detail:
+            "Local progress is parsed defensively, checked for the expected version and record shape, and reduced to unique lesson identifiers. Invalid data returns to a safe empty state instead of breaking the experience.",
+        },
+        {
+          kind: "Engineering",
+          step: "Model learning as structured content",
+          detail:
+            "Paths, courses, lessons, and outcomes have distinct roles in the data model. That keeps navigation and progress behaviour consistent as the library grows.",
+        },
+      ],
+      challenges:
+        "Breadth can quickly make a learning platform feel generic. The tradeoff was to show the range of disciplines while keeping each route anchored to a concrete outcome. Local progress also keeps the preview simple, but it does not follow a learner across devices.",
+      turningPoint:
+        "The information architecture settled when projects became the destination and lessons became the route. That gave the catalogue a reason to exist beyond its size.",
+      solution:
+        "A responsive digital learning platform with outcome led paths, a searchable course library, lesson level structure, and defensively stored progress in the current browser.",
+      results:
+        "The live product exposes its paths and course library for direct inspection. Visitors can browse by topic, review lesson depth and access status, and test the learning structure on desktop or mobile.",
+      lessons:
+        "A credible curriculum needs stronger sequencing, not more categories. The next improvement should deepen project assessment and make progress portable only when an account system is ready to support it reliably.",
+    },
   },
 ];
 
-export const FLAGSHIPS = PROJECTS.filter((p) => p.tier === "flagship");
-export const SUPPORTING = PROJECTS.filter((p) => p.tier === "supporting");
+const DISPLAY_ORDER = [
+  "digilearn",
+  "apprenticelog",
+  "electracore",
+  "traildesk",
+  "safesignal",
+] as const;
+
+export const PROJECTS: Project[] = [...PROJECT_CATALOG].sort(
+  (a, b) => DISPLAY_ORDER.indexOf(a.slug as (typeof DISPLAY_ORDER)[number]) - DISPLAY_ORDER.indexOf(b.slug as (typeof DISPLAY_ORDER)[number]),
+);
+
+export const FLAGSHIPS = PROJECTS.filter(
+  (project) => project.slug === "digilearn" || project.tier === "flagship",
+);
+export const SUPPORTING = PROJECTS.filter(
+  (project) => !FLAGSHIPS.includes(project),
+);

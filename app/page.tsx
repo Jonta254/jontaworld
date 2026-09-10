@@ -119,10 +119,11 @@ export default function HomePage() {
         title="Products in production."
         lede="Five applications across trade tools, safety, and learning. Each link opens the running product."
         wide
+        compactAfter
       >
         <div className={styles.flagships}>
           {FLAGSHIPS.map((p, i) => (
-            <FlagshipCard key={p.slug} project={p} priority={i === 0} index={i} />
+            <FlagshipCard key={p.slug} project={p} priority={i === 0} />
           ))}
         </div>
 
@@ -141,7 +142,7 @@ export default function HomePage() {
         <em>needed</em> it, and now it does.
       </Statement>
 
-      <Section title="Four rules, learned the expensive way." divider={false}>
+      <Section title="Four rules, learned the expensive way." divider={false} compactBefore>
         <ul className={styles.principles}>
           {PRINCIPLES.map((p) => (
             <li key={p.title} className={styles.principle}>

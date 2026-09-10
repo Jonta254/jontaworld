@@ -10,9 +10,13 @@
 }
 
 .wide { max-width: var(--container-wide); }
+.compactAfter .inner { padding-bottom: var(--space-6); }
+.compactBefore .inner { padding-top: var(--space-7); }
 
 @media (min-width: 1024px) {
   .inner { padding-block: var(--space-10); }
+  .compactAfter .inner { padding-bottom: var(--space-7); }
+  .compactBefore .inner { padding-top: var(--space-7); }
 }
 
 .header {

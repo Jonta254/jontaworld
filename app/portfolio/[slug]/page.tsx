@@ -91,15 +91,14 @@ export default async function ProjectPage({
         <Link href="/portfolio" className={styles.back}>
           <span aria-hidden="true">←</span> Work
         </Link>
+        <p className={styles.caseLabel}>Product case study</p>
         <h1 className={styles.title}>{project.name}</h1>
-        <p className={styles.summary}>{project.summary}</p>
+        <p className={styles.summary}>{project.outcome}</p>
         <a
           className={styles.heroCta}
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#case-study"
         >
-          Open live product <span aria-hidden="true">→</span>
+          Explore the case study <span aria-hidden="true">↓</span>
         </a>
       </header>
 
@@ -176,7 +175,7 @@ export default async function ProjectPage({
           reflection is quiet and italic.  */}
       {s ? (
         <div className={styles.body}>
-          <section className={styles.opening}>
+          <section className={styles.opening} id="case-study">
             <p className={styles.openingLabel}>The problem</p>
             <p className={styles.openingText}>{s.problem}</p>
           </section>

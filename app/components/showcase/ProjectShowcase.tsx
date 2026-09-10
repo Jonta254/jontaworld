@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/content/projects";
-import { FLAGSHIPS, PROJECTS, SUPPORTING } from "@/content/projects";
+import { FLAGSHIPS, SUPPORTING } from "@/content/projects";
 import { BrowserFrame, PhoneFrame } from "./BrowserFrame";
 import styles from "./showcase.module.css";
 
@@ -34,15 +34,11 @@ function LiveLink({ project }: { project: Project }) {
   );
 }
 
-export function FlagshipCard({ project, priority, index }: { project: Project; priority: boolean; index: number }) {
+export function FlagshipCard({ project, priority }: { project: Project; priority: boolean }) {
   const href = `/portfolio/${project.slug}`;
   return (
     <article className={`${styles.card} ${styles.flagship}`} data-project={project.slug}>
       <div className={styles.body}>
-        <div className={styles.projectMeta}>
-          <p className={styles.kicker}>Case study</p>
-          <p className={styles.projectCount}>{String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")} · Live</p>
-        </div>
         <h3 className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
@@ -56,7 +52,7 @@ export function FlagshipCard({ project, priority, index }: { project: Project; p
         </ul>
         <div className={styles.actions}>
           <Link href={href} className={styles.readCta}>
-            Read the case study
+            {project.study ? "Read the case study" : "Explore the product"}
             <span className={styles.arrow} aria-hidden="true">→</span>
           </Link>
           <LiveLink project={project} />
@@ -76,7 +72,7 @@ export function FlagshipCard({ project, priority, index }: { project: Project; p
   );
 }
 
-function SupportingCard({ project, index }: { project: Project; index: number }) {
+function SupportingCard({ project }: { project: Project }) {
   const href = `/portfolio/${project.slug}`;
   return (
     <article className={`${styles.card} ${styles.supporting}`} data-project={project.slug}>
@@ -88,10 +84,6 @@ function SupportingCard({ project, index }: { project: Project; index: number })
         />
       </div>
       <div className={styles.body}>
-        <div className={styles.projectMeta}>
-          <p className={styles.kicker}>Selected product</p>
-          <p className={styles.projectCount}>{String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")} · Live</p>
-        </div>
         <h3 className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
@@ -105,7 +97,7 @@ function SupportingCard({ project, index }: { project: Project; index: number })
         </ul>
         <div className={styles.actions}>
           <Link href={href} className={styles.readCtaSmall}>
-            View project
+            Read the case study
             <span className={styles.arrow} aria-hidden="true">→</span>
           </Link>
           <LiveLink project={project} />
@@ -115,11 +107,11 @@ function SupportingCard({ project, index }: { project: Project; index: number })
   );
 }
 
-export function SupportingGrid({ projects, startIndex = FLAGSHIPS.length }: { projects: Project[]; startIndex?: number }) {
+export function SupportingGrid({ projects }: { projects: Project[] }) {
   return (
     <div className={styles.grid}>
-      {projects.map((p, i) => (
-        <SupportingCard key={p.slug} project={p} index={startIndex + i} />
+      {projects.map((p) => (
+        <SupportingCard key={p.slug} project={p} />
       ))}
     </div>
   );
@@ -130,7 +122,7 @@ export function ProjectShowcase() {
     <>
       <div className={styles.flagshipStack}>
         {FLAGSHIPS.map((p, i) => (
-          <FlagshipCard key={p.slug} project={p} priority={i === 0} index={i} />
+          <FlagshipCard key={p.slug} project={p} priority={i === 0} />
         ))}
       </div>
 

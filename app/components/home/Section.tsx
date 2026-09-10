@@ -16,6 +16,8 @@ export default function Section({
   children,
   wide = false,
   divider = true,
+  compactAfter = false,
+  compactBefore = false,
   tone = "paper",
 }: {
   eyebrow?: string;
@@ -26,10 +28,12 @@ export default function Section({
   /** The top rule. Dropping it lets a section float, which is how pacing
       variation is created without changing any component's styling. */
   divider?: boolean;
+  compactAfter?: boolean;
+  compactBefore?: boolean;
   tone?: "paper" | "warm" | "stone";
 }) {
   return (
-    <section className={`${styles.section} ${styles[tone]}`}>
+    <section className={`${styles.section} ${styles[tone]} ${compactAfter ? styles.compactAfter : ""} ${compactBefore ? styles.compactBefore : ""}`}>
       {divider && <hr className="rule" />}
       <div className={`${styles.inner} ${wide ? styles.wide : ""}`}>
         {(eyebrow || title || lede) && (

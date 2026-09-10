@@ -138,40 +138,46 @@
   .cta { display: none; }
   .inner {
     flex-wrap: wrap;
-    gap: var(--space-2) var(--space-3);
+    gap: 0 var(--space-3);
+    padding-top: 0;
     padding-bottom: 0;
   }
-  .brand { margin-right: 0; }
+  .brand {
+    min-height: var(--tap);
+    margin-right: 0;
+    padding-block: 0;
+  }
+  .logo { width: 22px; height: 22px; }
+  .brandName { font-size: 0.95rem; }
   .mobileCta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: var(--tap);
-    padding-inline: var(--space-3);
-    font-size: var(--text-sm);
+    padding-inline: var(--space-1);
+    font-size: 0.9rem;
     color: var(--accent);
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius-sm);
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
     text-decoration: none;
     margin-left: auto;
   }
-  .mobileCta:hover { border-color: var(--accent); }
+  .mobileCta:hover { border-bottom-color: var(--accent); }
   .links {
     width: calc(100% + (var(--gutter) * 2));
     margin-inline: calc(var(--gutter) * -1);
     padding-inline: var(--gutter);
-    justify-content: flex-start;
-    gap: var(--space-1);
+    justify-content: space-between;
+    gap: 0;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
-    border-top: 1px solid var(--line);
-    background: color-mix(in srgb, var(--sunken) 52%, var(--paper));
+    border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+    background: var(--paper);
   }
   .links::-webkit-scrollbar { display: none; }
   .links li { flex: none; }
-  .link { padding-inline: var(--space-3); }
-  .link::after { left: var(--space-3); right: var(--space-3); bottom: 7px; }
+  .link { padding-inline: var(--space-2); }
+  .link::after { left: var(--space-2); right: var(--space-2); bottom: 6px; }
 }
 
 /* At 320px (WCAG 1.4.10 reflow, which is 400% zoom on a 1280 screen) the
@@ -179,14 +185,14 @@
    Wrapping is used rather than tighter padding because it holds regardless of
    font metrics or a longer label, and it avoids a hamburger for four links. */
 @media (max-width: 420px) {
-  .logo { width: 26px; height: 26px; }
   .links { justify-content: space-between; }
-  .link { padding-inline: var(--space-2); }
-  .link::after { left: var(--space-2); right: var(--space-2); }
+  .link { padding-inline: var(--space-1); }
+  .link::after { left: var(--space-1); right: var(--space-1); }
 }
 
 @media (max-width: 350px) {
-  .brandName { font-size: var(--text-base); }
-  .mobileCta { padding-inline: var(--space-2); }
+  .brandName { font-size: var(--text-sm); }
+  .mobileCta { padding-inline: 0; }
   .links { justify-content: flex-start; }
+  .link { padding-inline: var(--space-2); }
 }
