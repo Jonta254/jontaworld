@@ -173,11 +173,32 @@
     scrollbar-width: none;
     border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
     background: var(--paper);
+    max-height: var(--tap);
+    opacity: 1;
+    transform: translateY(0);
+    transition: max-height var(--dur-base) var(--ease-out),
+                opacity var(--dur-fast) var(--ease-out),
+                transform var(--dur-base) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out),
+                border-width var(--dur-fast) var(--ease-out);
+  }
+  .mobileNavHidden .links {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    border-top-color: transparent;
+    border-top-width: 0;
+    overflow: hidden;
   }
   .links::-webkit-scrollbar { display: none; }
   .links li { flex: none; }
   .link { padding-inline: var(--space-2); }
   .link::after { left: var(--space-2); right: var(--space-2); bottom: 6px; }
+}
+
+@media (max-width: 620px) and (prefers-reduced-motion: reduce) {
+  .links { transition: none; }
 }
 
 /* At 320px (WCAG 1.4.10 reflow, which is 400% zoom on a 1280 screen) the

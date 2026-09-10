@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NAV, SITE } from "@/content/site";
 import styles from "./nav.module.css";
 import BrandMark from "./BrandMark";
@@ -21,6 +21,8 @@ import BrandMark from "./BrandMark";
 export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileNavHidden, setMobileNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     // A sentinel + IntersectionObserver rather than a scroll listener: no
@@ -42,8 +44,58 @@ export default function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 620px)");
+    let frame = 0;
+
+    lastScrollY.current = window.scrollY;
+
+    const updateNavigation = () => {
+      frame = 0;
+
+      if (!mobile.matches) {
+        setMobileNavHidden(false);
+        lastScrollY.current = window.scrollY;
+        return;
+      }
+
+      const currentY = Math.max(window.scrollY, 0);
+      const distance = currentY - lastScrollY.current;
+
+      if (currentY <= 32) {
+        setMobileNavHidden(false);
+      } else if (distance > 6 && currentY > 96) {
+        setMobileNavHidden(true);
+      } else if (distance < -4) {
+        setMobileNavHidden(false);
+      }
+
+      if (Math.abs(distance) >= 4) lastScrollY.current = currentY;
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateNavigation);
+    };
+
+    const onBreakpointChange = () => {
+      setMobileNavHidden(false);
+      lastScrollY.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    mobile.addEventListener("change", onBreakpointChange);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      mobile.removeEventListener("change", onBreakpointChange);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${mobileNavHidden ? styles.mobileNavHidden : ""}`}
+    >
       <nav className={styles.inner} aria-label="Primary">
         <Link href="/" className={styles.brand}>
           <BrandMark className={styles.logo} />
@@ -59,7 +111,7 @@ export default function Nav() {
           Contact
         </Link>
 
-        <ul className={styles.links}>
+        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined}>
           {NAV.map((item) => {
             const active =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -69,6 +121,7 @@ export default function Nav() {
                   href={item.href}
                   className={`${styles.link} ${active ? styles.active : ""}`}
                   aria-current={active ? "page" : undefined}
+                  tabIndex={mobileNavHidden ? -1 : undefined}
                 >
                   {item.label}
                 </Link>
