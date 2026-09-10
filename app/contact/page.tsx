@@ -24,14 +24,6 @@ export default function ContactPage() {
 
         <ContactForm />
 
-        <section className={styles.emailBlock} aria-labelledby="email-title">
-          <div>
-            <p className={styles.label}>Email me</p>
-            <h2 id="email-title">{SITE.email}</h2>
-            <p>I read every message myself and reply personally.</p>
-          </div>
-        </section>
-
         <nav className={styles.actions} aria-label="Contact options">
           <a className={styles.primary} href={gmailUrl} target="_blank" rel="noopener noreferrer"><Mail aria-hidden="true" /><span><strong>Open Gmail</strong><small>Start a ready email</small></span></a>
           <a href={"mailto:" + SITE.email}><Send aria-hidden="true" /><span><strong>Use email app</strong><small>Open your default app</small></span></a>

@@ -25,10 +25,7 @@
 .formStatus[data-state="sent"] { color: var(--success); }
 .formStatus[data-state="error"] { color: var(--danger); }
 .honeypot { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
-.emailBlock { display: grid; gap: var(--space-5); align-items: end; margin-top: var(--space-8); padding: clamp(var(--space-5), 5vw, var(--space-7)); background: color-mix(in srgb, var(--project-amber-wash) 28%, var(--surface)); border: 1px solid var(--line); border-radius: var(--radius-md); }
-.emailBlock h2 { margin-top: var(--space-2); overflow-wrap: anywhere; font-size: var(--text-h2); }
-.emailBlock > div > p:last-child { margin-top: var(--space-2); color: var(--muted); font-size: var(--text-sm); }
-.actions { display: grid; gap: var(--space-2); margin-top: var(--space-5); }
+.actions { display: grid; gap: var(--space-2); margin-top: var(--space-8); }
 .actions a { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: var(--space-3); align-items: center; min-height: 68px; padding: var(--space-3) var(--space-4); color: var(--ink); border: 1px solid var(--line); text-decoration: none; transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
 .actions a:hover { border-color: var(--accent); background: var(--accent-wash); transform: translateY(-1px); }
 .actions svg { width: 19px; color: var(--accent); }
@@ -40,7 +37,7 @@
 .actions .primary svg, .actions .primary small { color: inherit; }
 .availability { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-6); color: var(--muted); font-size: var(--text-sm); }
 .availability svg { width: 16px; color: var(--accent); }
-@media (min-width: 640px) { .formRow { grid-template-columns: repeat(2, minmax(0, 1fr)); } .emailBlock { grid-template-columns: minmax(0, 1fr) auto; } .actions { grid-template-columns: repeat(3, minmax(0, 1fr)); } .actions a { align-content: center; min-height: 108px; } }
+@media (min-width: 640px) { .formRow { grid-template-columns: repeat(2, minmax(0, 1fr)); } .actions { grid-template-columns: repeat(3, minmax(0, 1fr)); } .actions a { align-content: center; min-height: 108px; } }
 .brief { margin-top: var(--space-7); padding-top: var(--space-6); border-top: 1px solid var(--line); }
 .brief h2 { margin-top: var(--space-2); font-size: var(--text-h3); }
 .brief ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2) var(--space-5); margin-top: var(--space-4); }
@@ -52,5 +49,5 @@
   .shell { width: calc(100% - (2 * var(--space-4))); padding-top: var(--space-8); }
   .intro h1 { font-size: clamp(2.5rem, 13vw, 3.25rem); line-height: var(--leading-tight); }
   .intro > p:last-child { font-size: var(--text-base); }
-  .formSection, .emailBlock { padding: var(--space-5) var(--space-4); }
+  .formSection { padding: var(--space-5) var(--space-4); }
 }
