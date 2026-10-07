@@ -85,6 +85,41 @@ export type Project = {
 
 const PROJECT_CATALOG: Project[] = [
   {
+    slug: "pure-entertainment",
+    name: "PURE Entertainment",
+    outcome: "An entertainment brand website with event discovery, a photographic collection preview, saved pieces, and original editorial content.",
+    summary: "A responsive entertainment website connecting events, collection browsing and culture. The deployed preview supports a persistent bag and server-validated order quotes. Payments, ticket issuance and production inquiry storage are not enabled.",
+    url: "https://entertainment-lac.vercel.app",
+    displayUrl: "entertainment-lac.vercel.app",
+    repo: "https://github.com/Jonta254/entertainment-",
+    stack: ["JavaScript", "Node.js", "Responsive design", "Server validation"],
+    tier: "supporting",
+    shot: {
+      desktop: "/showcase/pure-entertainment-desktop.webp",
+      feature: "/showcase/pure-entertainment-feature.webp",
+      mobile: "/showcase/pure-entertainment-mobile.webp",
+      alt: "PURE Entertainment live homepage with a concert photograph, wordmark and event navigation.",
+      featureAlt: "PURE collection preview with photographic style references, search, category filters and saved pieces.",
+    },
+    study: {
+      role: "Website design refinement and frontend and backend implementation.",
+      problem: "The entertainment website needed more than a striking homepage. Visitors needed useful routes into events, products, editorial stories and contact, with clear states for features that were not ready for live sales.",
+      objective: "Preserve the established PURE identity while making the wider website readable, accessible and useful across desktop and mobile.",
+      research: "I reviewed the existing pages and followed the customer journey from event discovery and collection browsing through the bag, order review and inquiry form. That exposed gaps in content, navigation and validation.",
+      decisions: [
+        { kind: "Design", step: "Extend the brand across real pages", detail: "The near-black, white and warm-gold direction carries through event pages, the collection, product guidance, an About page, four journal articles and searchable FAQs." },
+        { kind: "Design", step: "Make collection browsing practical", detail: "Search, category filters, sorting, saved pieces, explicit size selection and image enlargement help visitors inspect the collection. Stock photographs are labelled as style references." },
+        { kind: "Engineering", step: "Validate prices on the server", detail: "Order quotes use catalogue prices and reject invalid quantities, variants, past events and unopened ticket sales. The bag remains on the current device; no payment is collected." },
+        { kind: "Engineering", step: "Keep deployment limits visible", detail: "The local Node backend stores inquiries in SQLite. Vercel serves the website and order-quote API, but inquiries return a clear unavailable response until persistent production storage is connected." },
+      ],
+      challenges: "The local inquiry backend requires durable storage, while the existing hosting uses serverless functions. The deployed site therefore exposes the working catalogue and validation without pretending that contact submissions or paid orders are being processed.",
+      turningPoint: "The website became more useful when every visual destination led to readable content and every unavailable service explained its actual state.",
+      solution: "A responsive brand website with events and an archive, collection and product pages, saved pieces, a persistent bag, order validation, journal articles and customer guidance.",
+      results: "The live site can be opened and explored directly. Verification covered 84 responsive page checks, 73 internal links and 13 backend and deployment-adapter tests. Live order validation and private-file protection were checked after deployment.",
+      lessons: "A convincing brand experience depends on useful content and dependable interactions. Original product photography, confirmed commercial policies, payments and persistent inquiry storage remain necessary before live commerce.",
+    },
+  },
+  {
     slug: "apprenticelog",
     name: "ApprenticeLog",
     outcome:
@@ -429,6 +464,7 @@ const DISPLAY_ORDER = [
   "electracore",
   "traildesk",
   "safesignal",
+  "pure-entertainment",
 ] as const;
 
 export const PROJECTS: Project[] = [...PROJECT_CATALOG].sort(

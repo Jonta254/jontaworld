@@ -5,7 +5,7 @@ import styles from "./portfolio.module.css";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Live products built for people who work with their hands: electrical tools, trade logbooks, and offline field apps. Every one is running, and open to anyone.",
+    "Explore live work across learning, trade tools, safety, outdoor planning and entertainment, with case studies and links to each deployment.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -16,9 +16,9 @@ export default function PortfolioPage() {
         <p className={styles.eyebrow}>Selected work</p>
         <h1 className={styles.title}>Work</h1>
         <p className={styles.lede}>
-          Five products, all live. Every link below opens the real thing. No
-          mockups, and no screenshots of something that was never finished.
-          Open them and judge for yourself.
+          Six live websites and applications across learning, trade tools,
+          safety, outdoor planning and entertainment. Open each deployment,
+          explore the work, and read its capabilities and current limits.
         </p>
       </header>
 

@@ -27,6 +27,7 @@ const CHROME_CANDIDATES = [
 
 /** Canonical URLs — every one verified HTTP 200. See docs/design-system.md §1. */
 const APPS = [
+  { slug: "pure-entertainment", url: "https://entertainment-lac.vercel.app", featurePath: "/shop/" },
   { slug: "electracore",   url: "https://electracore.vercel.app", featurePath: "/calculate" },
   { slug: "apprenticelog", url: "https://apprentice-log-xi.vercel.app", featurePath: "/dashboard" },
   { slug: "traildesk",     url: "https://traildesk.vercel.app", featurePath: "/explore" },

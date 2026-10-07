@@ -117,7 +117,7 @@ export default function HomePage() {
       <Section
         eyebrow="Selected work"
         title="Products in production."
-        lede="Five applications across trade tools, safety, and learning. Each link opens the running product."
+        lede="Six websites and applications across trade tools, safety, learning and entertainment. Each link opens the running deployment."
         wide
         compactAfter
       >
