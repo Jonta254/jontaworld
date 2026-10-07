@@ -6,6 +6,20 @@ const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Googl
 try {
   const page = await browser.newPage();
   await page.setViewport({ width: 390, height: 844 });
+  const startupRequests = [];
+  const recordStartup = request => startupRequests.push(request.url());
+  page.on('request', recordStartup);
+  await page.goto(`${base}/`, { waitUntil: 'networkidle0' });
+  page.off('request', recordStartup);
+  assert.equal(startupRequests.some(url => new URL(url).pathname === '/lab'), false);
+  assert.equal(startupRequests.some(url => new URL(url).pathname === '/about'), false);
+  await page.hover('nav[aria-label=Primary] a[href="/about"]');
+  await page.waitForFunction(() => performance.getEntriesByType('resource').some(resource => new URL(resource.name).pathname === '/about'));
+  await page.focus('nav[aria-label=Primary] a[href="/lab"]');
+  await page.waitForFunction(() => performance.getEntriesByType('resource').some(resource => new URL(resource.name).pathname === '/lab'));
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => location.pathname === '/lab' && !!document.querySelector('#product-logic'));
+  console.log('PASS menu avoids startup About/Lab fetches, prefetches on hover/focus, and navigates with Enter');
   let fixture = { status: 200, body: '{"success":"false"}' };
   let posts = 0;
   let pending;
@@ -71,7 +85,9 @@ try {
   await page.keyboard.press('Enter');
   assert.match(await page.$eval('#product-logic', e => e.textContent), /Version 4/);
   console.log('PASS Lab keyboard edit and reset');
-  await page.evaluate(() => window.scrollTo(0, 500));
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }));
   await page.waitForSelector('nav[aria-label=Primary] ul[aria-hidden=true]');
   await page.focus('nav[aria-label=Primary] a');
   await page.waitForSelector('nav[aria-label=Primary] ul:not([aria-hidden])');

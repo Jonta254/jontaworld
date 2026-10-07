@@ -29,6 +29,7 @@ docs/audit/2026-10-07/hero-after.png
 docs/audit/2026-10-07/hero-before.png
 docs/audit/2026-10-07/live-http.json
 docs/audit/2026-10-07/measurements.json
+docs/audit/2026-10-07/performance-followup.json
 docs/audit/2026-10-07/now-after.png
 docs/audit/2026-10-07/now-before.png
 package-lock.json

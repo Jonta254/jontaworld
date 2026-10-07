@@ -1,0 +1,255 @@
+{
+  "environment": "Local Windows Chrome, Lighthouse mobile simulated throttling. Shared host; intent-1 overlapped browser regressions. intent-2/3 were requested sequentially afterward. Timing differences do not establish a field-performance improvement.",
+  "runs": [
+    {
+      "name": "final-2",
+      "scores": {
+        "performance": 0.68,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 2259.14915,
+      "tbtMs": 1972,
+      "cls": 0,
+      "benchmarkIndex": 479.5,
+      "requestCount": 38,
+      "transferBytes": 342235,
+      "scripts": 11,
+      "routePrefetches": [
+        {
+          "path": "/",
+          "transferBytes": 1452
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 1465
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 1466
+        },
+        {
+          "path": "/lab",
+          "transferBytes": 1460
+        },
+        {
+          "path": "/about",
+          "transferBytes": 1463
+        },
+        {
+          "path": "/blog",
+          "transferBytes": 1461
+        },
+        {
+          "path": "/now",
+          "transferBytes": 1461
+        },
+        {
+          "path": "/",
+          "transferBytes": 9789
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 4957
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 6036
+        },
+        {
+          "path": "/lab",
+          "transferBytes": 7789
+        },
+        {
+          "path": "/about",
+          "transferBytes": 5552
+        },
+        {
+          "path": "/blog",
+          "transferBytes": 4955
+        },
+        {
+          "path": "/now",
+          "transferBytes": 5418
+        }
+      ]
+    },
+    {
+      "name": "final-3",
+      "scores": {
+        "performance": 0.64,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 2703.318,
+      "tbtMs": 4605.090999999999,
+      "cls": 0,
+      "benchmarkIndex": 498.5,
+      "requestCount": 38,
+      "transferBytes": 342235,
+      "scripts": 11,
+      "routePrefetches": [
+        {
+          "path": "/",
+          "transferBytes": 1452
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 1465
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 1466
+        },
+        {
+          "path": "/lab",
+          "transferBytes": 1460
+        },
+        {
+          "path": "/about",
+          "transferBytes": 1463
+        },
+        {
+          "path": "/blog",
+          "transferBytes": 1461
+        },
+        {
+          "path": "/now",
+          "transferBytes": 1461
+        },
+        {
+          "path": "/",
+          "transferBytes": 9789
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 4957
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 6036
+        },
+        {
+          "path": "/lab",
+          "transferBytes": 7789
+        },
+        {
+          "path": "/about",
+          "transferBytes": 5552
+        },
+        {
+          "path": "/blog",
+          "transferBytes": 4955
+        },
+        {
+          "path": "/now",
+          "transferBytes": 5418
+        }
+      ]
+    },
+    {
+      "name": "intent-1",
+      "scores": {
+        "performance": 0.63,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 3606.1943,
+      "tbtMs": 1276,
+      "cls": 0,
+      "benchmarkIndex": 439,
+      "requestCount": 26,
+      "transferBytes": 288576,
+      "scripts": 10,
+      "routePrefetches": [
+        {
+          "path": "/portfolio",
+          "transferBytes": 1465
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 1463
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 4955
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 6034
+        }
+      ]
+    },
+    {
+      "name": "intent-2",
+      "scores": {
+        "performance": 0.62,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 3606.7862,
+      "tbtMs": 1459.5,
+      "cls": 0,
+      "benchmarkIndex": 490.5,
+      "requestCount": 26,
+      "transferBytes": 288576,
+      "scripts": 10,
+      "routePrefetches": [
+        {
+          "path": "/portfolio",
+          "transferBytes": 1465
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 1463
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 6034
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 4955
+        }
+      ]
+    },
+    {
+      "name": "intent-3",
+      "scores": {
+        "performance": 0.55,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 3674.4514750000003,
+      "tbtMs": 4772.0323499999995,
+      "cls": 0,
+      "benchmarkIndex": 400.5,
+      "requestCount": 26,
+      "transferBytes": 288576,
+      "scripts": 10,
+      "routePrefetches": [
+        {
+          "path": "/portfolio",
+          "transferBytes": 1465
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 1463
+        },
+        {
+          "path": "/portfolio",
+          "transferBytes": 6034
+        },
+        {
+          "path": "/contact",
+          "transferBytes": 4955
+        }
+      ]
+    }
+  ]
+}

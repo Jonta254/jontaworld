@@ -3,6 +3,18 @@
 Review branch: `codex/site-audit`. Local production preview: `http://localhost:3087`.
 This pass preserves the identity, seven services, story, routes, articles, screenshots, integrations, and product limitations. No production deployment, DNS change, environment change, or real enquiry submission was performed.
 
+## Follow-up: startup prefetch and lint advisory
+
+The shared header previously prefetched all seven destinations on initial load. Lighthouse recorded 14 route-data requests and downloaded Lab's client code and styles without a visit. Header links now disable viewport prefetch and call the supported `router.prefetch` API on mouse hover or keyboard focus. The current destination is skipped; navigation still uses Next.js `Link`. Content calls to action retain their existing prefetch behavior.
+
+Comparable Lighthouse traces fell from **38 to 26 requests** and **342,235 to 288,576 transferred bytes**: 12 requests and 53,659 bytes (15.7%) avoided on initial load. Route-data requests fell from 14 to four, for Contact and Work. The separate browser regression verifies no startup About/Lab fetch, prefetch on hover/focus, and Enter navigation to Lab. Build, lint and the existing contact/Lab/navigation regressions pass. These changes alter loading behavior, with no visual design or content change.
+
+The performance score still misses the requested 95 target: the three follow-up runs scored 63, 62 and 55. See [follow-up measurements](performance-followup.json) for individual scores, LCP, blocking time, CLS, request counts and host benchmark indices. Network savings are confirmed; timing results do not demonstrate an overall performance-score improvement. Main-thread execution and layout remain the dominant diagnostics. Accessibility, best practices and SEO remain 100 in the follow-up Lighthouse runs, with CLS zero. A quiet, repeatable browser/CPU environment is still needed to judge further rendering changes without confusing host contention with application work.
+
+The five high-severity development entries share [braces advisory GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm), which lists **no patched version**. Registry checks found `braces` still at 3.0.3 and the latest Next ESLint plugin still using `fast-glob`. Upgrading that lint plugin does not remove the advisory. In the installed plugin, `getRootDirs` invokes glob matching only when `settings.next.rootDir` is configured; this repository has no such setting and uses the default working directory. This narrows the demonstrated exposure to tooling/configuration rather than establishing a runtime site defect. Keep glob configuration trusted; do not interpret this as a dependency fix. The production dependency audit remains clean. No incompatible forced downgrade or vendored glob replacement was applied.
+
+The follow-up is another isolated commit on the review branch. Revert that commit first, then `33ce29e` and `f4072d3`, to roll back the full audit while retaining `d127700` and the pre-existing untracked files.
+
 ## Evidence and priorities
 
 | Priority / classification | Route or file | Evidence and user impact | Fix and verification |

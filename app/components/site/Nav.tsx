@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NAV, SITE } from "@/content/site";
 import styles from "./nav.module.css";
@@ -10,16 +10,20 @@ import BrandMark from "./BrandMark";
 /**
  * Sticky, minimal, keyboard-first.
  *
- * The only client state is a boolean for whether the page has scrolled : used
- * to bring in a hairline border and a backdrop once the header stops sitting
- * on empty space. Everything else is CSS.
- *
- * Deliberately no mobile drawer: four links fit on one row at 360px, and a
- * hamburger would add a focus trap, an overlay, and a state machine to solve
- * a problem this site does not have.
+ * Scroll state controls the header border and compact mobile row. Focusing
+ * the header restores that row so keyboard navigation stays visible.
+ * Routes are prefetched on hover or focus instead of loading the whole menu
+ * during startup.
  */
 export default function Nav() {
   const pathname = usePathname();
+  const router = useRouter();
+  const intentProps = (href: string) => {
+    const prefetch = () => {
+      if (href !== pathname) router.prefetch(href);
+    };
+    return { prefetch: false as const, onMouseEnter: prefetch, onFocus: prefetch };
+  };
   const [scrolled, setScrolled] = useState(false);
   const [mobileNavHidden, setMobileNavHidden] = useState(false);
   const lastScrollY = useRef(0);
@@ -97,7 +101,7 @@ export default function Nav() {
       className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${mobileNavHidden ? styles.mobileNavHidden : ""}`}
     >
       <nav className={styles.inner} aria-label="Primary" onFocusCapture={() => setMobileNavHidden(false)}>
-        <Link href="/" className={styles.brand}>
+        <Link href="/" {...intentProps("/")} className={styles.brand}>
           <BrandMark className={styles.logo} />
           <span className={styles.brandName}>{SITE.name}</span>
           <span className={styles.brandMark}>{SITE.brand}</span>
@@ -105,6 +109,7 @@ export default function Nav() {
 
         <Link
           href="/contact"
+          {...intentProps("/contact")}
           className={`${styles.mobileCta} ${pathname === "/contact" ? styles.active : ""}`}
           aria-current={pathname === "/contact" ? "page" : undefined}
         >
@@ -119,6 +124,7 @@ export default function Nav() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  {...intentProps(item.href)}
                   className={`${styles.link} ${active ? styles.active : ""}`}
                   aria-current={active ? "page" : undefined}
                   tabIndex={mobileNavHidden ? -1 : undefined}
@@ -130,7 +136,7 @@ export default function Nav() {
           })}
         </ul>
 
-        <Link href="/contact" className={styles.cta}>
+        <Link href="/contact" {...intentProps("/contact")} className={styles.cta}>
           Get in touch
         </Link>
       </nav>
