@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import Link from "next/link";
 import Section from "../components/home/Section";
 import Statement from "../components/home/Statement";
@@ -7,12 +7,7 @@ import { ESSAY, ABOUT_STATEMENT } from "@/content/about";
 import { SITE } from "@/content/site";
 import styles from "./about.module.css";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "How I approach problems, decide what to build, work with other people, and what I mean by good software. No credentials, no claims the work cannot support.",
-  alternates: { canonical: "/about" },
-};
+export const metadata = routeMetadata("About", "How I approach problems, decide what to build, work with other people, and what I mean by good software. No credentials, no claims the work cannot support.", "/about");
 
 /**
  * About, written as an essay rather than a biography or a resume.

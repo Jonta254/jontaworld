@@ -1,0 +1,317 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "title": "Josiah | Web and App Designer and Developer | jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com"
+  },
+  {
+    "path": "/lab",
+    "status": 200,
+    "title": "Lab | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/lab"
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "title": "About | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/about"
+  },
+  {
+    "path": "/portfolio",
+    "status": 200,
+    "title": "Work | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/portfolio"
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "title": "Contact | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/contact"
+  },
+  {
+    "path": "/portfolio/digilearn",
+    "status": 200,
+    "title": "DigiLearn | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/digilearn"
+  },
+  {
+    "path": "/blog",
+    "status": 200,
+    "title": "Writing | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/blog"
+  },
+  {
+    "path": "/now",
+    "status": 200,
+    "title": "Now | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com/now"
+  },
+  {
+    "path": "/portfolio/traildesk",
+    "status": 200,
+    "title": "TrailDesk | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/traildesk"
+  },
+  {
+    "path": "/portfolio/apprenticelog",
+    "status": 200,
+    "title": "ApprenticeLog | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/apprenticelog"
+  },
+  {
+    "path": "/portfolio/safesignal",
+    "status": 200,
+    "title": "SafeSignal | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/safesignal"
+  },
+  {
+    "path": "/portfolio/electracore",
+    "status": 200,
+    "title": "ElectraCore | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/electracore"
+  },
+  {
+    "path": "/blog/wiring-panel-architecture",
+    "status": 200,
+    "title": "What wiring a panel taught me about architecture | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/blog/wiring-panel-architecture"
+  },
+  {
+    "path": "/portfolio/pure-entertainment",
+    "status": 200,
+    "title": "PURE Entertainment | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/portfolio/pure-entertainment"
+  },
+  {
+    "path": "/blog/design-second-language",
+    "status": 200,
+    "title": "Design as a second language | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/blog/design-second-language"
+  },
+  {
+    "path": "/blog/nothing-announces-itself",
+    "status": 200,
+    "title": "Nothing announces itself | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "s-maxage=31536000",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "canonical": "https://jontaworld.com/blog/nothing-announces-itself"
+  },
+  {
+    "path": "/feed.xml",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=3600, s-maxage=86400",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "application/rss+xml; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/manifest.webmanifest",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "application/manifest+json",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/plain",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/opengraph-image",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "image/png",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/audit-missing-page",
+    "status": 404,
+    "title": "Not found | Josiah jontAWorld",
+    "headers": {
+      "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; media-src 'self' blob: data:; connect-src 'self' https://va.vercel-scripts.com https://formsubmit.co; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff"
+    },
+    "ogUrl": "https://jontaworld.com",
+    "canonical": "https://jontaworld.com"
+  }
+]

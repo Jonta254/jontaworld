@@ -26,8 +26,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.lede}>
-          I design the interface and engineer the system behind it. Clear,
-          fast, and made for real use.
+          I design and build websites, web apps, and internal tools, from the
+          interface to the system behind it. Clear, fast, and made for real use.
         </p>
 
         <div className={styles.actions}>
@@ -47,9 +47,9 @@ export default function Hero() {
           <span>01—03</span>
         </div>
         <dl className={styles.brief}>
-          <div><dt>01</dt><dd>Product direction</dd><span>Research + scope</span></div>
-          <div><dt>02</dt><dd>Interface system</dd><span>UX + visual design</span></div>
-          <div><dt>03</dt><dd>Engineering</dd><span>Next.js + TypeScript</span></div>
+          <div><dt>01</dt><dd>Product direction<span>Research + scope</span></dd></div>
+          <div><dt>02</dt><dd>Interface system<span>UX + visual design</span></dd></div>
+          <div><dt>03</dt><dd>Engineering<span>Next.js + TypeScript</span></dd></div>
         </dl>
         <p className={styles.systemFoot}><span aria-hidden="true" />From first decision to production</p>
       </aside>

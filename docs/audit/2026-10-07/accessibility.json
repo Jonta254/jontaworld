@@ -1,0 +1,322 @@
+[
+  {
+    "route": "/",
+    "theme": "light",
+    "title": "Josiah | Web and App Designer and Developer | jontAWorld",
+    "ogUrl": "https://jontaworld.com",
+    "ogTitle": "Josiah | Developer / jontAWorld",
+    "canonical": "https://jontaworld.com/",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio",
+    "theme": "light",
+    "title": "Work | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio",
+    "ogTitle": "Work",
+    "canonical": "https://jontaworld.com/portfolio",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/lab",
+    "theme": "light",
+    "title": "Lab | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/lab",
+    "ogTitle": "Lab",
+    "canonical": "https://jontaworld.com/lab",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "light",
+    "title": "About | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/about",
+    "ogTitle": "About",
+    "canonical": "https://jontaworld.com/about",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog",
+    "theme": "light",
+    "title": "Writing | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog",
+    "ogTitle": "Writing",
+    "canonical": "https://jontaworld.com/blog",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/now",
+    "theme": "light",
+    "title": "Now | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/now",
+    "ogTitle": "Now",
+    "canonical": "https://jontaworld.com/now",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "light",
+    "title": "Contact | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/contact",
+    "ogTitle": "Contact",
+    "canonical": "https://jontaworld.com/contact",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/digilearn",
+    "theme": "light",
+    "title": "DigiLearn | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/digilearn",
+    "ogTitle": "DigiLearn",
+    "canonical": "https://jontaworld.com/portfolio/digilearn",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/apprenticelog",
+    "theme": "light",
+    "title": "ApprenticeLog | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/apprenticelog",
+    "ogTitle": "ApprenticeLog",
+    "canonical": "https://jontaworld.com/portfolio/apprenticelog",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/electracore",
+    "theme": "light",
+    "title": "ElectraCore | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/electracore",
+    "ogTitle": "ElectraCore",
+    "canonical": "https://jontaworld.com/portfolio/electracore",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/traildesk",
+    "theme": "light",
+    "title": "TrailDesk | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/traildesk",
+    "ogTitle": "TrailDesk",
+    "canonical": "https://jontaworld.com/portfolio/traildesk",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/safesignal",
+    "theme": "light",
+    "title": "SafeSignal | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/safesignal",
+    "ogTitle": "SafeSignal",
+    "canonical": "https://jontaworld.com/portfolio/safesignal",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/pure-entertainment",
+    "theme": "light",
+    "title": "PURE Entertainment | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/pure-entertainment",
+    "ogTitle": "PURE Entertainment",
+    "canonical": "https://jontaworld.com/portfolio/pure-entertainment",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/nothing-announces-itself",
+    "theme": "light",
+    "title": "Nothing announces itself | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/nothing-announces-itself",
+    "ogTitle": "Nothing announces itself",
+    "canonical": "https://jontaworld.com/blog/nothing-announces-itself",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/wiring-panel-architecture",
+    "theme": "light",
+    "title": "What wiring a panel taught me about architecture | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/wiring-panel-architecture",
+    "ogTitle": "What wiring a panel taught me about architecture",
+    "canonical": "https://jontaworld.com/blog/wiring-panel-architecture",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/design-second-language",
+    "theme": "light",
+    "title": "Design as a second language | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/design-second-language",
+    "ogTitle": "Design as a second language",
+    "canonical": "https://jontaworld.com/blog/design-second-language",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "dark",
+    "title": "Josiah | Web and App Designer and Developer | jontAWorld",
+    "ogUrl": "https://jontaworld.com",
+    "ogTitle": "Josiah | Developer / jontAWorld",
+    "canonical": "https://jontaworld.com/",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio",
+    "theme": "dark",
+    "title": "Work | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio",
+    "ogTitle": "Work",
+    "canonical": "https://jontaworld.com/portfolio",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/lab",
+    "theme": "dark",
+    "title": "Lab | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/lab",
+    "ogTitle": "Lab",
+    "canonical": "https://jontaworld.com/lab",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "title": "About | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/about",
+    "ogTitle": "About",
+    "canonical": "https://jontaworld.com/about",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog",
+    "theme": "dark",
+    "title": "Writing | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog",
+    "ogTitle": "Writing",
+    "canonical": "https://jontaworld.com/blog",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/now",
+    "theme": "dark",
+    "title": "Now | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/now",
+    "ogTitle": "Now",
+    "canonical": "https://jontaworld.com/now",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "title": "Contact | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/contact",
+    "ogTitle": "Contact",
+    "canonical": "https://jontaworld.com/contact",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/digilearn",
+    "theme": "dark",
+    "title": "DigiLearn | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/digilearn",
+    "ogTitle": "DigiLearn",
+    "canonical": "https://jontaworld.com/portfolio/digilearn",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/apprenticelog",
+    "theme": "dark",
+    "title": "ApprenticeLog | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/apprenticelog",
+    "ogTitle": "ApprenticeLog",
+    "canonical": "https://jontaworld.com/portfolio/apprenticelog",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/electracore",
+    "theme": "dark",
+    "title": "ElectraCore | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/electracore",
+    "ogTitle": "ElectraCore",
+    "canonical": "https://jontaworld.com/portfolio/electracore",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/traildesk",
+    "theme": "dark",
+    "title": "TrailDesk | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/traildesk",
+    "ogTitle": "TrailDesk",
+    "canonical": "https://jontaworld.com/portfolio/traildesk",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/safesignal",
+    "theme": "dark",
+    "title": "SafeSignal | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/safesignal",
+    "ogTitle": "SafeSignal",
+    "canonical": "https://jontaworld.com/portfolio/safesignal",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/portfolio/pure-entertainment",
+    "theme": "dark",
+    "title": "PURE Entertainment | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/portfolio/pure-entertainment",
+    "ogTitle": "PURE Entertainment",
+    "canonical": "https://jontaworld.com/portfolio/pure-entertainment",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/nothing-announces-itself",
+    "theme": "dark",
+    "title": "Nothing announces itself | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/nothing-announces-itself",
+    "ogTitle": "Nothing announces itself",
+    "canonical": "https://jontaworld.com/blog/nothing-announces-itself",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/wiring-panel-architecture",
+    "theme": "dark",
+    "title": "What wiring a panel taught me about architecture | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/wiring-panel-architecture",
+    "ogTitle": "What wiring a panel taught me about architecture",
+    "canonical": "https://jontaworld.com/blog/wiring-panel-architecture",
+    "brokenAnchors": [],
+    "violations": []
+  },
+  {
+    "route": "/blog/design-second-language",
+    "theme": "dark",
+    "title": "Design as a second language | Josiah jontAWorld",
+    "ogUrl": "https://jontaworld.com/blog/design-second-language",
+    "ogTitle": "Design as a second language",
+    "canonical": "https://jontaworld.com/blog/design-second-language",
+    "brokenAnchors": [],
+    "violations": []
+  }
+]

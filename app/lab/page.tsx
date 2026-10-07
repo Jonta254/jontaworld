@@ -1,15 +1,11 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "../components/site/PageHeader";
 import LabStateDemo from "./LabStateDemo";
 import styles from "./lab.module.css";
 
-export const metadata: Metadata = {
-  title: "Lab",
-  description: "Real code studies, responsive interface work, prototypes, and engineering notes from Josiah's shipped products.",
-  alternates: { canonical: "/lab" },
-};
+export const metadata = routeMetadata("Lab", "Real code studies, responsive interface work, prototypes, and engineering notes from Josiah's shipped products.", "/lab");
 
 const transitionCode = `export function editEntry(
   entry: WorkEntry,
@@ -192,6 +188,7 @@ export default function LabPage() {
             <div><span className={styles.stateMark}>03</span><strong>Grace</strong><small>Contact worker</small></div>
             <div><span className={styles.stateMark}>04</span><strong>Overdue</strong><small>Escalation required</small></div>
           </div>
+          <p className={styles.note}>These are interface states from an on-device preview. SafeSignal does not monitor, message, call, or dispatch help.</p>
           <details className={styles.details}><summary>See the real state logic</summary><CodeBlock label="SafeSignal · lib/session.ts · excerpt">{timerCode}</CodeBlock></details>
           <EvidenceLinks live="https://safesignal-beta.vercel.app" source="https://github.com/Jonta254/safesignal" />
         </article>

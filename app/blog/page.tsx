@@ -1,15 +1,11 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "../components/site/PageHeader";
 import { POSTS } from "@/content/blog";
 import styles from "./blog.module.css";
 
-export const metadata: Metadata = {
-  title: "Writing",
-  description: "Notes on the overlap between the electrical trade and building software: architecture, design, and the discipline both demand.",
-  alternates: { canonical: "/blog" },
-};
+export const metadata = routeMetadata("Writing", "Notes on the overlap between the electrical trade and building software: architecture, design, and the discipline both demand.", "/blog");
 
 const formatMonth = (date: string) => new Intl.DateTimeFormat("en", { month: "short", year: "numeric" }).format(new Date(`${date}T00:00:00Z`));
 

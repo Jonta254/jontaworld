@@ -1,15 +1,11 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "../components/site/PageHeader";
 import { NOW } from "@/content/now";
 import styles from "./now.module.css";
 
-export const metadata: Metadata = {
-  title: "Now",
-  description: "What Josiah is building, learning, and noticing right now.",
-  alternates: { canonical: "/now" },
-};
+export const metadata = routeMetadata("Now", "What Josiah is building, learning, and noticing right now.", "/now");
 
 const MOMENTS = [
   { src: "/showcase/electracore-feature.webp", alt: "ElectraCore electrical calculator interface", label: "Learning through the trade" },

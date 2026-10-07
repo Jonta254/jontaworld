@@ -18,7 +18,7 @@
   --ink:           #17140F;  /* 17.48:1 on paper : AAA */
   --body:          #3D372E;  /* 11.20:1 : AAA */
   --muted:         #6B6459;  /*  5.56:1 : AA  */
-  --faint:         #7A7266;  /*  4.51:1 : AA  */
+  --faint:         #70685C;  /* Supports small text on paper and tinted/sunken panels. */
 
   --line:          #DED7CC;  /* decorative dividers only : not a UI boundary */
   --line-strong:   #8C8478;  /*  3.51:1 : AA non-text; inputs, interactive edges */

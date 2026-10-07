@@ -22,7 +22,8 @@ export async function generateMetadata({
     title: project.name,
     description: project.outcome,
     alternates: { canonical: `/portfolio/${project.slug}` },
-    openGraph: { title: project.name, description: project.outcome, type: "article", images: [{ url: project.shot.feature, width: 1440, height: 900, alt: project.shot.featureAlt }] },
+    openGraph: { url: `/portfolio/${project.slug}`, title: project.name, description: project.outcome, type: "article", images: [{ url: project.shot.feature, width: 1440, height: 900, alt: project.shot.featureAlt }] },
+    twitter: { card: "summary_large_image", title: project.name, description: project.outcome, images: [project.shot.feature] },
   };
 }
 
@@ -105,7 +106,7 @@ export default async function ProjectPage({
       <div className={styles.lead}>
         <div className={styles.leadMedia}>
           <BrowserFrame src={project.shot.desktop} alt={project.shot.alt} url={project.displayUrl} priority />
-          <PhoneFrame src={project.shot.mobile} priority />
+          <PhoneFrame src={project.shot.mobile} />
         </div>
       </div>
 

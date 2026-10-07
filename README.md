@@ -21,7 +21,7 @@ A design and engineering portfolio for Josiah. The site presents shipped digital
 | Route | Purpose |
 | --- | --- |
 | `/` | Positioning, selected work, principles, and services |
-| `/portfolio` | All production projects |
+| `/portfolio` | Deployed projects and previews, with their current limits |
 | `/portfolio/[slug]` | Project evidence and case studies |
 | `/lab` | Interface and product concept studies |
 | `/about` | Background and working philosophy |
@@ -57,16 +57,21 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Contact delivery
 
-The contact form sends through the free FormSubmit AJAX endpoint. No account or private runtime credential is required. The interface stays on the page and reports success only when FormSubmit accepts the message.
+The contact form sends through the FormSubmit AJAX endpoint. No private runtime credential is required. It accepts only explicit provider confirmation, prevents duplicate pending submissions, and retains entered text on failure or a 20-second timeout. Provider acceptance does not verify inbox delivery. FormSubmit processes the enquiry details; direct email alternatives remain available.
+
+Validation limits in this repository are browser-side. Provider-side validation, spam filtering, recipient activation, and inbox delivery require provider access or an agreed delivery test; no production test messages are sent by the audit scripts.
 
 ## Quality checks
 
 ```bash
 npm run lint
 npm run typecheck
+npm run test:contact
 npm run check:links
 npm run build
 ```
+
+For local browser regression checks on Windows with Chrome installed, start the production preview with `npm run start -- --port 3087`, then run `npm run test:browser`. FormSubmit requests are intercepted; these checks never send real enquiries. `BASE_URL=http://localhost:3087` and `AUDIT_OUT=.audit/after` can be set before `npm run audit:responsive` to check the local sitemap at six viewport widths.
 
 Pull requests also run mobile Lighthouse CI against the homepage, About, Work, a flagship case study, and Writing. Current enforced minimums are:
 

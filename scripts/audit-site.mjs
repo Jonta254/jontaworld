@@ -4,7 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 const base = process.env.BASE_URL || 'https://jontaworld.com';
 const out = process.env.AUDIT_OUT || '.audit/before';
 await mkdir(out, { recursive: true });
-const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });
+const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true, protocolTimeout: 30000 });
 const results = [];
 try {
   const sitemap = await fetch(`${base}/sitemap.xml`).then(r => r.text());
@@ -36,11 +36,13 @@ try {
         overflow: document.documentElement.scrollWidth > innerWidth,
         brokenImages: [...document.images].filter(i => i.complete && !i.naturalWidth).map(i => i.src),
         missingAlt: [...document.images].filter(i => !i.hasAttribute('alt')).length,
+        overflowElements: [...document.querySelectorAll('main *')].filter(e => e.getBoundingClientRect().right > innerWidth + 1).slice(0, 10).map(e => ({ tag: e.tagName, class: e.className, text: e.textContent?.slice(0, 60) })),
         metrics: window.auditMetrics,
         links: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')),
       }));
       results.push({ route, width, status: response.status(), ...data, errors: [...errors] });
-      if ([320, 1440].includes(width) && ['/', '/now', '/contact', '/lab'].includes(route)) await page.screenshot({ path: `${out}/${route.replaceAll('/', '') || 'home'}-${width}.png`, fullPage: true });
+      await writeFile(`${out}/results.json`, JSON.stringify(results, null, 2));
+      if ([320, 1440].includes(width) && ['/', '/now', '/contact', '/lab', '/portfolio'].includes(route)) await page.screenshot({ path: `${out}/${route.replaceAll('/', '') || 'home'}-${width}.png` });
     }
     await page.close();
     console.log(route);

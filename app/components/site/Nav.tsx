@@ -96,7 +96,7 @@ export default function Nav() {
     <header
       className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${mobileNavHidden ? styles.mobileNavHidden : ""}`}
     >
-      <nav className={styles.inner} aria-label="Primary">
+      <nav className={styles.inner} aria-label="Primary" onFocusCapture={() => setMobileNavHidden(false)}>
         <Link href="/" className={styles.brand}>
           <BrandMark className={styles.logo} />
           <span className={styles.brandName}>{SITE.name}</span>
@@ -111,7 +111,7 @@ export default function Nav() {
           Contact
         </Link>
 
-        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined} onFocusCapture={() => setMobileNavHidden(false)}>
+        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined}>
           {NAV.map((item) => {
             const active =
               pathname === item.href || pathname.startsWith(`${item.href}/`);

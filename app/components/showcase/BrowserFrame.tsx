@@ -49,7 +49,7 @@ export function BrowserFrame({
  * Purely presentational , it repeats what the desktop shot already shows, so
  * it is hidden from assistive tech rather than announced twice.
  */
-export function PhoneFrame({ src, priority = false }: { src: string; priority?: boolean }) {
+export function PhoneFrame({ src }: { src: string }) {
   return (
     <div className={styles.phone} aria-hidden="true">
       <Image
@@ -58,7 +58,6 @@ export function PhoneFrame({ src, priority = false }: { src: string; priority?: 
         width={390}
         height={844}
         sizes="180px"
-        priority={priority}
         className={styles.phoneShot}
       />
     </div>

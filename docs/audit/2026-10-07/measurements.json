@@ -1,0 +1,66 @@
+{
+  "environment": "Local production build, Windows Chrome, Lighthouse mobile simulated throttling; shared host. final-1 overlapped responsive checks; final-2/3 ran serially afterward. No field INP measurement.",
+  "runs": [
+    {
+      "name": "before-preload",
+      "url": "http://localhost:3087/",
+      "scores": {
+        "performance": 0.74,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 1782.7208,
+      "cls": 0,
+      "tbtMs": 1476.5,
+      "mobileScreenshots": [
+        {
+          "url": "http://localhost:3087/_next/image?url=%2Fshowcase%2Fdigilearn-mobile.webp&w=384&q=75",
+          "transferSize": 24183
+        }
+      ]
+    },
+    {
+      "name": "final-1",
+      "url": "http://localhost:3087/",
+      "scores": {
+        "performance": 0.56,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 4076.5416000000005,
+      "cls": 0,
+      "tbtMs": 3823.2291999999998,
+      "mobileScreenshots": []
+    },
+    {
+      "name": "final-2",
+      "url": "http://localhost:3087/",
+      "scores": {
+        "performance": 0.68,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 2259.14915,
+      "cls": 0,
+      "tbtMs": 1972,
+      "mobileScreenshots": []
+    },
+    {
+      "name": "final-3",
+      "url": "http://localhost:3087/",
+      "scores": {
+        "performance": 0.64,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "lcpMs": 2703.318,
+      "cls": 0,
+      "tbtMs": 4605.090999999999,
+      "mobileScreenshots": []
+    }
+  ]
+}

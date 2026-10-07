@@ -66,7 +66,7 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
           url={project.displayUrl}
           priority={priority}
         />
-        <PhoneFrame src={project.shot.mobile} priority={priority} />
+        <PhoneFrame src={project.shot.mobile} />
       </div>
     </article>
   );

@@ -1,13 +1,8 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import { ProjectShowcase } from "../components/showcase/ProjectShowcase";
 import styles from "./portfolio.module.css";
 
-export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Explore live work across learning, trade tools, safety, outdoor planning and entertainment, with case studies and links to each deployment.",
-  alternates: { canonical: "/portfolio" },
-};
+export const metadata = routeMetadata("Work", "Explore live work across learning, trade tools, safety, outdoor planning and entertainment, with case studies and links to each deployment.", "/portfolio");
 
 export default function PortfolioPage() {
   return (

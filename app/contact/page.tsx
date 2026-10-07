@@ -1,14 +1,10 @@
-import type { Metadata } from "next";
+import { routeMetadata } from "@/content/metadata";
 import { Code2, Mail, MapPin, Send } from "lucide-react";
 import { SITE, SOCIAL } from "@/content/site";
 import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Email Josiah about a website, product, role, or project.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata = routeMetadata("Contact", "Email Josiah about a website, product, role, or project.", "/contact");
 
 export default function ContactPage() {
   const subject = encodeURIComponent("Project enquiry for Josiah");

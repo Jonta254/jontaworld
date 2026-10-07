@@ -22,7 +22,8 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { title: post.title, description: post.excerpt, type: "article", publishedTime: post.published, modifiedTime: post.updated, images: [{ url: post.image.src, width: 1536, height: 1024, alt: post.image.alt }] },
+    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [post.image.src] },
+    openGraph: { url: `/blog/${post.slug}`, title: post.title, description: post.excerpt, type: "article", publishedTime: post.published, modifiedTime: post.updated, images: [{ url: post.image.src, width: 1536, height: 1024, alt: post.image.alt }] },
   };
 }
 
@@ -45,7 +46,7 @@ export default async function BlogPost({
     author: { "@type": "Person", name: SITE.fullName },
     publisher: { "@type": "Person", name: SITE.fullName },
     url: `${SITE.url}/blog/${post.slug}`,
-    timeRequired: post.readingTime,
+    timeRequired: `PT${Number.parseInt(post.readingTime, 10)}M`,
     datePublished: post.published,
     dateModified: post.updated ?? post.published,
     image: `${SITE.url}${post.image.src}`,
