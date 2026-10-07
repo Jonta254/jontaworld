@@ -91,7 +91,7 @@ const PROJECT_CATALOG: Project[] = [
     summary: "A responsive entertainment website connecting events, collection browsing and culture. The deployed preview supports a persistent bag and server-validated order quotes. Payments, ticket issuance and production inquiry storage are not enabled.",
     url: "https://entertainment-lac.vercel.app",
     displayUrl: "entertainment-lac.vercel.app",
-    repo: "https://github.com/Jonta254/entertainment-",
+    // Public source is currently unavailable (HTTP 404); retain the case study and deployment.
     stack: ["JavaScript", "Node.js", "Responsive design", "Server validation"],
     tier: "supporting",
     shot: {

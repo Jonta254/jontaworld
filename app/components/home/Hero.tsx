@@ -57,7 +57,7 @@ export default function Hero() {
       {/* Proof, above the fold. The claim above is a sentence. This is the
           evidence: five products a visitor can open before scrolling once. */}
       <div className={styles.proof}>
-        <span className={styles.proofLabel}>In production</span>
+        <span className={styles.proofLabel}>Explore the products</span>
         <ul className={styles.proofList}>
           {PROJECTS.map((p) => (
             <li key={p.slug}>

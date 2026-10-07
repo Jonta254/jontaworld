@@ -143,7 +143,7 @@ export default function LabPage() {
             result="The visible state and audit history continue to describe the same record."
           />
           <div className={styles.split}>
-            <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts">{transitionCode}</CodeBlock>
+            <CodeBlock label="ApprenticeLog · app/lib/entry-transitions.ts · shortened excerpt">{transitionCode}</CodeBlock>
             <LabStateDemo />
           </div>
           <EvidenceLinks live="https://apprentice-log-xi.vercel.app" source="https://github.com/Jonta254/apprentice-log" />
@@ -171,10 +171,10 @@ export default function LabPage() {
           <p className={styles.kind}>From DigiLearn · Engineering note</p><h2>Local progress is parsed defensively.</h2>
           <ProblemFrame
             problem="Browser storage can be missing, malformed, duplicated, or unexpectedly large."
-            decision="Validate shape, size, version, and identifiers before accepting saved progress."
+            decision="Validate shape, size, and identifiers before normalising saved progress to the current schema."
             result="A damaged payload falls back safely without breaking the learning interface."
           />
-          <CodeBlock label="DigiLearn · lib/learning-storage.ts · excerpt">{progressCode}</CodeBlock>
+          <CodeBlock label="DigiLearn · lib/learning-storage.ts · shortened excerpt; lastVisited omitted">{progressCode}</CodeBlock>
           <p className={styles.note}>Versioned local storage learning state survives malformed storage, duplicate IDs, and oversized payloads.</p>
           <EvidenceLinks live="https://digilearn-five.vercel.app" source="https://github.com/Jonta254/digilearn" />
         </article>

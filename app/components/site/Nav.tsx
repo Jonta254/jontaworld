@@ -64,7 +64,7 @@ export default function Nav() {
 
       if (currentY <= 32) {
         setMobileNavHidden(false);
-      } else if (distance > 6 && currentY > 96) {
+      } else if (distance > 6 && currentY > 96 && !document.activeElement?.closest("nav[aria-label='Primary']")) {
         setMobileNavHidden(true);
       } else if (distance < -4) {
         setMobileNavHidden(false);
@@ -111,7 +111,7 @@ export default function Nav() {
           Contact
         </Link>
 
-        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined}>
+        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined} onFocusCapture={() => setMobileNavHidden(false)}>
           {NAV.map((item) => {
             const active =
               pathname === item.href || pathname.startsWith(`${item.href}/`);

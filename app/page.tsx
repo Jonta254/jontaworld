@@ -43,11 +43,11 @@ const jsonLd = {
         "Design systems",
         "Brand identity",
       ],
-      makesOffer: PROJECTS.map((p) => ({
+      "@reverse": { creator: PROJECTS.map((p) => ({
         "@type": "CreativeWork",
         name: p.name,
         url: p.url,
-      })),
+      })) },
     },
     {
       "@type": "WebSite",
@@ -116,8 +116,8 @@ export default function HomePage() {
 
       <Section
         eyebrow="Selected work"
-        title="Products in production."
-        lede="Six websites and applications across trade tools, safety, learning and entertainment. Each link opens the running deployment."
+        title="Products you can explore."
+        lede="Six websites and applications across trade tools, safety, learning and entertainment. Open each deployment and read the case study for its capabilities and current limits."
         wide
         compactAfter
       >

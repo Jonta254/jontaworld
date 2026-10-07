@@ -3,37 +3,35 @@
 import { FormEvent, useRef, useState } from "react";
 import { Send } from "lucide-react";
 import styles from "./contact.module.css";
+import { providerAccepted } from "./submission";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
-type FormSubmitResult = {
-  success?: boolean;
-  message?: string;
-};
-
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
+  const sendingRef = useRef(false);
   const [state, setState] = useState<FormState>("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (state === "sending") return;
+    if (sendingRef.current) return;
 
     const formData = Object.fromEntries(new FormData(event.currentTarget));
     if (formData.website) {
-      formRef.current?.reset();
-      setState("sent");
-      setStatusMessage("Message sent. Thank you. I will reply by email.");
+      setState("error");
+      setStatusMessage("Your message could not be submitted. Please use one of the email options below.");
       return;
     }
 
+    sendingRef.current = true;
     setState("sending");
     setStatusMessage("");
 
     try {
       const response = await fetch("https://formsubmit.co/ajax/jontaworld@gmail.com", {
         method: "POST",
+        signal: AbortSignal.timeout(20000),
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           _subject: String(formData.projectType || "General enquiry") + ": message from " + String(formData.name),
@@ -48,18 +46,20 @@ export default function ContactForm() {
           botcheck: "",
         }),
       });
-      const result = (await response.json()) as FormSubmitResult;
+      const result: unknown = await response.json();
 
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Your message could not be sent.");
+      if (!response.ok || !providerAccepted(result)) {
+        throw new Error("Your message could not be sent. Please try again or use email below.");
       }
 
       formRef.current?.reset();
       setState("sent");
-      setStatusMessage("Message sent. Thank you. I will reply by email.");
-    } catch (error) {
+      setStatusMessage("Message accepted by the email service. Thank you. If you do not hear back, please use email below.");
+    } catch {
       setState("error");
-      setStatusMessage(error instanceof Error ? error.message : "Your message could not be sent. Please try again.");
+      setStatusMessage("Your message could not be confirmed. Your text is still here. Please try again or use email below.");
+    } finally {
+      sendingRef.current = false;
     }
   }
 
@@ -68,10 +68,10 @@ export default function ContactForm() {
       <div className={styles.formIntro}>
         <p className={styles.label}>Send a message</p>
         <h2 id="message-title">Write to me here.</h2>
-        <p>Your message comes directly to my inbox. No account and no redirect.</p>
+        <p>Send a project enquiry by email. No account and no redirect.</p>
       </div>
 
-      <form ref={formRef} className={styles.form} onSubmit={submit}>
+      <form ref={formRef} className={styles.form} onSubmit={submit} aria-busy={state === "sending"}>
         <div className={styles.formRow}>
           <label>
             <span>Name</span>
@@ -120,7 +120,7 @@ export default function ContactForm() {
             <Send aria-hidden="true" />
             {state === "sending" ? "Sending" : "Send message"}
           </button>
-          <p className={styles.formNote}>I use your details only to reply to this message.</p>
+          <p className={styles.formNote}>FormSubmit processes your name, email, and message to send the enquiry. I use your details to reply. You can also email me directly below.</p>
         </div>
 
         <p

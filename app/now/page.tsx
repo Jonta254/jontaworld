@@ -35,7 +35,7 @@ export default function NowPage() {
               <span>{moment.label}</span>
             </div>
           ))}
-          <figcaption>Three products in progress. Each one keeps teaching me something different.</figcaption>
+          <figcaption>Lessons from ElectraCore, ApprenticeLog, and TrailDesk. My current focus is listed below.</figcaption>
         </figure>
 
         <p className={styles.pull}>
