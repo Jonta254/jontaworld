@@ -87,9 +87,17 @@ try {
   console.log('PASS Lab keyboard edit and reset');
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  const contentTop = await page.$eval('main', element => element.offsetTop);
   await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }));
   await page.waitForSelector('nav[aria-label=Primary] ul[aria-hidden=true]');
+  await page.waitForFunction(() => document.querySelector('nav[aria-label=Primary] ul').getBoundingClientRect().height === 0);
+  assert.equal(await page.$eval('main', element => element.offsetTop), contentTop);
+  assert.ok(await page.evaluate(() => {
+    const header = document.querySelector('nav[aria-label=Primary]').closest('header');
+    const target = document.elementFromPoint(innerWidth / 2, header.getBoundingClientRect().bottom + 10);
+    return target && !header.parentElement.contains(target);
+  }), 'Transparent reserved header space must not block page interactions');
   await page.focus('nav[aria-label=Primary] a');
   await page.waitForSelector('nav[aria-label=Primary] ul:not([aria-hidden])');
-  console.log('PASS focusing header restores collapsed mobile navigation');
+  console.log('PASS compact header preserves content position and focusing it restores navigation');
 } finally { await browser.close(); }

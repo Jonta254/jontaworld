@@ -60,3 +60,39 @@
   color: var(--muted);
   max-width: 46ch;
 }
+.deferredWork, .deferredPrinciples, .deferredServices {
+  /* Keep content in the DOM and accessibility tree while deferring offscreen
+     layout. Estimates follow measured section heights; auto remembers the
+     actual size after the section is rendered. */
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto var(--section-height);
+}
+.deferredWork { --section-height: 4850px; }
+.deferredPrinciples { --section-height: 1050px; }
+.deferredServices { --section-height: 3900px; }
+
+@media (max-width: 350px) {
+  .deferredWork { --section-height: 4950px; }
+  .deferredPrinciples { --section-height: 1200px; }
+  .deferredServices { --section-height: 4250px; }
+}
+@media (min-width: 620px) {
+  .deferredWork { --section-height: 4350px; }
+  .deferredPrinciples { --section-height: 1000px; }
+  .deferredServices { --section-height: 3350px; }
+}
+@media (min-width: 820px) {
+  .deferredWork { --section-height: 3400px; }
+  .deferredPrinciples { --section-height: 700px; }
+  .deferredServices { --section-height: 2800px; }
+}
+@media (min-width: 1200px) {
+  .deferredWork { --section-height: 3000px; }
+  .deferredServices { --section-height: 2700px; }
+}
+@media print {
+  .deferredWork, .deferredPrinciples, .deferredServices {
+    content-visibility: visible;
+    contain-intrinsic-block-size: none;
+  }
+}

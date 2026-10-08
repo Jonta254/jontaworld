@@ -115,6 +115,7 @@ export default function HomePage() {
       <Hero />
 
       <Section
+        className={styles.deferredWork}
         eyebrow="Selected work"
         title="Products you can explore."
         lede="Six websites and applications across trade tools, safety, learning and entertainment. Open each deployment and read the case study for its capabilities and current limits."
@@ -142,7 +143,7 @@ export default function HomePage() {
         <em>needed</em> it, and now it does.
       </Statement>
 
-      <Section title="Four rules, learned the expensive way." divider={false} compactBefore>
+      <Section className={styles.deferredPrinciples} title="Four rules, learned the expensive way." divider={false} compactBefore>
         <ul className={styles.principles}>
           {PRINCIPLES.map((p) => (
             <li key={p.title} className={styles.principle}>
@@ -154,6 +155,7 @@ export default function HomePage() {
       </Section>
 
       <Section
+        className={styles.deferredServices}
         eyebrow="Services"
         title="What I can build for you."
         lede="Clear deliverables for a personal site, business, product, store, launch, or existing website."

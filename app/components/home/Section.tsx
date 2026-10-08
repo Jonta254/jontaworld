@@ -19,6 +19,7 @@ export default function Section({
   compactAfter = false,
   compactBefore = false,
   tone = "paper",
+  className = "",
 }: {
   eyebrow?: string;
   title?: string;
@@ -31,9 +32,10 @@ export default function Section({
   compactAfter?: boolean;
   compactBefore?: boolean;
   tone?: "paper" | "warm" | "stone";
+  className?: string;
 }) {
   return (
-    <section className={`${styles.section} ${styles[tone]} ${compactAfter ? styles.compactAfter : ""} ${compactBefore ? styles.compactBefore : ""}`}>
+    <section className={`${styles.section} ${styles[tone]} ${compactAfter ? styles.compactAfter : ""} ${compactBefore ? styles.compactBefore : ""} ${className}`}>
       {divider && <hr className="rule" />}
       <div className={`${styles.inner} ${wide ? styles.wide : ""}`}>
         {(eyebrow || title || lede) && (

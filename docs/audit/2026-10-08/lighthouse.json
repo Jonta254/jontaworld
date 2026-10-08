@@ -1,0 +1,232 @@
+{
+  "environment": "Sequential local Windows Chrome mobile simulated Lighthouse runs on a shared host; no concurrent build or browser checks. Not field INP or live deployment evidence. Local Vercel Analytics is conditional on VERCEL and may differ from production.",
+  "runs": [
+    {
+      "name": "deep-before",
+      "scores": {
+        "performance": 64,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "benchmarkIndex": 212.5,
+      "lcpMs": 2722.92789,
+      "tbtMs": 2325,
+      "cls": 0,
+      "requests": 26,
+      "transferBytes": 288582,
+      "mainThread": [
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 2439.6400000000003
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 2278.7719999999954
+        },
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 1839.8839999999973
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 221.29200000000006
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 201.43200000000002
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 193.72
+        }
+      ]
+    },
+    {
+      "name": "deep-final-1",
+      "scores": {
+        "performance": 67,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "benchmarkIndex": 508.5,
+      "lcpMs": 3359.7357,
+      "tbtMs": 1263.04405,
+      "cls": 0,
+      "requests": 26,
+      "transferBytes": 288880,
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 1765.071999999997
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1729.8400000000001
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 1351.2039999999938
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 184.0360000000001
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 163.31199999999998
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 150.12400000000002
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 13.496
+        }
+      ],
+      "bfcache": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "reason",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "frameUrl",
+              "valueType": "url"
+            },
+            "label": "Failure reason"
+          },
+          {
+            "key": "failureType",
+            "valueType": "text",
+            "label": "Failure type"
+          }
+        ],
+        "items": [
+          {
+            "reason": "Navigation was cancelled before the page could be restored from back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3087/"
+                }
+              ]
+            },
+            "protocolReason": "NavigationCancelledWhileRestoring"
+          }
+        ]
+      }
+    },
+    {
+      "name": "deep-final-2",
+      "scores": {
+        "performance": 75,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "benchmarkIndex": 745,
+      "lcpMs": 3183.71415,
+      "tbtMs": 703.9999999999995,
+      "cls": 0,
+      "requests": 26,
+      "transferBytes": 288880,
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 1410.8839999999927
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1347.8319999999999
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 739.1799999999981
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 166.84800000000004
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 125.39200000000004
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 108.02
+        }
+      ]
+    },
+    {
+      "name": "deep-final-3",
+      "scores": {
+        "performance": 31,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "benchmarkIndex": 1004.5,
+      "lcpMs": 6190.86078,
+      "tbtMs": 4397.999999999999,
+      "cls": 0,
+      "requests": 26,
+      "transferBytes": 288880,
+      "mainThread": [
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 7608.768000000001
+        },
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 4087.504000000003
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 3989.255999999993
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 1449.052
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 266.91600000000005
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 240.404
+        }
+      ]
+    }
+  ]
+}

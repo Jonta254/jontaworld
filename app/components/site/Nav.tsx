@@ -97,49 +97,51 @@ export default function Nav() {
   }, []);
 
   return (
-    <header
-      className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${mobileNavHidden ? styles.mobileNavHidden : ""}`}
-    >
-      <nav className={styles.inner} aria-label="Primary" onFocusCapture={() => setMobileNavHidden(false)}>
-        <Link href="/" {...intentProps("/")} className={styles.brand}>
-          <BrandMark className={styles.logo} />
-          <span className={styles.brandName}>{SITE.name}</span>
-          <span className={styles.brandMark}>{SITE.brand}</span>
-        </Link>
+    <div className={styles.slot}>
+      <header
+        className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${mobileNavHidden ? styles.mobileNavHidden : ""}`}
+      >
+        <nav className={styles.inner} aria-label="Primary" onFocusCapture={() => setMobileNavHidden(false)}>
+          <Link href="/" {...intentProps("/")} className={styles.brand}>
+            <BrandMark className={styles.logo} />
+            <span className={styles.brandName}>{SITE.name}</span>
+            <span className={styles.brandMark}>{SITE.brand}</span>
+          </Link>
 
-        <Link
-          href="/contact"
-          {...intentProps("/contact")}
-          className={`${styles.mobileCta} ${pathname === "/contact" ? styles.active : ""}`}
-          aria-current={pathname === "/contact" ? "page" : undefined}
-        >
-          Contact
-        </Link>
+          <Link
+            href="/contact"
+            {...intentProps("/contact")}
+            className={`${styles.mobileCta} ${pathname === "/contact" ? styles.active : ""}`}
+            aria-current={pathname === "/contact" ? "page" : undefined}
+          >
+            Contact
+          </Link>
 
-        <ul className={styles.links} aria-hidden={mobileNavHidden || undefined}>
-          {NAV.map((item) => {
-            const active =
-              pathname === item.href || pathname.startsWith(`${item.href}/`);
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  {...intentProps(item.href)}
-                  className={`${styles.link} ${active ? styles.active : ""}`}
-                  aria-current={active ? "page" : undefined}
-                  tabIndex={mobileNavHidden ? -1 : undefined}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+          <ul className={styles.links} aria-hidden={mobileNavHidden || undefined}>
+            {NAV.map((item) => {
+              const active =
+                pathname === item.href || pathname.startsWith(`${item.href}/`);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    {...intentProps(item.href)}
+                    className={`${styles.link} ${active ? styles.active : ""}`}
+                    aria-current={active ? "page" : undefined}
+                    tabIndex={mobileNavHidden ? -1 : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        <Link href="/contact" {...intentProps("/contact")} className={styles.cta}>
-          Get in touch
-        </Link>
-      </nav>
-    </header>
+          <Link href="/contact" {...intentProps("/contact")} className={styles.cta}>
+            Get in touch
+          </Link>
+        </nav>
+      </header>
+    </div>
   );
 }

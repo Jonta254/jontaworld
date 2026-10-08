@@ -1,0 +1,224 @@
+[
+  {
+    "width": 320,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 1234,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 4946,
+        "overflow": false
+      },
+      {
+        "height": 368,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 1193,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 4230,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 1180,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 4854,
+        "overflow": false
+      },
+      {
+        "height": 329,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 1036,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 3954,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 1180,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 4843,
+        "overflow": false
+      },
+      {
+        "height": 290,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 1036,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 3693,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 1170,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 4342,
+        "overflow": false
+      },
+      {
+        "height": 213,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 976,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 3320,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 843,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 3397,
+        "overflow": false
+      },
+      {
+        "height": 184,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 673,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 2764,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "accessibleHeadings": 23,
+    "findInPage": true,
+    "focusedLinkVisible": true,
+    "projectLinkVisible": true,
+    "printVisible": true,
+    "startupCls": 0,
+    "scriptedFlowCls": 0,
+    "shifts": [],
+    "sections": [
+      {
+        "title": "Digital products, built to work.",
+        "height": 835,
+        "overflow": false
+      },
+      {
+        "title": "Products you can explore.",
+        "height": 2962,
+        "overflow": false
+      },
+      {
+        "height": 251,
+        "overflow": false
+      },
+      {
+        "title": "Four rules, learned the expensive way.",
+        "height": 688,
+        "overflow": false
+      },
+      {
+        "title": "What I can build for you.",
+        "height": 2684,
+        "overflow": false
+      }
+    ]
+  }
+]

@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test:contact": "node --test scripts/contact-submission.test.mjs",
     "test:browser": "node scripts/verify-interactions.mjs",
+    "test:rendering": "node scripts/verify-home-rendering.mjs",
+    "profile:rendering": "node scripts/profile-home-rendering.mjs",
     "audit:responsive": "node scripts/audit-site.mjs",
     "check:links": "node scripts/check-links.mjs",
     "showcase:capture": "node scripts/capture-showcase.mjs"

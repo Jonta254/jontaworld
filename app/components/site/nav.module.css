@@ -1,7 +1,13 @@
-.header {
+.slot {
   position: sticky;
   top: 0;
   z-index: 50;
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  pointer-events: auto;
   /* Solid, not translucent. A blurred bar is the default choice right now,
      which is reason enough to avoid it : and design-system section 6 rules out
      backdrop-filter outright: it is a real paint cost on mobile and lets
@@ -135,6 +141,9 @@
 }
 
 @media (max-width: 620px) {
+  /* Reserve both rows while the visible header compacts. Its transparent
+     remainder passes pointer events through to the page underneath. */
+  .slot { height: calc(var(--tap) * 2 + 1px); }
   .cta { display: none; }
   .inner {
     flex-wrap: wrap;
@@ -216,4 +225,8 @@
   .mobileCta { padding-inline: 0; }
   .links { justify-content: flex-start; }
   .link { padding-inline: var(--space-2); }
+}
+
+@media print {
+  .slot { display: none; }
 }

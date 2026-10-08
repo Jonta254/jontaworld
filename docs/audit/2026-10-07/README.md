@@ -1,6 +1,7 @@
 # jontAWorld improvement audit — 7 October 2026
 
 Review branch: `codex/site-audit`. Local production preview: `http://localhost:3087`.
+The [8 October rendering deep dive](../2026-10-08/README.md) continues this audit with controlled layout experiments and homepage rendering verification.
 This pass preserves the identity, seven services, story, routes, articles, screenshots, integrations, and product limitations. No production deployment, DNS change, environment change, or real enquiry submission was performed.
 
 ## Follow-up: startup prefetch and lint advisory

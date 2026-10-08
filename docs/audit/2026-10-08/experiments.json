@@ -1,0 +1,359 @@
+{
+  "typographyAndJavaScript": [
+    {
+      "round": 0,
+      "variant": "normal",
+      "layoutMs": 2688.0389999999998,
+      "styleMs": 836.266,
+      "scriptMs": 1291.4289999999999,
+      "taskMs": 7791.969,
+      "layouts": 4
+    },
+    {
+      "round": 0,
+      "variant": "pretty-off",
+      "layoutMs": 2411.743,
+      "styleMs": 894.533,
+      "scriptMs": 863.706,
+      "taskMs": 6028.836,
+      "layouts": 3
+    },
+    {
+      "round": 0,
+      "variant": "wrap-all",
+      "layoutMs": 2503.698,
+      "styleMs": 1008.6500000000001,
+      "scriptMs": 1068.9869999999999,
+      "taskMs": 7114.8,
+      "layouts": 3
+    },
+    {
+      "round": 0,
+      "variant": "no-js",
+      "layoutMs": 2485.3109999999997,
+      "styleMs": 574.006,
+      "scriptMs": 0,
+      "taskMs": 4192.282999999999,
+      "layouts": 8
+    },
+    {
+      "round": 1,
+      "variant": "normal",
+      "layoutMs": 2421.801,
+      "styleMs": 453.297,
+      "scriptMs": 2037.8599999999997,
+      "taskMs": 8299.663,
+      "layouts": 10
+    },
+    {
+      "round": 1,
+      "variant": "pretty-off",
+      "layoutMs": 2118.2690000000002,
+      "styleMs": 875.1379999999999,
+      "scriptMs": 861.982,
+      "taskMs": 5876.634,
+      "layouts": 4
+    },
+    {
+      "round": 1,
+      "variant": "wrap-all",
+      "layoutMs": 1488.078,
+      "styleMs": 641.396,
+      "scriptMs": 1100.886,
+      "taskMs": 5350.9310000000005,
+      "layouts": 3
+    },
+    {
+      "round": 1,
+      "variant": "no-js",
+      "layoutMs": 2937.748,
+      "styleMs": 889.0709999999999,
+      "scriptMs": 0,
+      "taskMs": 4245.423,
+      "layouts": 1
+    },
+    {
+      "round": 2,
+      "variant": "normal",
+      "layoutMs": 2943.239,
+      "styleMs": 584.019,
+      "scriptMs": 1412.99,
+      "taskMs": 8155.5470000000005,
+      "layouts": 8
+    },
+    {
+      "round": 2,
+      "variant": "pretty-off",
+      "layoutMs": 3345.356,
+      "styleMs": 875.249,
+      "scriptMs": 1290.318,
+      "taskMs": 7882.076,
+      "layouts": 7
+    },
+    {
+      "round": 2,
+      "variant": "wrap-all",
+      "layoutMs": 2518.1659999999997,
+      "styleMs": 897.554,
+      "scriptMs": 905.9770000000001,
+      "taskMs": 6151.792,
+      "layouts": 3
+    },
+    {
+      "round": 2,
+      "variant": "no-js",
+      "layoutMs": 2082.335,
+      "styleMs": 1215.144,
+      "scriptMs": 0,
+      "taskMs": 3884.006,
+      "layouts": 2
+    }
+  ],
+  "sectionPrototype": [
+    {
+      "round": 0,
+      "variant": "normal",
+      "layoutMs": 1216.386,
+      "styleMs": 972.0360000000001,
+      "scriptMs": 795.767,
+      "taskMs": 5914.212,
+      "layouts": 3
+    },
+    {
+      "round": 0,
+      "variant": "contained",
+      "layoutMs": 1490.384,
+      "styleMs": 413.829,
+      "scriptMs": 1254.288,
+      "taskMs": 5218.035000000001,
+      "layouts": 4
+    },
+    {
+      "round": 1,
+      "variant": "normal",
+      "layoutMs": 3037.5589999999997,
+      "styleMs": 596.76,
+      "scriptMs": 986.0600000000001,
+      "taskMs": 7404.882,
+      "layouts": 7
+    },
+    {
+      "round": 1,
+      "variant": "contained",
+      "layoutMs": 1522.046,
+      "styleMs": 434.407,
+      "scriptMs": 1131.337,
+      "taskMs": 5369.25,
+      "layouts": 4
+    },
+    {
+      "round": 2,
+      "variant": "normal",
+      "layoutMs": 2063.029,
+      "styleMs": 454.394,
+      "scriptMs": 1567.596,
+      "taskMs": 6274.103,
+      "layouts": 3
+    },
+    {
+      "round": 2,
+      "variant": "contained",
+      "layoutMs": 1552.469,
+      "styleMs": 294.428,
+      "scriptMs": 932.9739999999999,
+      "taskMs": 5155.106,
+      "layouts": 10
+    }
+  ],
+  "cardPrototype": [
+    {
+      "round": 0,
+      "variant": "normal",
+      "layoutMs": 1814.586,
+      "styleMs": 615.925,
+      "scriptMs": 771.302,
+      "taskMs": 6388.313,
+      "layouts": 4
+    },
+    {
+      "round": 0,
+      "variant": "cards",
+      "layoutMs": 1245.4279999999999,
+      "styleMs": 456.93699999999995,
+      "scriptMs": 659.095,
+      "taskMs": 4065.086,
+      "layouts": 4
+    },
+    {
+      "round": 1,
+      "variant": "normal",
+      "layoutMs": 1307.973,
+      "styleMs": 362.70000000000005,
+      "scriptMs": 1192.585,
+      "taskMs": 4401.694,
+      "layouts": 5
+    },
+    {
+      "round": 1,
+      "variant": "cards",
+      "layoutMs": 1181.077,
+      "styleMs": 330.756,
+      "scriptMs": 913.6039999999999,
+      "taskMs": 4129.723,
+      "layouts": 8
+    },
+    {
+      "round": 2,
+      "variant": "normal",
+      "layoutMs": 1838.1870000000001,
+      "styleMs": 314.73,
+      "scriptMs": 1188.4060000000002,
+      "taskMs": 5952.396000000001,
+      "layouts": 6
+    },
+    {
+      "round": 2,
+      "variant": "cards",
+      "layoutMs": 1450.683,
+      "styleMs": 446.853,
+      "scriptMs": 903.891,
+      "taskMs": 5607.552,
+      "layouts": 4
+    }
+  ],
+  "rejectedCardFlow": [
+    {
+      "width": 320,
+      "accessibleHeadings": 23,
+      "findInPage": true,
+      "focusedLinkVisible": true,
+      "projectLinkVisible": true,
+      "printVisible": true,
+      "startupCls": 0,
+      "scriptedFlowCls": 0.23333333333333334,
+      "shifts": [
+        {
+          "phase": "project focus",
+          "value": 0.23333333333333334,
+          "sources": [
+            {
+              "tag": "SECTION",
+              "className": "section-module__4KjdkG__section section-module__4KjdkG__paper section-module__4KjdkG__compactAfter  home-module__txgM7a__deferredWork",
+              "previous": {
+                "x": 0,
+                "y": 0,
+                "width": 320,
+                "height": 900,
+                "top": 0,
+                "right": 320,
+                "bottom": 900,
+                "left": 0
+              },
+              "current": {
+                "x": 0,
+                "y": 0,
+                "width": 320,
+                "height": 900,
+                "top": 0,
+                "right": 320,
+                "bottom": 900,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Digital products, built to work.",
+          "height": 1234,
+          "overflow": false
+        },
+        {
+          "title": "Products you can explore.",
+          "height": 4946,
+          "overflow": false
+        },
+        {
+          "height": 368,
+          "overflow": false
+        },
+        {
+          "title": "Four rules, learned the expensive way.",
+          "height": 1193,
+          "overflow": false
+        },
+        {
+          "title": "What I can build for you.",
+          "height": 4230,
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "accessibilityActivation": [
+    {
+      "mode": "late",
+      "headings": [
+        "Have something that needs building properly?",
+        "Digital products, built to work.",
+        "EXPLORE",
+        "ELSEWHERE",
+        "Products you can explore.",
+        "DigiLearn",
+        "ApprenticeLog",
+        "ElectraCore",
+        "TrailDesk",
+        "SafeSignal",
+        "PURE Entertainment"
+      ]
+    },
+    {
+      "mode": "early",
+      "headings": [
+        "Have something that needs building properly?",
+        "Digital products, built to work.",
+        "EXPLORE",
+        "ELSEWHERE",
+        "Products you can explore.",
+        "DigiLearn",
+        "ApprenticeLog",
+        "ElectraCore",
+        "TrailDesk",
+        "SafeSignal",
+        "PURE Entertainment"
+      ]
+    },
+    {
+      "mode": "forced",
+      "headings": [
+        "Have something that needs building properly?",
+        "Digital products, built to work.",
+        "If it involves a browser, interface, workflow, data, automation, or digital product, I can probably help shape it.",
+        "EXPLORE",
+        "ELSEWHERE",
+        "Products you can explore.",
+        "DigiLearn",
+        "ApprenticeLog",
+        "ElectraCore",
+        "TrailDesk",
+        "SafeSignal",
+        "PURE Entertainment",
+        "Four rules, learned the expensive way.",
+        "What I can build for you.",
+        "A clear path from problem to launch.",
+        "Precision before speed",
+        "Constraints are the brief",
+        "Remove until it breaks",
+        "Show, do not claim",
+        "Personal and portfolio websites",
+        "Business websites",
+        "Web apps and internal tools",
+        "Online stores",
+        "Landing pages and launches",
+        "Logo and visual identity",
+        "Existing website improvement"
+      ]
+    }
+  ]
+}

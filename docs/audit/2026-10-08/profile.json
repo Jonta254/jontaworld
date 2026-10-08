@@ -1,0 +1,81 @@
+{
+  "environment": "Local production homepage; Chrome; 390×844; cold page cache; 4× CPU throttling; CSS intercepted identically in both variants; shared host. Baseline disables only homepage section containment. CDP task durations are lab diagnostics, not field INP.",
+  "runs": [
+    {
+      "round": 0,
+      "variant": "baseline",
+      "layoutMs": 1958.899,
+      "styleMs": 375.077,
+      "scriptMs": 834.1070000000001,
+      "taskMs": 4929.486,
+      "layoutCount": 3
+    },
+    {
+      "round": 0,
+      "variant": "current",
+      "layoutMs": 1488.403,
+      "styleMs": 360.527,
+      "scriptMs": 925.062,
+      "taskMs": 4942.715999999999,
+      "layoutCount": 5
+    },
+    {
+      "round": 1,
+      "variant": "current",
+      "layoutMs": 1541.094,
+      "styleMs": 315.695,
+      "scriptMs": 1334.3700000000001,
+      "taskMs": 5938.225,
+      "layoutCount": 8
+    },
+    {
+      "round": 1,
+      "variant": "baseline",
+      "layoutMs": 1695.262,
+      "styleMs": 597.931,
+      "scriptMs": 631.5,
+      "taskMs": 4151.562,
+      "layoutCount": 3
+    },
+    {
+      "round": 2,
+      "variant": "baseline",
+      "layoutMs": 2932.925,
+      "styleMs": 1099.297,
+      "scriptMs": 741.13,
+      "taskMs": 6931.031,
+      "layoutCount": 3
+    },
+    {
+      "round": 2,
+      "variant": "current",
+      "layoutMs": 1914.667,
+      "styleMs": 685.4050000000001,
+      "scriptMs": 1109.495,
+      "taskMs": 6127.818,
+      "layoutCount": 4
+    }
+  ],
+  "medians": {
+    "layoutMs": {
+      "baseline": 1958.899,
+      "current": 1541.094,
+      "changePct": -21.32856262625076
+    },
+    "styleMs": {
+      "baseline": 597.931,
+      "current": 360.527,
+      "changePct": -39.704246811086904
+    },
+    "scriptMs": {
+      "baseline": 741.13,
+      "current": 1109.495,
+      "changePct": 49.70315599152644
+    },
+    "taskMs": {
+      "baseline": 4929.486,
+      "current": 5938.225,
+      "changePct": 20.463370826086138
+    }
+  }
+}

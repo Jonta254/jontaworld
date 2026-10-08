@@ -1,0 +1,32 @@
+[
+  {
+    "name": "hero",
+    "stage": "before",
+    "sha256": "f45dd402a8bd9ccf76ea927af66993bfb49f92eb201e81caf4ef2f83b9e1b8fe"
+  },
+  {
+    "name": "hero",
+    "stage": "after",
+    "sha256": "f45dd402a8bd9ccf76ea927af66993bfb49f92eb201e81caf4ef2f83b9e1b8fe"
+  },
+  {
+    "name": "services",
+    "stage": "before",
+    "sha256": "c5799a580d11168cd8faaef61cdba292cc5c21e17288def0a0a7f3bbca5d435d"
+  },
+  {
+    "name": "services",
+    "stage": "after",
+    "sha256": "7b6cf6d9797bf9a5a98ee39cde93e6425482d353d19a47e3a584b91eb22a33c5"
+  },
+  {
+    "name": "desktop-services",
+    "stage": "before",
+    "sha256": "9d5b18888e8aa65951552234e1746f7aba82b900fdcb9c544232a929e954447c"
+  },
+  {
+    "name": "desktop-services",
+    "stage": "after",
+    "sha256": "a6adc7cfe0dc0b0a207cd8855e1b6d8da070bc202b759393a8752a48dd915f57"
+  }
+]

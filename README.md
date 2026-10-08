@@ -73,6 +73,8 @@ npm run build
 
 For local browser regression checks on Windows with Chrome installed, start the production preview with `npm run start -- --port 3087`, then run `npm run test:browser`. FormSubmit requests are intercepted; these checks never send real enquiries. `BASE_URL=http://localhost:3087` and `AUDIT_OUT=.audit/after` can be set before `npm run audit:responsive` to check the local sitemap at six viewport widths.
 
+`npm run test:rendering` checks homepage heading discovery with Chrome accessibility activated, normal-browser find-in-page and focused links, all project cards, overflow, layout shift and print at six widths. `npm run profile:rendering` runs three alternating cold-page comparisons with homepage section deferral enabled and disabled. Run profiling after other browser checks finish; reports default to ignored `.audit/` directories. See the [rendering audit](docs/audit/2026-10-08/README.md) for evidence and limits.
+
 Pull requests also run mobile Lighthouse CI against the homepage, About, Work, a flagship case study, and Writing. Current enforced minimums are:
 
 - Performance: 95
