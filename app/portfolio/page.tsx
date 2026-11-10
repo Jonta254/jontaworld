@@ -11,9 +11,9 @@ export default function PortfolioPage() {
         <p className={styles.eyebrow}>Selected work</p>
         <h1 className={styles.title}>Work</h1>
         <p className={styles.lede}>
-          Six live websites and applications across learning, trade tools,
-          safety, outdoor planning and entertainment. Open each deployment,
-          explore the work, and read its capabilities and current limits.
+          Websites and applications across reading, wellbeing, research,
+          school operations, learning and trade tools. Explore the previews,
+          case studies, and the current scope of each product.
         </p>
       </header>
 

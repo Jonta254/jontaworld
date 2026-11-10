@@ -266,3 +266,23 @@
 .supporting { padding: var(--space-5); gap: var(--space-5); min-width: 0; }
 .supporting .name { font-size: var(--text-h3); }
 .supporting .outcome { font-size: var(--text-sm); }
+
+/* Individual colour identities for the newer products, in the existing palette. */
+.card[data-project="worklane"] { --project-wash: color-mix(in srgb, var(--project-green-wash), var(--project-blue-wash)); --project-ink: var(--project-green-ink); }
+.card[data-project="passagewell"] { --project-wash: color-mix(in srgb, var(--project-amber-wash) 65%, var(--project-green-wash)); --project-ink: var(--project-amber-ink); }
+.card[data-project="school-results"] { --project-wash: color-mix(in srgb, var(--project-blue-wash) 65%, var(--project-violet-wash)); --project-ink: var(--project-blue-ink); }
+.card[data-project="innera"] { --project-wash: color-mix(in srgb, var(--project-coral-wash) 60%, var(--project-violet-wash)); --project-ink: var(--project-coral-ink); }
+.flagship .media {
+  width: 100%;
+  max-width: 540px;
+  justify-self: center;
+  padding: clamp(16px, 2.2vw, 30px);
+  border: 1px solid color-mix(in srgb, var(--project-ink) 20%, transparent);
+  background-image: linear-gradient(color-mix(in srgb, var(--project-ink) 5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--project-ink) 5%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.flagship .shot { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.flagship .chrome { border-top: 2px solid var(--project-ink); }
+.flagship .live { color: var(--project-ink); }
+.flagship .phone { width: 105px; }
+@media(min-width:1024px) { .flagship { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }

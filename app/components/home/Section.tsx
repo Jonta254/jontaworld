@@ -10,6 +10,7 @@ import styles from "./section.module.css";
  * than a stack of undifferentiated cards.
  */
 export default function Section({
+  id,
   eyebrow,
   title,
   lede,
@@ -21,6 +22,7 @@ export default function Section({
   tone = "paper",
   className = "",
 }: {
+  id?: string;
   eyebrow?: string;
   title?: string;
   lede?: string;
@@ -35,7 +37,7 @@ export default function Section({
   className?: string;
 }) {
   return (
-    <section className={`${styles.section} ${styles[tone]} ${compactAfter ? styles.compactAfter : ""} ${compactBefore ? styles.compactBefore : ""} ${className}`}>
+    <section id={id} className={`${styles.section} ${styles[tone]} ${compactAfter ? styles.compactAfter : ""} ${compactBefore ? styles.compactBefore : ""} ${className}`}>
       {divider && <hr className="rule" />}
       <div className={`${styles.inner} ${wide ? styles.wide : ""}`}>
         {(eyebrow || title || lede) && (

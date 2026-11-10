@@ -1,78 +1,25 @@
+import PlatformOrbit from "./PlatformOrbit";
 import Link from "next/link";
 import { SITE } from "@/content/site";
-import { PROJECTS } from "@/content/projects";
 import styles from "./hero.module.css";
 
-/**
- * The hero. Server-rendered text, with no canvas, orb, or boot sequence.
- *
- * A plain, client facing promise: what gets built, and that one person handles
- * the whole thing from design to launch. The one visual gesture is a hairline
- * underline beneath the emphasis, drawn in CSS.
- *
- * Nothing here animates before first paint, and nothing blocks the content.
- * A visitor's first five seconds are the most expensive on the site.
- */
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.intro}>
-        <p className={styles.kicker}>{SITE.availability}</p>
-
-        <h1 className={styles.headline}>
-          Digital products,
-          <br className={styles.br} />
-          <span className={styles.emphasis}> built to work.</span>
-        </h1>
-
-        <p className={styles.lede}>
-          I design and build websites, web apps, and internal tools, from the
-          interface to the system behind it. Clear, fast, and made for real use.
-        </p>
-
+        <p className={styles.kicker}><span aria-hidden="true" />{SITE.availability}</p>
+        <h1 id="hero-title" className={styles.headline}>Digital products,<br /><span className={styles.emphasis}>built to work.</span></h1>
+        <p className={styles.lede}>I design and build websites, web apps, and internal tools, from the interface to the system behind it. Clear, fast, and made for real use.</p>
         <div className={styles.actions}>
-          <Link href="/portfolio" className={styles.primary}>
-            See the work
-            <span className={styles.arrow} aria-hidden="true">→</span>
-          </Link>
-          <Link href="/contact" className={styles.secondary}>
-            Start a project
-          </Link>
+          <a href="#work" className={styles.primary}>See the work <span aria-hidden="true">→</span></a>
+          <Link href="/contact" className={styles.secondary}>Start a project</Link>
         </div>
+        <p className={styles.signature}>Product direction <span>/</span> Interface design <span>/</span> Engineering</p>
       </div>
-
-      <aside className={styles.system} aria-label="Connected build process">
-        <div className={styles.systemHead}>
-          <span>Build system</span>
-          <span>01—03</span>
-        </div>
-        <dl className={styles.brief}>
-          <div><dt>01</dt><dd>Product direction<span>Research + scope</span></dd></div>
-          <div><dt>02</dt><dd>Interface system<span>UX + visual design</span></dd></div>
-          <div><dt>03</dt><dd>Engineering<span>Next.js + TypeScript</span></dd></div>
-        </dl>
-        <p className={styles.systemFoot}><span aria-hidden="true" />From first decision to production</p>
-      </aside>
-
-      {/* Proof, above the fold. The claim above is a sentence. This is the
-          evidence: five products a visitor can open before scrolling once. */}
-      <div className={styles.proof}>
-        <span className={styles.proofLabel}>Explore the products</span>
-        <ul className={styles.proofList}>
-          {PROJECTS.map((p) => (
-            <li key={p.slug}>
-              <a
-                className={styles.proofLink}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {p.name}
-                <span className="sr-only"> opens in a new tab</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+      <PlatformOrbit />
+      <div className={styles.footer}>
+        <span>From first decision to production.</span>
+        <a href="#work">Explore the work <span aria-hidden="true">↓</span></a>
       </div>
     </section>
   );

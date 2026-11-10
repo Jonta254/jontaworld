@@ -3,8 +3,8 @@ import Hero from "./components/home/Hero";
 import Section from "./components/home/Section";
 import Statement from "./components/home/Statement";
 import Services from "./components/home/Services";
-import { FlagshipCard, SupportingGrid } from "./components/showcase/ProjectShowcase";
-import { FLAGSHIPS, SUPPORTING, PROJECTS } from "@/content/projects";
+import { SelectedWorkCards, SupportingGrid } from "./components/showcase/ProjectShowcase";
+import { SUPPORTING, PROJECTS } from "@/content/projects";
 import { PRINCIPLES } from "@/content/sequence";
 import { SITE, SOCIAL } from "@/content/site";
 import { SERVICES } from "@/content/services";
@@ -92,8 +92,7 @@ const jsonLd = {
   ],};
 
 /**
- * Homepage. A server component end to end : zero client JavaScript ships for
- * anything on this page except the nav's scroll sentinel.
+ * Homepage. Server-rendered content with a client-side interactive hero orb.
  *
  * Order is the argument:
  *   hero       → what he does, in one sentence
@@ -115,17 +114,16 @@ export default function HomePage() {
       <Hero />
 
       <Section
+        id="work"
         className={styles.deferredWork}
         eyebrow="Selected work"
         title="Products you can explore."
-        lede="Six websites and applications across trade tools, safety, learning and entertainment. Open each deployment and read the case study for its capabilities and current limits."
+        lede="Websites and applications across reading, research, school operations, trade tools, safety, learning and entertainment. Explore the work and each product’s current capabilities."
         wide
         compactAfter
       >
         <div className={styles.flagships}>
-          {FLAGSHIPS.map((p, i) => (
-            <FlagshipCard key={p.slug} project={p} priority={i === 0} />
-          ))}
+          <SelectedWorkCards />
         </div>
 
         <div className={styles.supporting}>

@@ -4,6 +4,7 @@ import type { Project } from "@/content/projects";
 import { FLAGSHIPS, SUPPORTING } from "@/content/projects";
 import { BrowserFrame, PhoneFrame } from "./BrowserFrame";
 import styles from "./showcase.module.css";
+import RecentPlatforms from "../home/RecentPlatforms";
 
 /**
  * The showcase. Server-rendered, with no client JavaScript for any of it.
@@ -117,13 +118,22 @@ export function SupportingGrid({ projects }: { projects: Project[] }) {
   );
 }
 
+/** Mix established products with newer work; private previews follow live products. */
+export function SelectedWorkCards() {
+  const order = ["digilearn", "worklane", "apprenticelog", "passagewell", "electracore", "school-results", "innera"];
+  return order.map((slug, index) => {
+    const project = FLAGSHIPS.find((item) => item.slug === slug);
+    return project
+      ? <FlagshipCard key={slug} project={project} priority={index === 0} />
+      : <RecentPlatforms key={slug} slugs={[slug]} />;
+  });
+}
+
 export function ProjectShowcase() {
   return (
     <>
       <div className={styles.flagshipStack}>
-        {FLAGSHIPS.map((p, i) => (
-          <FlagshipCard key={p.slug} project={p} priority={i === 0} />
-        ))}
+        <SelectedWorkCards />
       </div>
 
       <div className={styles.stackGap}>

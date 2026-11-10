@@ -67,7 +67,7 @@
   content-visibility: auto;
   contain-intrinsic-block-size: auto var(--section-height);
 }
-.deferredWork { --section-height: 4850px; }
+.deferredWork { --section-height: 4850px; scroll-margin-top: 80px; }
 .deferredPrinciples { --section-height: 1050px; }
 .deferredServices { --section-height: 3900px; }
 

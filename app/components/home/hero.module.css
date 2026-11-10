@@ -1,246 +1,55 @@
+/* Original editorial layout with a single portfolio montage. */
 .hero {
-  max-width: var(--container-content);
+  max-width: var(--container-wide);
   margin-inline: auto;
-  padding: var(--space-10) var(--gutter) var(--space-9);
+  padding: 88px var(--gutter) 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  /* Deliberately tighter than the section rhythm , a hero that breathes too
-     much reads as a splash screen rather than an opening statement. */
-  gap: var(--space-5);
-}
-
-.intro { display: flex; flex-direction: column; gap: var(--space-5); }
-
-.system {
-  position: relative;
-  align-self: end;
-  padding-inline: var(--space-4);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--line-strong);
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--project-blue-wash) 42%, transparent), transparent 72%),
-    repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), color-mix(in srgb, var(--line) 38%, transparent) 25%);
-}
-
-.system::before,
-.system::after {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border: 1px solid var(--project-blue-ink);
-  background: var(--paper);
-}
-.system::before { top: -3px; left: -3px; }
-.system::after { right: -3px; bottom: -3px; }
-
-.systemHead {
-  display: flex;
-  justify-content: space-between;
-  padding-block: var(--space-3);
-  color: var(--faint);
-  font: var(--text-xs)/1.4 var(--font-mono);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-}
-
-.brief {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 0;
-  border-top: 1px solid var(--line);
-}
-
-.brief > div {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: var(--space-1) var(--space-3);
-  padding-block: var(--space-4);
-  border-bottom: 1px solid var(--line);
-}
-
-.brief dt { color: var(--accent); font: var(--text-xs)/1.5 var(--font-mono); letter-spacing: var(--tracking-wide); }
-.brief dd { display: grid; gap: var(--space-1); margin: 0; color: var(--ink); font-size: var(--text-sm); line-height: var(--leading-snug); }
-.brief span { color: var(--faint); font: var(--text-xs)/1.5 var(--font-mono); }
-
-.systemFoot {
-  display: flex;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(40px, 5vw, 80px);
   align-items: center;
-  gap: var(--space-2);
-  padding-block: var(--space-3);
-  color: var(--muted);
-  font: var(--text-xs)/1.4 var(--font-mono);
 }
-.systemFoot span { width: 7px; height: 7px; border-radius: var(--radius-full); background: var(--success); box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 14%, transparent); }
-
-@media (min-width: 1024px) {
-  .hero {
-    grid-template-columns: minmax(0, 8fr) minmax(15rem, 3fr);
-    gap: var(--space-9);
-    align-content: center;
-    padding-block: var(--space-9);
-  }
-
-  .system { margin-bottom: var(--space-5); }
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.headline {
-  font-size: var(--text-display);
-  color: var(--ink);
-  /* Optical: the display size needs a touch more negative tracking than the
-     token default to hold together as a shape. */
-  letter-spacing: -0.028em;
-  max-width: 16ch;
-}
-
-/* The one visual gesture , a schematic underline that reads as a conductor
-   rather than a highlighter. Uses text-decoration so it wraps naturally across
-   lines: an absolute-positioned rule overflowed the viewport on mobile when
-   the phrase could not fit on one line. */
-.emphasis {
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.14em;
-  -webkit-text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
-}
-
-.br { display: none; }
-@media (min-width: 700px) { .br { display: block; } }
-
-.lede {
-  font-size: var(--text-lg);
-  line-height: var(--leading-base);
-  color: var(--muted);
-  max-width: 54ch;
-  margin-top: var(--space-2);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 48px;
-  padding-inline: var(--space-6);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  text-decoration: none;
-  transition: background var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out),
-              color var(--dur-fast) var(--ease-out);
-}
-
-.primary {
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: var(--paper);
-}
+.intro { padding-bottom: 20px; }
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; font: 12px/1.5 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.kicker > span { width: 5px; height: 5px; border-radius: 50%; background: var(--success); }
+.headline { font-size: clamp(48px, 4.8vw, 68px); line-height: 1.09; letter-spacing: -.04em; text-wrap: initial; }
+.emphasis { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 48%, transparent); text-decoration-thickness: 2px; text-underline-offset: .16em; }
+.lede { max-width: 46ch; margin-top: 32px; font-size: 17px; line-height: 1.8; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.primary, .secondary { display: inline-flex; justify-content: center; align-items: center; gap: 28px; min-height: 50px; padding-inline: 25px; border-radius: var(--radius-sm); font-size: 14px; text-decoration: none; transition: background var(--dur-fast), border-color var(--dur-fast); }
+.primary { color: var(--paper); background: var(--accent); border: 1px solid var(--accent); }
 .primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.secondary { border: 1px solid var(--line-strong); color: var(--ink); }
+.secondary:hover { border-color: var(--ink); background: var(--accent-wash); }
+.signature { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; font: 10px/1.6 var(--font-mono); color: var(--faint); }
+.signature span { color: var(--line-strong); }
+.footer { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid var(--line); margin-top: 70px; padding: 20px 0; color: var(--muted); font: 11px/1.6 var(--font-mono); }
+.footer a { display: flex; align-items: center; gap: 24px; min-height: 44px; text-decoration: none; }
+.footer a span { color: var(--accent); font-size: 20px; }
+.footer a:hover { color: var(--ink); }
+@media (min-width: 1500px) { .hero { padding-top: 110px; } }
+@media (max-width: 1100px) and (min-width: 901px) { .hero { padding-inline: 32px; column-gap: 36px; padding-top: 65px; } .headline { font-size: 52px; } .lede { font-size: 16px; } }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 44px; }
+  .intro { max-width: 610px; }
+  .headline { font-size: clamp(42px, 7.8vw, 66px); }
+  .kicker { margin-bottom: 24px; font-size: 11px; }
+  .lede { font-size: 16px; margin-top: 26px; }
+  .signature { margin-top: 24px; }
 
-.secondary {
-  background: transparent;
-  border: 1px solid var(--line-strong);
-  color: var(--ink);
+  .footer { margin-top: 38px; }
 }
-.secondary:hover { border-color: var(--ink); }
-
-.arrow { transition: transform var(--dur-fast) var(--ease-out); }
-.primary:hover .arrow { transform: translateX(var(--nudge)); }
-
-/* ── Proof strip ────────────────────────────────────────────────────────
-   The evidence, above the fold. A quiet mono label + the five live product
-   names as real links. Wraps gracefully; never shouts. */
-.proof {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2) var(--space-5);
-  margin-top: var(--space-8);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--line);
-  grid-column: 1 / -1;
+@media (max-width: 480px) {
+  .hero { padding-top: 32px; }
+  .headline { font-size: clamp(35px, 9vw, 43px); }
+  .lede { font-size: 15px; line-height: 1.75; }
+  .actions { margin-top: 26px; gap: 10px; }
+  .primary, .secondary { padding-inline: 18px; font-size: 13px; gap: 18px; }
+  .signature { font-size: 8px; gap: 5px; }
+  .footer { font-size: 9px; gap: 20px; }
+  .footer > span { max-width: 22ch; }
+  .footer a { gap: 12px; }
 }
+@media (prefers-reduced-motion: reduce) { .primary, .secondary { transition: none; } }
+@media(min-width:901px) { .intro { align-self: start; padding-top: 50px; } .hero { padding-top: 50px; } }
 
-.proofLabel {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
-.proofList {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-2) var(--space-4);
-  list-style: none;
-}
-
-.proofLink {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  /* Full 44px hit area (WCAG 2.5.5) while the visual stays a compact inline
-     link , the padding is invisible but tappable. */
-  min-height: var(--tap);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--muted);
-  text-decoration: none;
-  transition: color var(--dur-fast) var(--ease-out);
-}
-
-/* Separator dot between products , cheaper than borders, reads as a list. */
-.proofList li:not(:last-child) .proofLink::after {
-  content: "·";
-  position: absolute;
-  right: calc(var(--space-2) * -1 - 0.15em);
-  color: var(--line-strong);
-}
-
-.proofLink:hover { color: var(--accent); }
-
-@media (max-width: 620px) {
-  .hero {
-    padding-top: var(--space-8);
-    padding-bottom: var(--space-8);
-    gap: var(--space-4);
-  }
-
-  .headline {
-    font-size: clamp(2.35rem, 12vw, 2.75rem);
-    line-height: 1.04;
-    max-width: 12ch;
-  }
-
-  .lede {
-    font-size: var(--text-base);
-    line-height: 1.55;
-    max-width: 34ch;
-    margin-top: var(--space-1);
-  }
-
-  .actions { margin-top: var(--space-2); }
-  .proof { margin-top: var(--space-5); }
-  .system { margin-top: var(--space-3); }
-}
+.footer { margin-top: 32px; }

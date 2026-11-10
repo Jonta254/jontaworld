@@ -1,0 +1,48 @@
+/** Verified from the project READMEs and public previews, October 2026.
+ * Private projects deliberately have no public application link. */
+export const RECENT_PLATFORMS = [
+  {
+    slug: "passagewell",
+    name: "Passagewell",
+    category: "Reading & reflection",
+    status: "Public preview",
+    image: "/showcase/passagewell-desktop.jpg",
+    alt: "Passagewell's Scripture reading homepage with its passage journal and reading invitations.",
+    description: "A calm space to read Scripture in context, keep questions and observations, and return to them. Writing stays on the reader’s device.",
+    stack: "Next.js · TypeScript · IndexedDB",
+    url: "https://passagewell.vercel.app",
+  },
+  {
+    slug: "innera",
+    name: "Innera",
+    category: "Discovery & connection",
+    status: "Private demonstration",
+    image: "/showcase/innera-desktop.jpg",
+    alt: "Innera's editorial homepage with a forest photograph and pathways into educational resources.",
+    description: "Mental health education and discovery, with a personal reading path and sample provider inquiries. Providers are fictional; this demonstration does not deliver clinical care or appointments.",
+    stack: "React · TypeScript · Cloudflare D1",
+    url: null,
+  },
+  {
+    slug: "worklane",
+    name: "Worklane",
+    category: "Product feedback & research",
+    status: "Invited pilot",
+    image: "/showcase/worklane-desktop.jpg",
+    alt: "Worklane's product feedback homepage with a clear testing brief and participant guidance.",
+    description: "A workspace for product feedback and research studies, from a clear brief to a reviewed contribution. The current pilot is invited and unpaid.",
+    stack: "Next.js · TypeScript · libSQL",
+    url: "https://worklane-ten.vercel.app",
+  },
+  {
+    slug: "school-results",
+    name: "School Results",
+    category: "School records & reporting",
+    status: "Development preview",
+    image: "/showcase/school-results-desktop.png",
+    alt: "School Results academic dashboard showing synthetic training records and marks-entry tasks.",
+    description: "An academic workspace for learner records, marks entry, review and draft reporting. This preview uses synthetic records; official publication remains gated.",
+    stack: "Rust · React · SQLite",
+    url: null,
+  },
+] as const;
