@@ -85,8 +85,8 @@ export default function PlatformOrbit() {
   }
   return <div className={styles.orbit} role="region" aria-label="Interactive platform explorer">
     <div className={styles.modes} aria-label="Explorer view">
-      <button type="button" aria-pressed={mode === "work"} onClick={() => { setMode("work"); choose(0); }}>Platforms <span>10</span></button>
-      <button type="button" aria-pressed={mode === "tech"} onClick={() => { setMode("tech"); choose(0); }}>Languages & tools <span>10</span></button>
+      <button type="button" aria-pressed={mode === "work"} onClick={() => { setMode("work"); choose(0); }}>Platforms <span>{platforms.length}</span></button>
+      <button type="button" aria-pressed={mode === "tech"} onClick={() => { setMode("tech"); choose(0); }}>Languages & tools <span>{technologies.length}</span></button>
     </div>
     <div className={styles.stage} tabIndex={0} role="group" aria-label="Rotate the sphere: drag in any direction or use all four arrow keys. Home resets the view." data-dragging={dragging}
       onKeyDown={(event) => {

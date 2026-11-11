@@ -281,8 +281,26 @@
   background-image: linear-gradient(color-mix(in srgb, var(--project-ink) 5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--project-ink) 5%, transparent) 1px, transparent 1px);
   background-size: 24px 24px;
 }
-.flagship .shot { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+
 .flagship .chrome { border-top: 2px solid var(--project-ink); }
 .flagship .live { color: var(--project-ink); }
 .flagship .phone { width: 105px; }
 @media(min-width:1024px) { .flagship { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+/* Preserve the complete capture instead of forcing every product into one crop. */
+.frame { min-width: 0; width: 100%; }
+.chrome { min-width: 0; }
+.chromeUrl { min-width: 0; font-size: clamp(9px, 1vw, 12px); }
+.previewViewport { width: 100%; }
+.previewViewport[data-tall=true] { max-height: clamp(220px, 38vw, 360px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--project-ink) var(--surface); }
+.previewLink { display: block; cursor: zoom-in; }
+.previewLink:focus-visible, .previewViewport:focus-visible { outline: 2px solid var(--project-ink); outline-offset: -3px; }
+.shot { aspect-ratio: auto; height: auto; }
+@media(max-width:620px) {
+  .card { padding: 16px; gap: 24px; }
+  .flagship .media, .mediaBlock { padding: 8px; }
+  .chrome { gap: 8px; padding: 8px; }
+  .dots { gap: 4px; }
+  .dots i { width: 5px; height: 5px; }
+}
+@media(min-width:769px) and (max-width:1023px) { .phone { right: 8px; bottom: 8px; } }

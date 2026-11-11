@@ -75,3 +75,10 @@
 .techCard { width: 32%; }
 .dragHint { bottom: 2%; }
 @media(max-width:480px) { .card { width: 34%; } .techCard { width: 34%; } }
+
+/* Long product names must not push touch controls beyond narrow screens. */
+.details { flex-wrap: wrap; }
+.details > div:first-child { flex: 1 1 160px; min-width: 0; }
+.project { overflow-wrap: anywhere; }
+.project span { flex-shrink: 0; }
+.controls { flex-shrink: 0; margin-left: auto; }

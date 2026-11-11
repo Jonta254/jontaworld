@@ -14,7 +14,7 @@ export default function RecentPlatforms({ slugs }: { slugs?: readonly string[] }
               <ul className={showcase.stack} aria-label="Technology">{project.stack.split(" · ").map((item) => <li className={showcase.tag} key={item}>{item}</li>)}</ul>
               <div className={showcase.actions}>{project.url ? <a className={showcase.live} href={project.url} target="_blank" rel="noopener noreferrer">Open {project.name} <span aria-hidden="true">↗</span><span className="sr-only"> in a new tab</span></a> : <span className={styles.status}>{project.status}</span>}</div>
             </div>
-            <div className={showcase.media}><BrowserFrame src={project.image} alt={project.alt} url={project.url ? new URL(project.url).hostname : `${project.name} · ${project.status}`} /></div>
+            <div className={showcase.media}><BrowserFrame width={project.width} height={project.height} src={project.image} alt={project.alt} url={project.url ? new URL(project.url).hostname : `${project.name} · ${project.status}`} /></div>
           </article>
         ))}
     </>

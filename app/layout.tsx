@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: SITE.url,
     siteName: `${SITE.name} ${SITE.brand}`,
     title: `${SITE.name} | Developer / ${SITE.brand}`,
-    description: `Design and engineering for the full web: apps, online stores, marketing sites, design systems, and brand. Every project is live and open to anyone.`,
+    description: `Design and engineering for the full web: apps, online stores, marketing sites, design systems, and brand. Explore live products, case studies, and clearly labelled development previews.`,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Josiah | Developer / jontAWorld" }],
   },
   twitter: {
