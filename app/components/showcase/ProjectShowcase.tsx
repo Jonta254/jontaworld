@@ -35,16 +35,19 @@ function LiveLink({ project }: { project: Project }) {
   );
 }
 
-export function FlagshipCard({ project, priority }: { project: Project; priority: boolean }) {
+type HeadingLevel = "h2" | "h3";
+
+export function FlagshipCard({ project, priority, heading = "h3" }: { project: Project; priority: boolean; heading?: HeadingLevel }) {
+  const Heading = heading;
   const href = `/portfolio/${project.slug}`;
   return (
     <article className={`${styles.card} ${styles.flagship}`} data-project={project.slug}>
       <div className={styles.body}>
-        <h3 className={styles.name}>
+        <Heading className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
           </Link>
-        </h3>
+        </Heading>
         <p className={styles.outcome}>{project.outcome}</p>
         <ul className={styles.stack}>
           {project.stack.map((s) => (
@@ -73,7 +76,8 @@ export function FlagshipCard({ project, priority }: { project: Project; priority
   );
 }
 
-function SupportingCard({ project }: { project: Project }) {
+function SupportingCard({ project, heading = "h3" }: { project: Project; heading?: HeadingLevel }) {
+  const Heading = heading;
   const href = `/portfolio/${project.slug}`;
   return (
     <article className={`${styles.card} ${styles.supporting}`} data-project={project.slug}>
@@ -85,11 +89,11 @@ function SupportingCard({ project }: { project: Project }) {
         />
       </div>
       <div className={styles.body}>
-        <h3 className={styles.name}>
+        <Heading className={styles.name}>
           <Link href={href} className={styles.nameLink}>
             {project.name}
           </Link>
-        </h3>
+        </Heading>
         <p className={styles.outcome}>{project.outcome}</p>
         <ul className={styles.stack} aria-label="Technology">
           {project.stack.slice(0, 3).map((item) => (
@@ -108,24 +112,24 @@ function SupportingCard({ project }: { project: Project }) {
   );
 }
 
-export function SupportingGrid({ projects }: { projects: Project[] }) {
+export function SupportingGrid({ projects, heading = "h3" }: { projects: Project[]; heading?: HeadingLevel }) {
   return (
     <div className={styles.grid}>
       {projects.map((p) => (
-        <SupportingCard key={p.slug} project={p} />
+        <SupportingCard key={p.slug} project={p} heading={heading} />
       ))}
     </div>
   );
 }
 
 /** Mix established products with newer work; private previews follow live products. */
-export function SelectedWorkCards() {
+export function SelectedWorkCards({ heading = "h3" }: { heading?: HeadingLevel } = {}) {
   const order = ["digilearn", "worklane", "apprenticelog", "passagewell", "electracore", "school-results", "innera"];
   return order.map((slug, index) => {
     const project = FLAGSHIPS.find((item) => item.slug === slug);
     return project
-      ? <FlagshipCard key={slug} project={project} priority={index === 0} />
-      : <RecentPlatforms key={slug} slugs={[slug]} />;
+      ? <FlagshipCard key={slug} project={project} priority={index === 0} heading={heading} />
+      : <RecentPlatforms key={slug} slugs={[slug]} heading={heading} />;
   });
 }
 
@@ -133,11 +137,11 @@ export function ProjectShowcase() {
   return (
     <>
       <div className={styles.flagshipStack}>
-        <SelectedWorkCards />
+        <SelectedWorkCards heading="h2" />
       </div>
 
       <div className={styles.stackGap}>
-        <SupportingGrid projects={SUPPORTING} />
+        <SupportingGrid projects={SUPPORTING} heading="h2" />
       </div>
     </>
   );

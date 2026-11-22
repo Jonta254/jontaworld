@@ -2,7 +2,7 @@ import { routeMetadata } from "@/content/metadata";
 import { ProjectShowcase } from "../components/showcase/ProjectShowcase";
 import styles from "./portfolio.module.css";
 
-export const metadata = routeMetadata("Work", "Explore live work across learning, trade tools, safety, outdoor planning and entertainment, with case studies and links to each deployment.", "/portfolio");
+export const metadata = routeMetadata("Work", "Explore websites and applications across reading, research, school operations, learning and trade tools, with case studies and clearly labelled previews.", "/portfolio");
 
 export default function PortfolioPage() {
   return (

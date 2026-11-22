@@ -82,3 +82,4 @@
 .project { overflow-wrap: anywhere; }
 .project span { flex-shrink: 0; }
 .controls { flex-shrink: 0; margin-left: auto; }
+.controls button:disabled { opacity: .45; cursor: not-allowed; }

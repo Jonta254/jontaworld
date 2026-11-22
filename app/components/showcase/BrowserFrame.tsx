@@ -34,18 +34,24 @@ export function BrowserFrame({
           {url}
         </span>
       </div>
-      <div className={styles.previewViewport} data-tall={height > width} tabIndex={height > width ? 0 : undefined} role={height > width ? "group" : undefined} aria-label={height > width ? "Scrollable screenshot preview" : undefined}>
-      <a href={src} target="_blank" rel="noopener noreferrer" className={styles.previewLink} aria-label={`Open full-size screenshot: ${alt}`}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        sizes="(max-width: 620px) calc(100vw - 66px), (max-width: 1023px) 480px, (max-width: 1440px) 40vw, 480px"
-        priority={priority}
-        className={styles.shot}
-      />
-      </a>
+      <div
+        className={styles.previewViewport}
+        data-tall={height > width}
+        tabIndex={height > width ? 0 : undefined}
+        role={height > width ? "group" : undefined}
+        aria-label={height > width ? "Scrollable screenshot preview" : undefined}
+      >
+        <a href={src} target="_blank" rel="noopener noreferrer" className={styles.previewLink} aria-label={`Open full-size screenshot in a new tab: ${alt}`}>
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            sizes="(max-width: 620px) calc(100vw - 66px), (max-width: 1023px) 520px, (max-width: 1440px) 40vw, 480px"
+            priority={priority}
+            className={styles.shot}
+          />
+        </a>
       </div>
     </div>
   );

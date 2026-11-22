@@ -75,17 +75,17 @@ export default function ContactForm() {
         <div className={styles.formRow}>
           <label>
             <span>Name</span>
-            <input name="name" type="text" autoComplete="name" minLength={2} maxLength={80} required />
+            <input name="name" type="text" autoComplete="name" minLength={2} maxLength={80} disabled={state === "sending"} required />
           </label>
           <label>
             <span>Email</span>
-            <input name="email" type="email" autoComplete="email" maxLength={254} required />
+            <input name="email" type="email" autoComplete="email" maxLength={254} disabled={state === "sending"} required />
           </label>
         </div>
 
         <label>
           <span>What can I help with?</span>
-          <select name="projectType" defaultValue="">
+          <select name="projectType" defaultValue="" disabled={state === "sending"}>
             <option value="">Choose one if useful</option>
             <option>Website</option>
             <option>Web app or internal tool</option>
@@ -105,6 +105,7 @@ export default function ContactForm() {
             rows={7}
             minLength={20}
             maxLength={4000}
+            disabled={state === "sending"}
             placeholder="Tell me what you need, who it is for, and what a good result would look like."
             required
           />

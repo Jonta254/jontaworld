@@ -123,7 +123,8 @@ a { color: inherit; }
   /* Stable element/global selectors , module hashes aren't printable targets.
      The sticky header, the footer, and the skip link are page chrome, not
      content. */
-  header, footer, .skip-link { display: none !important; }
+  body > footer, .skip-link { display: none !important; }
+  :root { color-scheme: light; }
   body { background: #fff; color: #000; }
   a { text-decoration: underline; }
   /* Reveal external URLs so the printout is self-contained. */

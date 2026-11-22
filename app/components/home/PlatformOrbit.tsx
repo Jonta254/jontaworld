@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type PointerEvent } from "react";
 import { RECENT_PLATFORMS } from "@/content/recent-platforms";
 import styles from "./platform-orbit.module.css";
 
@@ -38,7 +38,16 @@ function facing(index: number, count: number) {
   const p = point(index, count);
   return { yaw: -Math.atan2(p.x, p.z), pitch: Math.atan2(p.y, Math.hypot(p.x, p.z)) };
 }
+function subscribeToMotion(onChange: () => void) {
+  const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const serverMotionPreference = () => false;
+
 export default function PlatformOrbit() {
+  const reducedMotion = useSyncExternalStore(subscribeToMotion, prefersReducedMotion, serverMotionPreference);
   const [mode, setMode] = useState<"work" | "tech">("work");
   const [rotation, setRotation] = useState(() => facing(0, platforms.length));
   const [playing, setPlaying] = useState(false);
@@ -55,7 +64,7 @@ export default function PlatformOrbit() {
   const selected = positions.reduce((best, p, index) => p.z > positions[best].z ? index : best, 0);
   const project = items[selected];
   useEffect(() => {
-    if (!playing) return;
+    if (!playing || reducedMotion) return;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motion.matches) return;
     const timer = window.setInterval(() => {
@@ -64,7 +73,7 @@ export default function PlatformOrbit() {
     const stop = () => { if (motion.matches) setPlaying(false); };
     motion.addEventListener("change", stop);
     return () => { window.clearInterval(timer); motion.removeEventListener("change", stop); };
-  }, [playing]);
+  }, [playing, reducedMotion]);
   function choose(index: number) { setPlaying(false); setRotation(facing((index + items.length) % items.length, items.length)); }
   function start(event: PointerEvent<HTMLDivElement>) {
     if (drag.current || (event.pointerType === "mouse" && event.button !== 0)) return;
@@ -125,7 +134,7 @@ export default function PlatformOrbit() {
     </div>
     <div className={styles.details}>
       <div aria-live={playing || dragging ? "off" : "polite"} aria-atomic="true"><p className={styles.number}>{String(selected + 1).padStart(2, "0")} / {items.length}</p>{project.href ? <a href={project.href} className={styles.project}>{project.name}<span aria-hidden="true">↗</span></a> : <p className={styles.project}>{project.name}</p>}<p className={styles.stack}>{project.stack}</p></div>
-      <div className={styles.controls}><button type="button" aria-label="Previous item" onClick={() => choose(selected - 1)}>←</button><button type="button" className={styles.play} aria-label={playing ? "Pause rotation" : "Play rotation"} aria-pressed={playing} onClick={() => setPlaying(!playing)}>{playing ? "Ⅱ" : "▷"}</button><button type="button" aria-label="Next item" onClick={() => choose(selected + 1)}>→</button></div>
+      <div className={styles.controls}><button type="button" aria-label="Previous item" onClick={() => choose(selected - 1)}>←</button><button type="button" className={styles.play} disabled={reducedMotion} title={reducedMotion ? "Automatic rotation is off because reduced motion is enabled. Use the arrows or drag to explore." : undefined} aria-label={reducedMotion ? "Automatic rotation off: reduced motion enabled" : playing ? "Pause rotation" : "Play rotation"} aria-pressed={playing && !reducedMotion} onClick={() => setPlaying(!playing)}>{playing && !reducedMotion ? "Ⅱ" : "▷"}</button><button type="button" aria-label="Next item" onClick={() => choose(selected + 1)}>→</button></div>
     </div>
     <div className={styles.index} aria-label={mode === "work" ? "Choose a platform" : "Choose a technology"}>{items.map((item, i) => <button key={item.name} type="button" aria-pressed={selected === i} onClick={() => choose(i)}>{item.name}</button>)}</div>
   </div>;
