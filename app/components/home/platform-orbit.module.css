@@ -31,7 +31,7 @@
 .controls button:focus-visible, .project:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media(max-width: 900px) { .orbit { margin-top: 28px; max-width: 600px; width: 100%; justify-self: center; } }
 @media(max-width: 480px) { .topline { font-size: 7px; } .sphere > span { font-size: 44px; } .sphere span span { font-size: 5px; } .cardTitle { font-size: 6px; padding: 6px; } .project { font-size: 23px; } .stack { font-size: 8px; max-width: 27ch; } .controls { gap: 3px; } .controls button { width: 44px; } .details { gap: 8px; } }
-@media(prefers-reduced-motion: reduce) { .card { transition: none; } .play { display: none !important; } }
+@media(prefers-reduced-motion: reduce) { .card { transition: none; } }
 
 /* Two-axis spherical collection. Scroll the page outside the drag surface. */
 .stage { height: 87cqw; touch-action: none; }

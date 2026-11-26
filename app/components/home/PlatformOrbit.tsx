@@ -52,6 +52,7 @@ export default function PlatformOrbit() {
   const [rotation, setRotation] = useState(() => facing(0, platforms.length));
   const [playing, setPlaying] = useState(false);
   const [dragging, setDragging] = useState(false);
+  const stageRef = useRef<HTMLDivElement>(null);
   const moved = useRef(false);
   const drag = useRef<{ x: number; y: number; yaw: number; pitch: number; id: number; sensitivity: number } | null>(null);
   const items = mode === "work" ? platforms : technologies;
@@ -64,15 +65,39 @@ export default function PlatformOrbit() {
   const selected = positions.reduce((best, p, index) => p.z > positions[best].z ? index : best, 0);
   const project = items[selected];
   useEffect(() => {
-    if (!playing || reducedMotion) return;
+    const stage = stageRef.current;
+    if (!playing || reducedMotion || !stage) return;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motion.matches) return;
-    const timer = window.setInterval(() => {
-      if (!document.hidden) setRotation((r) => ({ yaw: r.yaw + .035, pitch: r.pitch + .009 }));
-    }, 50);
+    let visible = false;
+    let timer: number | undefined;
+    const clearTimer = () => {
+      window.clearInterval(timer);
+      timer = undefined;
+    };
+    const syncPlayback = () => {
+      if (!visible || document.hidden || motion.matches) {
+        clearTimer();
+      } else if (timer === undefined) {
+        timer = window.setInterval(() => {
+          setRotation((r) => ({ yaw: r.yaw + .035, pitch: r.pitch + .009 }));
+        }, 50);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncPlayback();
+    });
+    observer.observe(stage);
+    document.addEventListener("visibilitychange", syncPlayback);
     const stop = () => { if (motion.matches) setPlaying(false); };
     motion.addEventListener("change", stop);
-    return () => { window.clearInterval(timer); motion.removeEventListener("change", stop); };
+    return () => {
+      clearTimer();
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", syncPlayback);
+      motion.removeEventListener("change", stop);
+    };
   }, [playing, reducedMotion]);
   function choose(index: number) { setPlaying(false); setRotation(facing((index + items.length) % items.length, items.length)); }
   function start(event: PointerEvent<HTMLDivElement>) {
@@ -97,7 +122,8 @@ export default function PlatformOrbit() {
       <button type="button" aria-pressed={mode === "work"} onClick={() => { setMode("work"); choose(0); }}>Platforms <span>{platforms.length}</span></button>
       <button type="button" aria-pressed={mode === "tech"} onClick={() => { setMode("tech"); choose(0); }}>Languages & tools <span>{technologies.length}</span></button>
     </div>
-    <div className={styles.stage} tabIndex={0} role="group" aria-label="Rotate the sphere: drag in any direction or use all four arrow keys. Home resets the view." data-dragging={dragging}
+    <div ref={stageRef} className={styles.stage} tabIndex={0} role="group" aria-label="Rotate the sphere: drag in any direction or use all four arrow keys. Home resets the view." data-dragging={dragging}
+      onFocusCapture={() => setPlaying(false)}
       onKeyDown={(event) => {
         if (event.key.startsWith("Arrow")) {
           event.preventDefault(); setPlaying(false);
