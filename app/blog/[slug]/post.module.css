@@ -34,6 +34,7 @@
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
   font-family: var(--font-mono);
@@ -41,6 +42,7 @@
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
 }
+.meta > * { white-space: nowrap; }
 .topic { color: var(--accent); }
 .time { color: var(--faint); }
 .time::before { content: "·"; margin-right: var(--space-3); color: var(--line-strong); }

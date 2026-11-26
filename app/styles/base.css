@@ -10,6 +10,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Leave room for the sticky navigation when following section links. */
+:where([id]) {
+  scroll-margin-top: calc(var(--tap) * 2 + var(--space-4));
+}
+
 body {
   margin: 0;
   background: var(--paper);
