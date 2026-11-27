@@ -68,7 +68,7 @@ export default function ContactForm() {
       <div className={styles.formIntro}>
         <p className={styles.label}>Send a message</p>
         <h2 id="message-title">Write to me here.</h2>
-        <p>Send a project enquiry by email. No account and no redirect.</p>
+        <p>Send a project enquiry by email. Name, email and message are required.</p>
       </div>
 
       <form ref={formRef} className={styles.form} onSubmit={submit} aria-busy={state === "sending"}>
@@ -84,7 +84,7 @@ export default function ContactForm() {
         </div>
 
         <label>
-          <span>What can I help with?</span>
+          <span>What can I help with? (optional)</span>
           <select name="projectType" defaultValue="" disabled={state === "sending"}>
             <option value="">Choose one if useful</option>
             <option>Website</option>
@@ -105,11 +105,14 @@ export default function ContactForm() {
             rows={7}
             minLength={20}
             maxLength={4000}
+            aria-describedby="message-hint"
             disabled={state === "sending"}
             placeholder="Tell me what you need, who it is for, and what a good result would look like."
             required
           />
         </label>
+
+        <p id="message-hint" className={styles.fieldHint}>20–4,000 characters. A short outline is enough to start.</p>
 
         <label className={styles.honeypot} aria-hidden="true">
           <span>Website</span>

@@ -21,6 +21,7 @@
 .formFooter button:disabled { cursor: wait; opacity: .7; }
 .formFooter svg { width: 17px; }
 .formNote { color: var(--muted); font-size: var(--text-xs); }
+.fieldHint { margin-top: calc(var(--space-2) * -1); color: var(--muted); font-size: var(--text-xs); }
 .formStatus { min-height: 1.5em; color: var(--muted); font-size: var(--text-sm); }
 .formStatus[data-state="sent"] { color: var(--success); }
 .formStatus[data-state="error"] { color: var(--danger); }

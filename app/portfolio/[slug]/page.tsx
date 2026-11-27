@@ -105,8 +105,14 @@ export default async function ProjectPage({
 
       <div className={styles.lead}>
         <div className={styles.leadMedia}>
-          <BrowserFrame src={project.shot.desktop} alt={project.shot.alt} url={project.displayUrl} priority />
-          <PhoneFrame src={project.shot.mobile} />
+          <BrowserFrame
+            src={project.shot.desktop}
+            alt={project.shot.alt}
+            url={project.displayUrl}
+            sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1023px) calc(100vw - 160px), (max-width: 1247px) calc(100vw - 200px), 1040px"
+            priority
+          />
+          <PhoneFrame src={project.shot.mobile} sizes="132px" />
         </div>
       </div>
 
@@ -145,6 +151,7 @@ export default async function ProjectPage({
           src={project.shot.feature}
           alt={project.shot.featureAlt}
           url={project.displayUrl}
+          sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 96px), 992px"
         />
       </section>
 
@@ -162,6 +169,7 @@ export default async function ProjectPage({
                   src={view.src}
                   alt={view.alt}
                   url={project.displayUrl}
+                  sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 899px) calc(100vw - 96px), (max-width: 1023px) calc(50vw - 64px), (max-width: 1359px) calc(50vw - 80px), 600px"
                 />
                 <figcaption>{view.label}</figcaption>
               </figure>

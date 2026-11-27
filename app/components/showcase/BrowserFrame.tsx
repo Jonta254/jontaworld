@@ -15,6 +15,7 @@ export function BrowserFrame({
   priority = false,
   width = 1440,
   height = 900,
+  sizes = "(max-width: 620px) calc(100vw - 66px), (max-width: 1023px) 520px, (max-width: 1440px) 40vw, 480px",
 }: {
   src: string;
   alt: string;
@@ -22,6 +23,7 @@ export function BrowserFrame({
   priority?: boolean;
   width?: number;
   height?: number;
+  sizes?: string;
 }) {
   return (
     <div className={styles.frame}>
@@ -47,7 +49,7 @@ export function BrowserFrame({
             alt={alt}
             width={width}
             height={height}
-            sizes="(max-width: 620px) calc(100vw - 66px), (max-width: 1023px) 520px, (max-width: 1440px) 40vw, 480px"
+            sizes={sizes}
             priority={priority}
             className={styles.shot}
           />
@@ -63,7 +65,7 @@ export function BrowserFrame({
  * Purely presentational , it repeats what the desktop shot already shows, so
  * it is hidden from assistive tech rather than announced twice.
  */
-export function PhoneFrame({ src }: { src: string }) {
+export function PhoneFrame({ src, sizes = "105px" }: { src: string; sizes?: string }) {
   return (
     <div className={styles.phone} aria-hidden="true">
       <Image
@@ -71,7 +73,7 @@ export function PhoneFrame({ src }: { src: string }) {
         alt=""
         width={390}
         height={844}
-        sizes="105px"
+        sizes={sizes}
         className={styles.phoneShot}
       />
     </div>
