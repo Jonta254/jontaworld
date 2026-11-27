@@ -117,14 +117,16 @@ export default function PlatformOrbit() {
     if (event.pointerId !== drag.current?.id) return;
     drag.current = null; setDragging(false);
   }
-  return <div className={styles.orbit} role="region" aria-label="Interactive platform explorer">
-    <div className={styles.modes} aria-label="Explorer view">
+  return <div className={styles.orbit} role="region" aria-label="Interactive platform explorer" onFocusCapture={() => setPlaying(false)}>
+    <div className={styles.modes} role="group" aria-label="Explorer view">
       <button type="button" aria-pressed={mode === "work"} onClick={() => { setMode("work"); choose(0); }}>Platforms <span>{platforms.length}</span></button>
       <button type="button" aria-pressed={mode === "tech"} onClick={() => { setMode("tech"); choose(0); }}>Languages & tools <span>{technologies.length}</span></button>
     </div>
     <div ref={stageRef} className={styles.stage} tabIndex={0} role="group" aria-label="Rotate the sphere: drag in any direction or use all four arrow keys. Home resets the view." data-dragging={dragging}
-      onFocusCapture={() => setPlaying(false)}
       onKeyDown={(event) => {
+        // Rotation keys belong to the stage, not to links within it. Otherwise
+        // a focused preview can rotate behind the sphere and be unmounted.
+        if (event.target !== event.currentTarget) return;
         if (event.key.startsWith("Arrow")) {
           event.preventDefault(); setPlaying(false);
           setRotation((r) => ({ yaw: r.yaw + (event.key === "ArrowLeft" ? -.25 : event.key === "ArrowRight" ? .25 : 0), pitch: r.pitch + (event.key === "ArrowUp" ? .25 : event.key === "ArrowDown" ? -.25 : 0) }));
@@ -153,7 +155,12 @@ export default function PlatformOrbit() {
         } as CSSProperties}>
           <div className={styles.cardTitle}><i />{item.name}<span>{String(index + 1).padStart(2, "0")}</span></div>
           {item.image ? <div className={styles.capture}><Image src={item.image} alt="" fill sizes="(max-width: 900px) 40vw, 260px" draggable={false} preload={index === 0} /></div> : <div className={styles.symbol}>{item.logo ? <Image className={styles.techLogo} data-monochrome={item.name === "Rust"} src={item.logo} alt={item.name === "SVG" ? "W3C SVG Logo" : `${item.name === "Cloudflare D1" ? "Cloudflare" : item.name} logo`} width={64} height={64} draggable={false} unoptimized /> : <svg className={styles.storageIcon} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><ellipse cx="24" cy="11" rx="15" ry="6" /><path d="M9 11v26c0 8 30 8 30 0V11M9 24c0 8 30 8 30 0" /></svg>}<span>{item.stack.split(" · ")[0]}</span></div>}
-          {item.href && p.z >= 0 && <a className={styles.cardLink} href={item.href} aria-label={`Open ${item.name}`} draggable={false} onFocus={() => setPlaying(false)} />}
+          {item.href && p.z >= 0 && <a className={styles.cardLink} href={item.href} aria-label={`Open ${item.name}`} draggable={false} onFocus={(event) => {
+            setPlaying(false);
+            // Keep keyboard focus clear of overlapping previews without moving
+            // a link under someone's finger during a tap or drag.
+            if (event.currentTarget.matches(":focus-visible")) choose(index);
+          }} />}
         </div>;
       })}
       <span className={styles.dragHint} aria-hidden="true">{mode === "work" ? "SWIPE TO ROTATE · TAP A PREVIEW TO OPEN" : "SWIPE TO ROTATE · EXPLORE THE STACK"}</span>
@@ -162,6 +169,6 @@ export default function PlatformOrbit() {
       <div aria-live={playing || dragging ? "off" : "polite"} aria-atomic="true"><p className={styles.number}>{String(selected + 1).padStart(2, "0")} / {items.length}</p>{project.href ? <a href={project.href} className={styles.project}>{project.name}<span aria-hidden="true">↗</span></a> : <p className={styles.project}>{project.name}</p>}<p className={styles.stack}>{project.stack}</p></div>
       <div className={styles.controls}><button type="button" aria-label="Previous item" onClick={() => choose(selected - 1)}>←</button><button type="button" className={styles.play} disabled={reducedMotion} title={reducedMotion ? "Automatic rotation is off because reduced motion is enabled. Use the arrows or drag to explore." : undefined} aria-label={reducedMotion ? "Automatic rotation off: reduced motion enabled" : playing ? "Pause rotation" : "Play rotation"} aria-pressed={playing && !reducedMotion} onClick={() => setPlaying(!playing)}>{playing && !reducedMotion ? "Ⅱ" : "▷"}</button><button type="button" aria-label="Next item" onClick={() => choose(selected + 1)}>→</button></div>
     </div>
-    <div className={styles.index} aria-label={mode === "work" ? "Choose a platform" : "Choose a technology"}>{items.map((item, i) => <button key={item.name} type="button" aria-pressed={selected === i} onClick={() => choose(i)}>{item.name}</button>)}</div>
+    <div className={styles.index} role="group" aria-label={mode === "work" ? "Choose a platform" : "Choose a technology"}>{items.map((item, i) => <button key={item.name} type="button" aria-pressed={selected === i} onClick={() => choose(i)}>{item.name}</button>)}</div>
   </div>;
 }
